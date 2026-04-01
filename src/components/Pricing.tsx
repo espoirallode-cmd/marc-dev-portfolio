@@ -194,7 +194,7 @@ export default function Pricing() {
         <div className="mt-12 sm:mt-16 text-center reveal" style={{ transitionDelay: "400ms" }}>
           <div className="inline-flex items-center gap-2.5 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md shadow-[0_0_15px_rgba(255,255,255,0.05)] transition-all hover:bg-white/10 cursor-default">
             <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-primary animate-pulse" />
-            <span className="text-white/90 font-medium text-sm sm:text-[15px] tracking-wide">
+            <span className="text-white/90 font-medium text-[10px] sm:text-[15px] tracking-wide whitespace-nowrap">
               Nom de domaine 1 an offert pour chaque offre
             </span>
           </div>
