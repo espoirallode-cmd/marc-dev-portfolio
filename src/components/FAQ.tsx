@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useReveal } from "@/hooks/use-reveal";
-import { ChevronDown, Clock, RefreshCw, CreditCard, Rocket, Sliders, ShieldCheck, Sparkles } from "lucide-react";
+import { ChevronDown, Clock, RefreshCw, CreditCard, Rocket, Sliders, ShieldCheck, Sparkles, Globe } from "lucide-react";
 
 const faqs = [
   { 
@@ -44,6 +44,12 @@ const faqs = [
     a: "L'outil n'est pas le problème. Ce qui compte, c'est ce qu'on en fait.\nUn architecte utilise AutoCAD, un photographe utilise Lightroom. L'outil ne remet pas en cause la qualité du travail — c'est l'expertise derrière qui fait la différence.\nJ'utilise l'IA comme levier : elle me permet d'aller plus vite, et cette rapidité je vous la répercute en tarif et en délai. Ce que vous payez, c'est mon jugement et ma capacité à transformer vos besoins en un site qui convertit.\nLa vraie question n'est pas 'est-ce que c'est fait par une IA' — c'est : est-ce que votre site va vous ramener des clients ? Et là, ma réponse est oui.",
     icon: Sparkles,
     color: "#7209b7"
+  },
+  { 
+    q: "Est-il possible d'avoir un site multilingue ?", 
+    a: "Absolument. Je peux intégrer plusieurs langues à votre site selon vos besoins — français, anglais, espagnol et bien d'autres. Un site multilingue, c'est plus de visibilité, plus de clients potentiels, et une image encore plus professionnelle. Il suffit juste de le mentionner après votre commande.",
+    icon: Globe,
+    color: "#e50024"
   },
 ];
 
