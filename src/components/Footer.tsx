@@ -7,7 +7,7 @@ export default function Footer() {
       <footer className="border-t border-foreground/[0.06] py-12">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
           <div>
-            <h3 className="font-heading font-bold text-lg mb-2">Marc Dev<span className="text-primary">.</span></h3>
+            <h3 className="font-heading font-bold text-lg mb-2">Marc Dev</h3>
             <p className="font-body text-muted-foreground text-sm">
               Création de sites web professionnels propulsés par l'IA.
             </p>
