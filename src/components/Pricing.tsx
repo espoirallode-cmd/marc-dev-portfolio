@@ -28,7 +28,7 @@ const plans: Plan[] = [
     name: "Essentielle",
     subtitle: "Site vitrine 3 pages",
     description: "L'essentiel pour avoir une présence professionnelle en ligne et accueillir vos prospects.",
-    price: "297 €",
+    price: "",
     recommended: false,
     features: [
       { icon: FileText, text: "3 pages : Accueil, À propos, Contact" },
@@ -38,7 +38,7 @@ const plans: Plan[] = [
       { icon: Link, text: "Intégration de vos liens existants" },
       { icon: Clock, text: "Livré en 5 à 7 jours" },
     ],
-    cta: "Je choisis Essentielle",
+    cta: "Demander un devis",
     theme: {
       border: "border-[#219ebc]/30",
       shadow: "shadow-[0_0_20px_0_rgba(33,158,188,0.15),inset_0_0_10px_0_rgba(33,158,188,0.1)]",
@@ -50,7 +50,7 @@ const plans: Plan[] = [
     name: "Plus populaire",
     subtitle: "Site vitrine Pro — 5 pages",
     description: "Pour les coachs qui veulent convertir leurs visiteurs en prospects qualifiés.",
-    price: "497 €",
+    price: "",
     recommended: true,
     features: [
       { icon: Layers, text: "5 pages : Accueil, À propos, Services, Témoignages, Contact" },
@@ -61,7 +61,7 @@ const plans: Plan[] = [
       { icon: CreditCard, text: "Intégration lien de paiement" },
       { icon: Clock, text: "Livré en 7 à 10 jours" },
     ],
-    cta: "Je choisis cette offre",
+    cta: "Demander un devis",
     theme: {
       border: "border-[#fb5607]/80",
       shadow: "shadow-[0_0_35px_0_rgba(251,86,7,0.4),inset_0_0_20px_0_rgba(251,86,7,0.2)]",
@@ -73,7 +73,7 @@ const plans: Plan[] = [
     name: "Premium",
     subtitle: "Site vitrine complet — 7 pages",
     description: "Le pack complet avec système de collecte d'emails et tunnel de vente intégré.",
-    price: "797 €",
+    price: "",
     recommended: false,
     features: [
       { icon: Layers, text: "7 pages complètes sur-mesure" },
@@ -84,7 +84,7 @@ const plans: Plan[] = [
       { icon: Mail, text: "Email automatique de bienvenue configuré" },
       { icon: Clock, text: "Livré en 10 à 14 jours" },
     ],
-    cta: "Je choisis Premium",
+    cta: "Demander un devis",
     theme: {
       border: "border-[#99d98c]/30",
       shadow: "shadow-[0_0_20px_0_rgba(153,217,140,0.15),inset_0_0_10px_0_rgba(153,217,140,0.1)]",
@@ -96,7 +96,7 @@ const plans: Plan[] = [
     name: "Identité + Site",
     subtitle: "Charte graphique + site vitrine",
     description: "Vous n'avez pas encore d'identité visuelle ? Je crée votre charte complète puis votre site sur cette base.",
-    price: "997 €",
+    price: "",
     recommended: false,
     features: [
       { icon: PenTool, text: "Logo professionnel (2 propositions)" },
@@ -107,7 +107,7 @@ const plans: Plan[] = [
       { icon: RefreshCw, text: "2 révisions incluses sur la charte" },
       { icon: Clock, text: "Livré en 12 à 16 jours" },
     ],
-    cta: "Je choisis cette offre",
+    cta: "Demander un devis",
     theme: {
       border: "border-[#06d6a0]/30",
       shadow: "shadow-[0_0_20px_0_rgba(6,214,160,0.15),inset_0_0_10px_0_rgba(6,214,160,0.1)]",
@@ -170,13 +170,6 @@ export default function Pricing() {
                   </ul>
                 </div>
 
-                {/* Pricing Area */}
-                <div className="mt-auto mb-6 relative z-10">
-                  <p className={`font-heading font-extrabold text-[2.5rem] tracking-tight bg-gradient-to-r from-white ${plan.theme.gradient} bg-clip-text text-transparent flex items-center justify-center gap-1.5 leading-none`}>
-                    {plan.price.replace(' €', '')}
-                    {!plan.price.includes('devis') && <span className="text-xl font-semibold tracking-normal mt-1">€</span>}
-                  </p>
-                </div>
 
                 {/* Button */}
                 <a
