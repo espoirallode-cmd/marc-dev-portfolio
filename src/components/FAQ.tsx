@@ -17,7 +17,7 @@ const faqs = [
   },
   { 
     q: "Quels moyens de paiement acceptez-vous ?", 
-    a: "Pour le moment vous serai dirigé vers mon site Comeup pour terminer votre commande.",
+    a: "Pour le moment vous serez dirigé vers mon site Comeup pour terminer votre commande.",
     icon: CreditCard,
     color: "#99d98c"
   },
