@@ -33,7 +33,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <a href="#hero" className="font-heading font-bold text-xl text-foreground tracking-tight">
-          Marc Dev
+          Marc Dev<span className="text-primary">.</span>
         </a>
 
         {/* Desktop links */}
