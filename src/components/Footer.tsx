@@ -37,7 +37,7 @@ export default function Footer() {
               </svg>
             </a>
             <a
-              href="mailto:contact@marcdev.fr"
+              href="mailto:contactmarcosgraphique@gmail.com"
               className="w-10 h-10 rounded-full border border-foreground/10 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/50 transition-colors cursor-pointer"
             >
               <Mail className="w-[18px] h-[18px]" />

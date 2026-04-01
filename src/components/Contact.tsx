@@ -8,7 +8,7 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const mailtoLink = `mailto:contact@marcdev.fr?subject=Nouveau projet - ${form.prenom}&body=${encodeURIComponent(
+    const mailtoLink = `mailto:contactmarcosgraphique@gmail.com?subject=Nouveau projet - ${form.prenom}&body=${encodeURIComponent(
       `Prénom: ${form.prenom}\nEmail: ${form.email}\nType: ${form.type}\n\nMessage:\n${form.message}`
     )}`;
     window.open(mailtoLink);
@@ -38,7 +38,7 @@ export default function Contact() {
             Discuter sur WhatsApp
           </a>
           <a
-            href="mailto:contact@marcdev.fr"
+            href="mailto:contactmarcosgraphique@gmail.com"
             className="border border-foreground/20 text-foreground px-6 py-3 rounded-md font-semibold text-sm flex items-center justify-center gap-2 hover:border-primary/50 transition-colors cursor-pointer"
           >
             <Mail className="w-[18px] h-[18px]" />
