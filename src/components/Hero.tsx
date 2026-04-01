@@ -3,6 +3,7 @@ import { ChevronDown } from "lucide-react";
 import LightRays from "./LightRays";
 import GradientText from "./GradientText";
 import ShinyText from "./ShinyText";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const mockups = [
   "/assets/mockup-1.webp",
@@ -18,6 +19,7 @@ export default function Hero() {
   const title = "Votre présence en ligne, professionnelle et livrée clé en main.";
   const words = title.split(" ");
   const [mounted, setMounted] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     setMounted(true);
@@ -42,6 +44,7 @@ export default function Hero() {
         mouseInfluence={0.08}
         noiseAmount={0.0}
         distortion={0.0}
+        raysOffset={isMobile ? 0.05 : 0.2}
       />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">

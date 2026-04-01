@@ -11,8 +11,8 @@ const hexToRgb = (hex: string): [number, number, number] => {
 
 type RaysOrigin = 'top-left' | 'top-center' | 'top-right' | 'left' | 'right' | 'bottom-left' | 'bottom-center' | 'bottom-right';
 
-const getAnchorAndDir = (origin: RaysOrigin, w: number, h: number) => {
-  const outside = 0.2;
+const getAnchorAndDir = (origin: RaysOrigin, w: number, h: number, offset: number) => {
+  const outside = offset;
   switch (origin) {
     case 'top-left':
       return { anchor: [0, -outside * h], dir: [0, 1] };
@@ -46,6 +46,7 @@ interface LightRaysProps {
   mouseInfluence?: number;
   noiseAmount?: number;
   distortion?: number;
+  raysOffset?: number;
   className?: string;
 }
 
@@ -62,6 +63,7 @@ const LightRays = ({
   mouseInfluence = 0.1,
   noiseAmount = 0.0,
   distortion = 0.0,
+  raysOffset = 0.2,
   className = ''
 }: LightRaysProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -272,7 +274,7 @@ void main() {
 
         uniforms.iResolution.value = [w, h];
 
-        const { anchor, dir } = getAnchorAndDir(raysOrigin, w, h);
+        const { anchor, dir } = getAnchorAndDir(raysOrigin, w, h, raysOffset);
         uniforms.rayPos.value = anchor;
         uniforms.rayDir.value = dir;
       };
@@ -379,7 +381,7 @@ void main() {
 
     const { clientWidth: wCSS, clientHeight: hCSS } = containerRef.current;
     const dpr = renderer.dpr;
-    const { anchor, dir } = getAnchorAndDir(raysOrigin, wCSS * dpr, hCSS * dpr);
+    const { anchor, dir } = getAnchorAndDir(raysOrigin, wCSS * dpr, hCSS * dpr, raysOffset);
     u.rayPos.value = anchor;
     u.rayDir.value = dir;
   }, [
@@ -387,6 +389,7 @@ void main() {
     raysSpeed,
     lightSpread,
     raysOrigin,
+    raysOffset,
     rayLength,
     pulsating,
     fadeDistance,
