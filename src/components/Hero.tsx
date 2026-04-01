@@ -44,7 +44,7 @@ export default function Hero() {
         mouseInfluence={0.08}
         noiseAmount={0.0}
         distortion={0.0}
-        raysOffset={isMobile ? 0.05 : 0.2}
+        raysOffset={isMobile ? -0.02 : 0.2}
       />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
