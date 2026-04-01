@@ -23,7 +23,7 @@ const faqs = [
   },
   { 
     q: "Que se passe-t-il après la livraison ?", 
-    a: "Vous recevez tous les accès à votre site. L'offre Premium inclut 1 mois de maintenance. Un support par email reste disponible pour toutes les offres.",
+    a: "Vous recevez tous les accès à votre site. Et un mois de suivi inclus pour toute mise à jour complémentaire.",
     icon: Rocket,
     color: "#06d6a0"
   },
