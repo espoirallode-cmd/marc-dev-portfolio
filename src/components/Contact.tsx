@@ -27,7 +27,7 @@ export default function Contact() {
 
         <div className="reveal flex flex-col sm:flex-row gap-4 justify-center mb-14">
           <a
-            href="https://wa.me/33600000000"
+            href="https://wa.me/22990107869"
             target="_blank"
             rel="noopener noreferrer"
             className="border border-foreground/20 text-foreground px-6 py-3 rounded-md font-semibold text-sm flex items-center justify-center gap-2 hover:border-primary/50 transition-colors cursor-pointer"
