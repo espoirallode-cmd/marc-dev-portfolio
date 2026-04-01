@@ -17,7 +17,7 @@ const faqs = [
   },
   { 
     q: "Quels moyens de paiement acceptez-vous ?", 
-    a: "Virement bancaire, PayPal et paiement en plusieurs fois sont disponibles. Un acompte de 50% est demandé au démarrage.",
+    a: "Pour le moment vous serai dirigé vers mon site Comeup pour terminer votre commande.",
     icon: CreditCard,
     color: "#99d98c"
   },
