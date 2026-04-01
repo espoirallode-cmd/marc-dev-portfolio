@@ -173,7 +173,15 @@ export default function Pricing() {
 
                 {/* Button */}
                 <a
-                  href="#contact"
+                  href={`https://wa.me/2290190107869?text=${encodeURIComponent(
+                    `Bonjour ! Je souhaiterais obtenir un devis pour l'offre : ${plan.name}.\n\n` +
+                    `Détails : ${plan.subtitle}\n` +
+                    `${plan.description}\n\n` +
+                    `Fonctionnalités incluses :\n` +
+                    plan.features.map(f => `- ${f.text}`).join('\n')
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="relative z-10 w-fit mx-auto px-5 sm:px-6 py-2.5 rounded-full font-bold text-[11px] tracking-wider whitespace-nowrap text-white transition-all cursor-pointer uppercase bg-white/[0.05] border border-white/20 backdrop-blur-md shadow-[0_0_20px_rgba(255,255,255,0.1),inset_0_0_10px_rgba(255,255,255,0.05)] hover:bg-white/10 hover:border-white/40 hover:shadow-[0_0_30px_rgba(255,255,255,0.2),inset_0_0_15px_rgba(255,255,255,0.1)] hover:-translate-y-0.5"
                 >
                   {plan.cta}
