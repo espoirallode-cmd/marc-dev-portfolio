@@ -16,7 +16,7 @@ const cards = [
     buttonLabel: "Éclat",
     tagline: "Le travail parle avant même de vous.",
     title: "Site vitrine",
-    image: "/assets/wave-purple.png",
+    image: "/assets/card-2.png",
     dots: 4,
     activeDot: 1,
     accent: "from-violet-500/30 via-purple-600/20 to-transparent",
