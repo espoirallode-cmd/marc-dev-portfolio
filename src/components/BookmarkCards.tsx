@@ -26,7 +26,7 @@ const cards = [
     buttonLabel: "Style",
     tagline: "Votre marque mérite une seconde chance.",
     title: "Portfolio",
-    image: "/assets/wave-blue.png",
+    image: "/assets/card-3.png",
     dots: 4,
     activeDot: 2,
     accent: "from-indigo-500/30 via-blue-600/20 to-transparent",
