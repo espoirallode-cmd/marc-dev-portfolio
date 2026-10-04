@@ -20,10 +20,9 @@ export default function Process() {
   return (
     <section id="process" className="py-24 bg-black relative" ref={ref}>
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="w-fit mx-auto font-heading font-extrabold text-3xl sm:text-5xl text-center mb-4 bg-gradient-to-b from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
+        <h2 className="w-fit mx-auto font-heading font-extrabold text-3xl sm:text-5xl text-center mb-16 bg-gradient-to-b from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
           Comment ça marche ?
         </h2>
-        <div className="w-20 h-1.5 bg-gradient-to-r from-red-600 via-rose-500 to-red-600 mx-auto mb-20 rounded-full shadow-[0_0_15px_rgba(229,0,36,0.5)]" />
 
         {/* Desktop horizontal */}
         <div className="hidden md:flex items-start justify-between relative">
