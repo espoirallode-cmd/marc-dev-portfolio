@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { ChevronDown, ArrowRight } from "lucide-react";
-import GradientText from "./GradientText";
 
 const mockups = [
   "/assets/mockup-1.webp",
@@ -31,16 +30,10 @@ export default function Hero() {
 
         {/* Main Heading */}
         <h1 
-          className="font-heading font-extrabold text-4xl sm:text-6xl lg:text-[4.75rem] leading-[1.08] tracking-tight mb-8"
+          className="font-heading font-extrabold text-4xl sm:text-6xl lg:text-[4.75rem] leading-[1.08] tracking-tight mb-8 text-white"
           style={{ opacity: mounted ? 1 : 0, transition: "opacity 0.8s ease-out" }}
         >
-          <GradientText
-            colors={['#ffffff', '#ff4d6d', '#ffffff', '#e50024']}
-            animationSpeed={6}
-            className="w-full inline-block pb-2"
-          >
-            {title}
-          </GradientText>
+          {title}
         </h1>
 
         {/* Subtitle */}
