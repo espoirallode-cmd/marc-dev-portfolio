@@ -6,7 +6,7 @@ const cards = [
     buttonLabel: "Cible",
     tagline: "Une croissance visible dès le premier mois.",
     title: "Landing page",
-    image: "/assets/wave-orange.png",
+    image: "/assets/card-1.png",
     dots: 4,
     activeDot: 0,
     accent: "from-orange-500/30 via-red-600/20 to-transparent",
