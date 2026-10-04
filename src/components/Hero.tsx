@@ -1,16 +1,6 @@
 import { useEffect, useState } from "react";
 import { ChevronDown, ArrowRight } from "lucide-react";
 
-const mockups = [
-  "/assets/mockup-1.webp",
-  "/assets/mockup-2.webp",
-  "/assets/mockup-3.webp",
-  "/assets/mockup-4.webp",
-  "/assets/mockup-5.webp",
-  "/assets/mockup-6.webp",
-  "/assets/mockup-7.webp"
-];
-
 export default function Hero() {
   const title = "On construit votre présence en ligne, vous gérez votre business.";
   const [mounted, setMounted] = useState(false);
@@ -19,7 +9,6 @@ export default function Hero() {
     setMounted(true);
   }, []);
 
-
   return (
     <section
       id="hero"
@@ -27,9 +16,8 @@ export default function Hero() {
     >
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
 
-
         {/* Main Heading */}
-        <h1 
+        <h1
           className="font-heading font-extrabold text-4xl sm:text-6xl lg:text-[4.75rem] leading-[1.08] tracking-tight mb-8 text-white"
           style={{ opacity: mounted ? 1 : 0, transition: "opacity 0.8s ease-out" }}
         >
@@ -59,52 +47,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Mockups Marquee */}
-      <div className="relative z-10 w-full overflow-hidden mt-16 sm:mt-20 mask-horizontal">
-        <div className="flex w-max hover:pause">
-          <div className="flex gap-5 sm:gap-7 animate-marquee shrink-0 pr-5 sm:pr-7">
-            {mockups.map((src, i) => (
-              <div
-                key={i}
-                className="w-52 h-32 sm:w-72 sm:h-48 rounded-2xl bg-zinc-950/80 border border-white/10 flex items-center justify-center shrink-0 backdrop-blur-xl shadow-2xl transition-all duration-300 hover:border-rose-500/50 hover:shadow-[0_0_30px_rgba(229,0,36,0.3)] hover:-translate-y-1 cursor-pointer overflow-hidden group"
-              >
-                {src ? (
-                  <img 
-                    src={src} 
-                    alt={`Mockup ${i + 1}`} 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
-                  />
-                ) : (
-                  <span className="text-zinc-500 font-heading font-medium text-sm">
-                    Mockup {i + 1}
-                  </span>
-                )}
-              </div>
-            ))}
-          </div>
-          <div className="flex gap-5 sm:gap-7 animate-marquee shrink-0 pr-5 sm:pr-7" aria-hidden="true">
-            {mockups.map((src, i) => (
-              <div
-                key={`dup-${i}`}
-                className="w-52 h-32 sm:w-72 sm:h-48 rounded-2xl bg-zinc-950/80 border border-white/10 flex items-center justify-center shrink-0 backdrop-blur-xl shadow-2xl transition-all duration-300 hover:border-rose-500/50 hover:shadow-[0_0_30px_rgba(229,0,36,0.3)] hover:-translate-y-1 cursor-pointer overflow-hidden group"
-              >
-                {src ? (
-                  <img 
-                    src={src} 
-                    alt={`Mockup ${i + 1}`} 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
-                  />
-                ) : (
-                  <span className="text-zinc-500 font-heading font-medium text-sm">
-                    Mockup {i + 1}
-                  </span>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* Scroll indicator */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 scroll-bounce text-zinc-500 z-10 hidden sm:block">
         <ChevronDown className="w-6 h-6 text-rose-500" />
@@ -112,4 +54,5 @@ export default function Hero() {
     </section>
   );
 }
+
 
