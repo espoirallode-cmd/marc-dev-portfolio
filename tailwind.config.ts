@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['Outfit', 'sans-serif'],
-        body: ['Montserrat', 'sans-serif'],
+        heading: ['Remixa', 'var(--font-heading)', 'Outfit', 'sans-serif'],
+        body: ['var(--font-body)', 'Montserrat', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
