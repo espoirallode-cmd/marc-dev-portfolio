@@ -75,7 +75,7 @@ export default function BookmarkCards() {
         {/* === CARDS AREA + BUTTONS BELOW === */}
         <div className="flex flex-col gap-5 w-full lg:w-[55%]">
           {/* Cards */}
-          <div className="relative h-[320px] sm:h-[380px]">
+          <div className="relative h-[255px] sm:h-[270px]">
             {cards.map((card, i) => {
               const isActive = i === active;
               const positions = [
