@@ -125,17 +125,17 @@ export default function BookmarkCards() {
                         : "0 16px 40px rgba(0,0,0,0.5)",
                     }}
                   >
-                    <div className="relative w-full h-[155px] rounded-t-2xl overflow-hidden">
+                    <div className="relative w-full h-[155px] rounded-t-2xl overflow-hidden bg-zinc-950 flex items-center justify-center p-1">
                       <img
                         src={card.image}
                         alt={card.title}
-                        className="w-full h-full object-cover"
+                        className={`w-full h-full ${card.image.includes('wave') ? 'object-cover' : 'object-contain'} rounded-t-xl`}
                         style={{
                           filter: isActive ? "brightness(1)" : "brightness(0.7)",
                           transition: "filter 0.5s ease",
                         }}
                       />
-                      <div className={`absolute inset-0 bg-gradient-to-t ${card.accent}`} />
+                      <div className={`absolute inset-0 bg-gradient-to-t ${card.accent} pointer-events-none`} />
                     </div>
                     <div className="px-4 pt-3 pb-4">
                       <h3
