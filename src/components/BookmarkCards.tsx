@@ -2,31 +2,40 @@ import { useState, useEffect, useRef } from "react";
 
 const cards = [
   {
+    brand: "Bright Path®",
+    tagline: "Une croissance visible dès le premier mois.",
+    title: "Landing page",
+    image: "/assets/wave-orange.png",
+    dots: 2,
+    activeDot: 0,
+    accent: "from-orange-500/30 via-red-600/20 to-transparent",
+  },
+  {
+    brand: "North Field®",
+    tagline: "Le travail parle avant même de vous.",
+    title: "Site vitrine",
+    image: "/assets/wave-purple.png",
+    dots: 3,
+    activeDot: 1,
+    accent: "from-violet-500/30 via-purple-600/20 to-transparent",
+  },
+  {
     brand: "Marc Dev®",
     tagline: "Votre marque mérite une seconde chance.",
-    title: "Commencez ici.",
+    title: "Portfolio",
     image: "/assets/wave-blue.png",
     dots: 2,
     activeDot: 0,
     accent: "from-indigo-500/30 via-blue-600/20 to-transparent",
   },
   {
-    brand: "Bright Path®",
-    tagline: "Une croissance visible dès le premier mois.",
-    title: "+240%",
-    image: "/assets/wave-orange.png",
-    dots: 2,
-    activeDot: 1,
-    accent: "from-orange-500/30 via-red-600/20 to-transparent",
-  },
-  {
-    brand: "North Field®",
-    tagline: "Le travail parle avant même de vous.",
-    title: "Voyez-le.",
-    image: "/assets/wave-purple.png",
-    dots: 3,
-    activeDot: 2,
-    accent: "from-violet-500/30 via-purple-600/20 to-transparent",
+    brand: "Aura Store®",
+    tagline: "Une boutique en ligne moderne et performante.",
+    title: "Site e-commerce",
+    image: "/assets/wave-green.png",
+    dots: 4,
+    activeDot: 3,
+    accent: "from-emerald-500/30 via-green-600/20 to-transparent",
   },
 ];
 
@@ -79,9 +88,10 @@ export default function BookmarkCards() {
             {cards.map((card, i) => {
               const isActive = i === active;
               const positions = [
-                { left: "0%", zIndex: 30, scale: 1, opacity: 1 },
-                { left: "37%", zIndex: 20, scale: 0.88, opacity: 0.9 },
-                { left: "62%", zIndex: 10, scale: 0.78, opacity: 0.75 },
+                { left: "0%", zIndex: 40, scale: 1, opacity: 1 },
+                { left: "26%", zIndex: 30, scale: 0.90, opacity: 0.9 },
+                { left: "48%", zIndex: 20, scale: 0.81, opacity: 0.8 },
+                { left: "68%", zIndex: 10, scale: 0.72, opacity: 0.65 },
               ];
               const order = ((i - active) + cards.length) % cards.length;
               const pos = positions[order];
@@ -135,8 +145,8 @@ export default function BookmarkCards() {
                     </div>
                     <div className="px-4 pt-3 pb-4">
                       <h3
-                        className="font-heading text-white/90 leading-none tracking-tight"
-                        style={{ fontSize: isActive ? "2rem" : "1.5rem", transition: "font-size 0.4s ease" }}
+                        className="font-heading text-white/90 leading-none tracking-tight truncate"
+                        style={{ fontSize: isActive ? "1.35rem" : "1.05rem", transition: "font-size 0.4s ease" }}
                       >
                         {card.title}
                       </h3>
@@ -163,12 +173,12 @@ export default function BookmarkCards() {
           </div>
 
           {/* Selector buttons — below cards, horizontal */}
-          <div className="flex flex-row gap-2">
+          <div className="flex flex-row gap-2 flex-wrap sm:flex-nowrap">
             {cards.map((c, i) => (
               <button
                 key={i}
                 onClick={() => setActive(i)}
-                className="px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer whitespace-nowrap"
+                className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 cursor-pointer whitespace-nowrap"
                 style={{
                   background: active === i ? "rgba(255,255,255,0.12)" : "transparent",
                   border: active === i ? "1px solid rgba(255,255,255,0.25)" : "1px solid rgba(255,255,255,0.08)",
