@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
-import { ChevronDown, ArrowRight, Sparkles } from "lucide-react";
-import LightRays from "./LightRays";
+import { ChevronDown, ArrowRight } from "lucide-react";
 import GradientText from "./GradientText";
-import ShinyText from "./ShinyText";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 const mockups = [
   "/assets/mockup-1.webp",
@@ -18,46 +15,19 @@ const mockups = [
 export default function Hero() {
   const title = "Votre présence en ligne, professionnelle et livrée clé en main.";
   const [mounted, setMounted] = useState(false);
-  const isMobile = useIsMobile();
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
 
   return (
     <section
       id="hero"
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-32 pb-16 sm:pt-40 bg-black bg-grid-pattern"
     >
-      {/* Radial Dark Glow Overlay */}
-      <div className="absolute inset-0 bg-radial-gradient pointer-events-none" />
-
-      {/* Light Rays WebGL Background */}
-      <LightRays
-        raysOrigin="top-center"
-        raysColor="#e50024"
-        raysSpeed={0.9}
-        lightSpread={1.4}
-        rayLength={2.8}
-        pulsating={true}
-        fadeDistance={1.2}
-        saturation={1.0}
-        followMouse={true}
-        mouseInfluence={0.12}
-        noiseAmount={0.0}
-        distortion={0.0}
-        raysOffset={isMobile ? -0.02 : 0.15}
-      />
-
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        {/* Top Tag Badge */}
-        <div className="inline-flex items-center gap-2.5 bg-black/80 border border-white/15 px-5 py-2 rounded-full mb-8 backdrop-blur-xl shadow-[0_0_20px_rgba(229,0,36,0.2)]">
-          <span className="flex h-2 w-2 relative">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
-          </span>
-          <ShinyText text="Création de site pro avec l'IA" disabled={false} speed={3} className="font-semibold text-xs sm:text-sm tracking-wide text-white" />
-        </div>
+
 
         {/* Main Heading */}
         <h1 
