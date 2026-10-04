@@ -65,7 +65,7 @@ export default function BookmarkCards() {
       </div>
 
       <div
-        className="relative max-w-6xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-16"
+        className="relative max-w-6xl mx-auto px-6 flex flex-col lg:flex-row items-start gap-16"
         style={{
           opacity: visible ? 1 : 0,
           transform: visible ? "translateY(0)" : "translateY(40px)",
@@ -73,7 +73,7 @@ export default function BookmarkCards() {
         }}
       >
         {/* === CARDS AREA === */}
-        <div className="relative w-full lg:w-[55%] h-[320px] sm:h-[380px] flex items-end">
+        <div className="relative w-full lg:w-[55%] h-[320px] sm:h-[380px] flex items-start">
           {cards.map((card, i) => {
             const isActive = i === active;
             // Position offsets: active is left/center, others stack to the right
@@ -90,12 +90,12 @@ export default function BookmarkCards() {
               <div
                 key={i}
                 onClick={() => setActive(i)}
-                className="absolute bottom-0 cursor-pointer"
+                className="absolute top-0 cursor-pointer"
                 style={{
                   left: pos.left,
                   zIndex: pos.zIndex,
                   transform: `scale(${pos.scale})`,
-                  transformOrigin: "bottom left",
+                  transformOrigin: "top left",
                   opacity: pos.opacity,
                   transition: "all 0.6s cubic-bezier(0.34,1.56,0.64,1)",
                   width: "220px",
