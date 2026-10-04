@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ArrowRight, Sparkles } from "lucide-react";
 import LightRays from "./LightRays";
 import GradientText from "./GradientText";
 import ShinyText from "./ShinyText";
@@ -17,7 +17,6 @@ const mockups = [
 
 export default function Hero() {
   const title = "Votre présence en ligne, professionnelle et livrée clé en main.";
-  const words = title.split(" ");
   const [mounted, setMounted] = useState(false);
   const isMobile = useIsMobile();
 
@@ -28,37 +27,45 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-32 pb-16 sm:pt-40"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-32 pb-16 sm:pt-40 bg-black bg-grid-pattern"
     >
+      {/* Radial Dark Glow Overlay */}
+      <div className="absolute inset-0 bg-radial-gradient pointer-events-none" />
+
       {/* Light Rays WebGL Background */}
       <LightRays
         raysOrigin="top-center"
-        raysColor="#ffffff"
-        raysSpeed={0.8}
-        lightSpread={1.2}
-        rayLength={2.5}
-        pulsating={false}
-        fadeDistance={1.0}
-        saturation={0.8}
+        raysColor="#e50024"
+        raysSpeed={0.9}
+        lightSpread={1.4}
+        rayLength={2.8}
+        pulsating={true}
+        fadeDistance={1.2}
+        saturation={1.0}
         followMouse={true}
-        mouseInfluence={0.08}
+        mouseInfluence={0.12}
         noiseAmount={0.0}
         distortion={0.0}
-        raysOffset={isMobile ? -0.02 : 0.2}
+        raysOffset={isMobile ? -0.02 : 0.15}
       />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        <span className="inline-flex items-center gap-2 bg-foreground/5 text-muted-foreground text-sm font-body px-5 py-2 rounded-full mb-8 border border-foreground/10 backdrop-blur-sm tracking-wide">
-          <span className="opacity-50 text-[10px] tracking-widest">///</span>
-          <ShinyText text="Création de site pro avec l'IA" disabled={false} speed={3} className="font-medium" />
-        </span>
+      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+        {/* Top Tag Badge */}
+        <div className="inline-flex items-center gap-2.5 bg-black/80 border border-white/15 px-5 py-2 rounded-full mb-8 backdrop-blur-xl shadow-[0_0_20px_rgba(229,0,36,0.2)]">
+          <span className="flex h-2 w-2 relative">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
+          </span>
+          <ShinyText text="Création de site pro avec l'IA" disabled={false} speed={3} className="font-semibold text-xs sm:text-sm tracking-wide text-white" />
+        </div>
 
+        {/* Main Heading */}
         <h1 
-          className="font-heading font-bold text-4xl sm:text-5xl lg:text-[4.5rem] leading-[1.1] tracking-tight mb-8"
+          className="font-heading font-extrabold text-4xl sm:text-6xl lg:text-[4.75rem] leading-[1.08] tracking-tight mb-8"
           style={{ opacity: mounted ? 1 : 0, transition: "opacity 0.8s ease-out" }}
         >
           <GradientText
-            colors={['#ffffff', '#e50024', '#ffffff']}
+            colors={['#ffffff', '#ff4d6d', '#ffffff', '#e50024']}
             animationSpeed={6}
             className="w-full inline-block pb-2"
           >
@@ -66,20 +73,23 @@ export default function Hero() {
           </GradientText>
         </h1>
 
-        <p className="font-body text-muted-foreground text-lg sm:text-xl max-w-2xl mx-auto mb-12">
-          Des sites qui convertissent, pour des businesses qui avancent.
+        {/* Subtitle */}
+        <p className="font-body text-zinc-400 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+          Des sites d'exception qui captivent votre audience, convertissent vos visiteurs et propulsent votre activité.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        {/* Action Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a
             href="#offres"
-            className="bg-[#e4e4e7] hover:bg-white text-zinc-900 px-8 py-3.5 rounded-full font-medium text-sm transition-colors cursor-pointer"
+            className="group relative inline-flex items-center gap-2 bg-gradient-to-r from-red-600 via-rose-600 to-red-600 hover:from-red-500 hover:to-rose-500 text-white font-bold text-base px-8 py-4 rounded-full shadow-[0_0_30px_rgba(229,0,36,0.4)] hover:shadow-[0_0_45px_rgba(229,0,36,0.7)] transition-all duration-300 hover:scale-105 cursor-pointer"
           >
-            Voir mes offres
+            <span>Voir mes offres</span>
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
           <a
             href="#contact"
-            className="bg-foreground/5 border border-foreground/10 text-foreground px-8 py-3.5 rounded-full font-medium text-sm hover:bg-foreground/10 hover:border-foreground/20 transition-colors cursor-pointer backdrop-blur-sm"
+            className="inline-flex items-center justify-center bg-zinc-900/90 border border-white/15 text-white font-semibold text-base px-8 py-4 rounded-full hover:bg-zinc-800 hover:border-white/30 transition-all duration-300 backdrop-blur-md hover:scale-105 cursor-pointer"
           >
             Me contacter
           </a>
@@ -87,13 +97,13 @@ export default function Hero() {
       </div>
 
       {/* Mockups Marquee */}
-      <div className="relative z-10 w-full overflow-hidden mt-12 sm:mt-16 mask-horizontal">
+      <div className="relative z-10 w-full overflow-hidden mt-16 sm:mt-20 mask-horizontal">
         <div className="flex w-max hover:pause">
-          <div className="flex gap-4 sm:gap-6 animate-marquee shrink-0 pr-4 sm:pr-6">
+          <div className="flex gap-5 sm:gap-7 animate-marquee shrink-0 pr-5 sm:pr-7">
             {mockups.map((src, i) => (
               <div
                 key={i}
-                className="w-44 h-28 sm:w-60 sm:h-40 rounded-xl bg-foreground/5 border border-foreground/10 flex items-center justify-center shrink-0 backdrop-blur-sm shadow-xl transition-all duration-300 hover:bg-foreground/10 hover:border-primary/40 cursor-pointer overflow-hidden group"
+                className="w-52 h-32 sm:w-72 sm:h-48 rounded-2xl bg-zinc-950/80 border border-white/10 flex items-center justify-center shrink-0 backdrop-blur-xl shadow-2xl transition-all duration-300 hover:border-rose-500/50 hover:shadow-[0_0_30px_rgba(229,0,36,0.3)] hover:-translate-y-1 cursor-pointer overflow-hidden group"
               >
                 {src ? (
                   <img 
@@ -102,18 +112,18 @@ export default function Hero() {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
                   />
                 ) : (
-                  <span className="text-muted-foreground/40 font-heading font-medium text-sm">
+                  <span className="text-zinc-500 font-heading font-medium text-sm">
                     Mockup {i + 1}
                   </span>
                 )}
               </div>
             ))}
           </div>
-          <div className="flex gap-4 sm:gap-6 animate-marquee shrink-0 pr-4 sm:pr-6" aria-hidden="true">
+          <div className="flex gap-5 sm:gap-7 animate-marquee shrink-0 pr-5 sm:pr-7" aria-hidden="true">
             {mockups.map((src, i) => (
               <div
                 key={`dup-${i}`}
-                className="w-44 h-28 sm:w-60 sm:h-40 rounded-xl bg-foreground/5 border border-foreground/10 flex items-center justify-center shrink-0 backdrop-blur-sm shadow-xl transition-all duration-300 hover:bg-foreground/10 hover:border-primary/40 cursor-pointer overflow-hidden group"
+                className="w-52 h-32 sm:w-72 sm:h-48 rounded-2xl bg-zinc-950/80 border border-white/10 flex items-center justify-center shrink-0 backdrop-blur-xl shadow-2xl transition-all duration-300 hover:border-rose-500/50 hover:shadow-[0_0_30px_rgba(229,0,36,0.3)] hover:-translate-y-1 cursor-pointer overflow-hidden group"
               >
                 {src ? (
                   <img 
@@ -122,7 +132,7 @@ export default function Hero() {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
                   />
                 ) : (
-                  <span className="text-muted-foreground/40 font-heading font-medium text-sm">
+                  <span className="text-zinc-500 font-heading font-medium text-sm">
                     Mockup {i + 1}
                   </span>
                 )}
@@ -133,9 +143,10 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 scroll-bounce text-muted-foreground z-10 hidden sm:block">
-        <ChevronDown className="w-6 h-6" />
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 scroll-bounce text-zinc-500 z-10 hidden sm:block">
+        <ChevronDown className="w-6 h-6 text-rose-500" />
       </div>
     </section>
   );
 }
+

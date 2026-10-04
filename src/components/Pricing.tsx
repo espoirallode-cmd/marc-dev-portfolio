@@ -1,5 +1,5 @@
 import { useReveal } from "@/hooks/use-reveal";
-import { FileText, Smartphone, Mail, Clock, Layers, Sparkles, Search, MapPin, ShoppingCart, CreditCard, Package, TrendingUp, Shield, Link, PenTool, Calendar, MessageSquare, Send, Palette, RefreshCw, type LucideIcon } from "lucide-react";
+import { FileText, Smartphone, Mail, Clock, Layers, Sparkles, Search, CreditCard, Shield, Link, PenTool, Calendar, MessageSquare, Send, Palette, RefreshCw, type LucideIcon } from "lucide-react";
 import ShinyText from "./ShinyText";
 
 interface Feature {
@@ -40,10 +40,10 @@ const plans: Plan[] = [
     ],
     cta: "Demander un devis",
     theme: {
-      border: "border-[#219ebc]/30",
-      shadow: "shadow-[0_0_20px_0_rgba(33,158,188,0.15),inset_0_0_10px_0_rgba(33,158,188,0.1)]",
-      flare: "bg-[#219ebc]/40",
-      gradient: "to-[#219ebc]"
+      border: "border-cyan-500/40",
+      shadow: "shadow-[0_0_30px_rgba(6,182,212,0.2)]",
+      flare: "bg-cyan-500/30",
+      gradient: "from-white to-cyan-400"
     }
   },
   {
@@ -63,10 +63,10 @@ const plans: Plan[] = [
     ],
     cta: "Demander un devis",
     theme: {
-      border: "border-[#fb5607]/80",
-      shadow: "shadow-[0_0_35px_0_rgba(251,86,7,0.4),inset_0_0_20px_0_rgba(251,86,7,0.2)]",
-      flare: "bg-[#fb5607]/80",
-      gradient: "to-[#fb5607]"
+      border: "border-rose-500/90",
+      shadow: "shadow-[0_0_40px_rgba(229,0,36,0.4)]",
+      flare: "bg-rose-500/40",
+      gradient: "from-white via-rose-300 to-rose-500"
     }
   },
   {
@@ -86,10 +86,10 @@ const plans: Plan[] = [
     ],
     cta: "Demander un devis",
     theme: {
-      border: "border-[#99d98c]/30",
-      shadow: "shadow-[0_0_20px_0_rgba(153,217,140,0.15),inset_0_0_10px_0_rgba(153,217,140,0.1)]",
-      flare: "bg-[#99d98c]/40",
-      gradient: "to-[#99d98c]"
+      border: "border-emerald-500/40",
+      shadow: "shadow-[0_0_30px_rgba(16,185,129,0.2)]",
+      flare: "bg-emerald-500/30",
+      gradient: "from-white to-emerald-400"
     }
   },
   {
@@ -109,10 +109,10 @@ const plans: Plan[] = [
     ],
     cta: "Demander un devis",
     theme: {
-      border: "border-[#06d6a0]/30",
-      shadow: "shadow-[0_0_20px_0_rgba(6,214,160,0.15),inset_0_0_10px_0_rgba(6,214,160,0.1)]",
-      flare: "bg-[#06d6a0]/40",
-      gradient: "to-[#06d6a0]"
+      border: "border-amber-500/40",
+      shadow: "shadow-[0_0_30px_rgba(245,158,11,0.2)]",
+      flare: "bg-amber-500/30",
+      gradient: "from-white to-amber-400"
     }
   },
 ];
@@ -121,12 +121,12 @@ export default function Pricing() {
   const ref = useReveal();
 
   return (
-    <section id="offres" className="py-24" ref={ref}>
+    <section id="offres" className="py-24 bg-black relative" ref={ref}>
       <div className="max-w-[90rem] mx-auto px-6">
-        <h2 className="w-fit mx-auto font-heading font-bold text-3xl sm:text-4xl text-center mb-4 bg-gradient-to-r from-white to-primary bg-clip-text text-transparent">
+        <h2 className="w-fit mx-auto font-heading font-extrabold text-3xl sm:text-5xl text-center mb-4 bg-gradient-to-r from-white via-zinc-200 to-rose-500 bg-clip-text text-transparent">
           Mes offres
         </h2>
-        <div className="w-16 h-1 bg-gradient-to-r from-white to-primary mx-auto mb-16 rounded-full" />
+        <div className="w-20 h-1.5 bg-gradient-to-r from-red-600 via-rose-500 to-red-600 mx-auto mb-16 rounded-full shadow-[0_0_15px_rgba(229,0,36,0.5)]" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 items-center">
           {plans.map((plan, i) => {
@@ -134,20 +134,26 @@ export default function Pricing() {
             return (
               <div
                 key={i}
-                className={`reveal relative flex flex-col items-center bg-[#0B0C15]/60 backdrop-blur-xl rounded-[2.5rem] p-10 text-center transition-all duration-300 hover:-translate-y-2 overflow-hidden mx-auto w-full max-w-sm border-2 ${plan.theme.border} ${plan.theme.shadow} ${isRec ? 'lg:scale-105 z-10' : ''}`}
+                className={`reveal relative flex flex-col items-center bg-zinc-950/90 backdrop-blur-2xl rounded-[2.5rem] p-8 sm:p-10 text-center transition-all duration-300 hover:-translate-y-2 overflow-hidden mx-auto w-full max-w-sm border-2 ${plan.theme.border} ${plan.theme.shadow} ${isRec ? 'lg:scale-105 z-10 bg-zinc-900/90' : ''}`}
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
-                {/* Top glow flare effect like in the image */}
-                <div className={`absolute -top-10 left-1/2 -translate-x-1/2 w-32 h-20 rounded-[100%] blur-[35px] pointer-events-none ${plan.theme.flare}`} />
+                {/* Top glow flare effect */}
+                <div className={`absolute -top-10 left-1/2 -translate-x-1/2 w-40 h-24 rounded-[100%] blur-[40px] pointer-events-none ${plan.theme.flare}`} />
+
+                {isRec && (
+                  <span className="absolute top-4 right-4 bg-gradient-to-r from-red-600 to-rose-600 text-white font-extrabold text-[10px] tracking-widest uppercase px-3 py-1 rounded-full shadow-[0_0_15px_rgba(229,0,36,0.6)]">
+                    RECOMMANDÉ
+                  </span>
+                )}
 
                 {/* Title and Subtitles */}
-                <h3 className={`font-heading font-bold text-2xl bg-gradient-to-r from-white ${plan.theme.gradient} bg-clip-text text-transparent mb-1 relative z-10`}>{plan.name}</h3>
+                <h3 className={`font-heading font-extrabold text-2xl bg-gradient-to-r ${plan.theme.gradient} bg-clip-text text-transparent mb-1 relative z-10`}>{plan.name}</h3>
                 {plan.subtitle && (
                   <div className={`${plan.description ? 'mb-4' : 'mb-8'} relative z-10`}>
                     <ShinyText 
                       text={plan.subtitle} 
                       color="#ffffff" 
-                      shineColor="#d1d5db" 
+                      shineColor="#f43f5e" 
                       speed={2} 
                       className="font-semibold text-[15px]" 
                     />
@@ -155,21 +161,20 @@ export default function Pricing() {
                 )}
                 
                 {plan.description && (
-                  <p className="text-[13.5px] text-white/70 mb-8 relative z-10 font-body leading-relaxed">{plan.description}</p>
+                  <p className="text-[13.5px] text-zinc-400 mb-8 relative z-10 font-body leading-relaxed">{plan.description}</p>
                 )}
 
                 {/* Features list */}
                 <div className="flex-1 w-full flex flex-col mb-10 relative z-10 justify-start">
                   <ul className="space-y-4 inline-block text-left mx-auto">
                     {plan.features.map((f, j) => (
-                      <li key={j} className="flex items-center gap-3 text-[14px] font-medium text-white/80">
-                        <f.icon className="text-white w-4 h-4 shrink-0 drop-shadow-[0_0_8px_hsl(0_0%_100%/0.8)]" />
+                      <li key={j} className="flex items-center gap-3 text-[14px] font-medium text-zinc-300">
+                        <f.icon className="text-rose-400 w-4 h-4 shrink-0 drop-shadow-[0_0_8px_rgba(244,63,94,0.6)]" />
                         {f.text}
                       </li>
                     ))}
                   </ul>
                 </div>
-
 
                 {/* Button */}
                 <a
@@ -182,7 +187,11 @@ export default function Pricing() {
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="relative z-10 w-fit mx-auto px-5 sm:px-6 py-2.5 rounded-full font-bold text-[11px] tracking-wider whitespace-nowrap text-white transition-all cursor-pointer uppercase bg-white/[0.05] border border-white/20 backdrop-blur-md shadow-[0_0_20px_rgba(255,255,255,0.1),inset_0_0_10px_rgba(255,255,255,0.05)] hover:bg-white/10 hover:border-white/40 hover:shadow-[0_0_30px_rgba(255,255,255,0.2),inset_0_0_15px_rgba(255,255,255,0.1)] hover:-translate-y-0.5"
+                  className={`relative z-10 w-full px-6 py-3.5 rounded-full font-bold text-xs tracking-wider uppercase text-white transition-all duration-300 cursor-pointer text-center ${
+                    isRec 
+                      ? 'bg-gradient-to-r from-red-600 via-rose-600 to-red-600 hover:from-red-500 hover:to-rose-500 shadow-[0_0_25px_rgba(229,0,36,0.5)] hover:shadow-[0_0_35px_rgba(229,0,36,0.8)]' 
+                      : 'bg-white/5 border border-white/20 hover:bg-white/10 hover:border-white/40 shadow-[0_0_15px_rgba(255,255,255,0.05)]'
+                  }`}
                 >
                   {plan.cta}
                 </a>
@@ -192,10 +201,10 @@ export default function Pricing() {
           })}
         </div>
 
-        <div className="mt-12 sm:mt-16 text-center reveal" style={{ transitionDelay: "400ms" }}>
-          <div className="inline-flex items-center gap-2.5 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md shadow-[0_0_15px_rgba(255,255,255,0.05)] transition-all hover:bg-white/10 cursor-default">
-            <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-primary animate-pulse" />
-            <span className="text-white/90 font-medium text-[10px] sm:text-[15px] tracking-wide whitespace-nowrap">
+        <div className="mt-14 text-center reveal" style={{ transitionDelay: "400ms" }}>
+          <div className="inline-flex items-center gap-3 px-6 sm:px-8 py-3.5 rounded-full border border-amber-500/30 bg-amber-500/10 backdrop-blur-md shadow-[0_0_25px_rgba(245,158,11,0.2)] cursor-default">
+            <Sparkles className="w-5 h-5 text-amber-400 animate-pulse" />
+            <span className="text-amber-200 font-semibold text-xs sm:text-sm tracking-wide whitespace-nowrap">
               Nom de domaine 1 an offert pour chaque offre
             </span>
           </div>
@@ -205,3 +214,4 @@ export default function Pricing() {
     </section>
   );
 }
+
