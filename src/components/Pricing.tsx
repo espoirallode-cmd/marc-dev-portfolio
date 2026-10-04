@@ -140,7 +140,7 @@ export default function Pricing() {
                 <div className={`absolute -top-10 left-1/2 -translate-x-1/2 w-40 h-24 rounded-[100%] blur-[40px] pointer-events-none ${plan.theme.flare}`} />
 
                 {isRec && (
-                  <span className="absolute top-4 right-4 bg-[#e60029] text-white font-extrabold text-[10px] tracking-widest uppercase px-3 py-1 rounded-full shadow-[0_0_15px_rgba(230,0,41,0.6)]">
+                  <span className="absolute top-4 right-4 bg-[#e60029] text-white font-extrabold text-[10px] tracking-widest uppercase px-3 py-1 rounded-full">
                     RECOMMANDÉ
                   </span>
                 )}
@@ -188,7 +188,7 @@ export default function Pricing() {
                   rel="noopener noreferrer"
                   className={`relative z-10 w-full px-6 py-3.5 rounded-full font-bold text-xs tracking-wider uppercase text-white transition-all duration-300 cursor-pointer text-center ${
                     isRec 
-                      ? 'bg-[#e60029] hover:bg-[#c2001f] shadow-[0_0_25px_rgba(230,0,41,0.5)] hover:shadow-[0_0_35px_rgba(230,0,41,0.8)]' 
+                      ? 'bg-[#e60029] hover:bg-[#c2001f]' 
                       : 'bg-white/5 border border-white/20 hover:bg-white/10 hover:border-white/40 shadow-[0_0_15px_rgba(255,255,255,0.05)]'
                   }`}
                 >
