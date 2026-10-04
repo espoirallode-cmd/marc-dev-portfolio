@@ -36,7 +36,7 @@ const cards = [
     buttonLabel: "Achat",
     tagline: "Une boutique en ligne moderne et performante.",
     title: "Site e-commerce",
-    image: "/assets/wave-green.png",
+    image: "/assets/card-4.png",
     dots: 4,
     activeDot: 3,
     accent: "from-emerald-500/30 via-green-600/20 to-transparent",
