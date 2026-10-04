@@ -18,7 +18,7 @@ export default function Hero() {
 
         {/* Main Heading */}
         <h1
-          className="font-heading font-extrabold text-4xl sm:text-6xl lg:text-[4.75rem] leading-[1.08] tracking-tight mb-8 text-white"
+          className="font-heading font-extrabold text-4xl sm:text-6xl lg:text-[4.75rem] leading-[1.08] tracking-tight mb-8 bg-gradient-to-b from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent"
           style={{ opacity: mounted ? 1 : 0, transition: "opacity 0.8s ease-out" }}
         >
           {title}

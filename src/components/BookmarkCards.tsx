@@ -192,11 +192,9 @@ export default function BookmarkCards() {
             Réalisations clients
           </span>
 
-          <h2 className="font-heading text-white text-4xl sm:text-5xl font-bold leading-tight">
+          <h2 className="font-heading text-4xl sm:text-5xl font-bold leading-tight bg-gradient-to-b from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
             Des sites qui<br />
-            <span className="bg-gradient-to-r from-white via-zinc-300 to-zinc-500 bg-clip-text text-transparent">
-              parlent d'eux-mêmes.
-            </span>
+            parlent d'eux-mêmes.
           </h2>
 
           <p className="font-body text-zinc-400 text-base leading-relaxed max-w-md">
