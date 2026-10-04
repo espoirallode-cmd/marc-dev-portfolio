@@ -186,28 +186,30 @@ export default function BookmarkCards() {
             </span>
           </h2>
 
-          <p className="font-body text-zinc-400 text-base leading-relaxed max-w-md">
-            Chaque projet est conçu sur-mesure — illustration saturée, typographie premium 
-            et expérience utilisateur soignée. L'image se dissout dans la lueur 
-            plutôt que d'être cachée derrière elle.
-          </p>
+          {/* Subtitle + buttons on same line */}
+          <div className="flex flex-row items-start gap-6 flex-wrap">
+            <p className="font-body text-zinc-400 text-base leading-relaxed flex-1 min-w-[180px]">
+              Chaque projet est conçu sur-mesure — illustration saturée, typographie premium
+              et expérience utilisateur soignée.
+            </p>
 
-          {/* Card selector pills */}
-          <div className="flex gap-2 mt-2">
-            {cards.map((c, i) => (
-              <button
-                key={i}
-                onClick={() => setActive(i)}
-                className="px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer"
-                style={{
-                  background: active === i ? "rgba(255,255,255,0.12)" : "transparent",
-                  border: active === i ? "1px solid rgba(255,255,255,0.25)" : "1px solid rgba(255,255,255,0.08)",
-                  color: active === i ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0.4)",
-                }}
-              >
-                {c.brand.replace("®", "")}
-              </button>
-            ))}
+            {/* Card selector pills */}
+            <div className="flex flex-col gap-2 shrink-0">
+              {cards.map((c, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActive(i)}
+                  className="px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer whitespace-nowrap"
+                  style={{
+                    background: active === i ? "rgba(255,255,255,0.12)" : "transparent",
+                    border: active === i ? "1px solid rgba(255,255,255,0.25)" : "1px solid rgba(255,255,255,0.08)",
+                    color: active === i ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0.4)",
+                  }}
+                >
+                  {c.brand.replace("®", "")}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
