@@ -16,16 +16,16 @@ export default function Hero() {
     >
       {/* Glow top-left */}
       <div
-        className="pointer-events-none absolute top-0 left-0 w-[420px] h-[220px]"
+        className="pointer-events-none absolute top-0 left-0 w-[520px] h-[420px]"
         style={{
-          background: "radial-gradient(ellipse at top left, rgba(230,0,41,0.28) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse at top left, rgba(230,0,41,0.32) 0%, transparent 65%)",
         }}
       />
       {/* Glow top-right */}
       <div
-        className="pointer-events-none absolute top-0 right-0 w-[420px] h-[220px]"
+        className="pointer-events-none absolute top-0 right-0 w-[520px] h-[420px]"
         style={{
-          background: "radial-gradient(ellipse at top right, rgba(230,0,41,0.28) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse at top right, rgba(230,0,41,0.32) 0%, transparent 65%)",
         }}
       />
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
