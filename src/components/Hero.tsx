@@ -12,7 +12,7 @@ const mockups = [
 ];
 
 export default function Hero() {
-  const title = "Votre présence en ligne, professionnelle et livrée clé en main.";
+  const title = "On construit votre présence en ligne, vous gérez votre business.";
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
