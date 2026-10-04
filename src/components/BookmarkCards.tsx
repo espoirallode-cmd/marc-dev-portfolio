@@ -136,11 +136,6 @@ export default function BookmarkCards() {
                         }}
                       />
                       <div className={`absolute inset-0 bg-gradient-to-t ${card.accent}`} />
-                      <div className="absolute bottom-3 left-3 right-8">
-                        <p className="text-white text-[11px] font-semibold leading-snug drop-shadow-md">
-                          {card.tagline}
-                        </p>
-                      </div>
                     </div>
                     <div className="px-4 pt-3 pb-4">
                       <h3
