@@ -105,7 +105,7 @@ export default function Contact() {
 
             <button
               type="submit"
-              className="w-full group bg-[#38b000] hover:bg-[#2e9300] text-white py-4 rounded-xl font-bold text-sm uppercase tracking-wider shadow-[0_0_25px_rgba(56,176,0,0.4)] hover:shadow-[0_0_35px_rgba(56,176,0,0.7)] transition-all duration-300 hover:scale-[1.01] cursor-pointer flex items-center justify-center gap-2"
+              className="w-full group bg-[#e60029] hover:bg-[#c2001f] text-white py-4 rounded-xl font-bold text-sm uppercase tracking-wider shadow-[0_0_25px_rgba(230,0,41,0.4)] hover:shadow-[0_0_35px_rgba(230,0,41,0.7)] transition-all duration-300 hover:scale-[1.01] cursor-pointer flex items-center justify-center gap-2"
             >
               <span>Envoyer ma demande</span>
               <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

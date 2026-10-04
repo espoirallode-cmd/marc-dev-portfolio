@@ -33,7 +33,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a
             href="#offres"
-            className="group relative inline-flex items-center gap-2 bg-[#38b000] hover:bg-[#2e9300] text-white font-bold text-base px-8 py-4 rounded-full shadow-[0_0_30px_rgba(56,176,0,0.5)] hover:shadow-[0_0_45px_rgba(56,176,0,0.8)] transition-all duration-300 hover:scale-105 cursor-pointer"
+            className="group relative inline-flex items-center gap-2 bg-[#e60029] hover:bg-[#c2001f] text-white font-bold text-base px-8 py-4 rounded-full shadow-[0_0_30px_rgba(230,0,41,0.5)] hover:shadow-[0_0_45px_rgba(230,0,41,0.8)] transition-all duration-300 hover:scale-105 cursor-pointer"
           >
             <span>Voir mes offres</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
