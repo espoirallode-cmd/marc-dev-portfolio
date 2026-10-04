@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['Syne', 'Plus Jakarta Sans', 'Space Grotesk', 'var(--font-heading)', 'sans-serif'],
+        heading: ['Playfair Display', 'var(--font-heading)', 'serif'],
         body: ['var(--font-body)', 'Montserrat', 'sans-serif'],
       },
       colors: {
