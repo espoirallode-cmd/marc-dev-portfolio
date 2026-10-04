@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 const cards = [
   {
     brand: "Bright Path®",
+    buttonLabel: "Cible",
     tagline: "Une croissance visible dès le premier mois.",
     title: "Landing page",
     image: "/assets/wave-orange.png",
@@ -12,6 +13,7 @@ const cards = [
   },
   {
     brand: "North Field®",
+    buttonLabel: "Éclat",
     tagline: "Le travail parle avant même de vous.",
     title: "Site vitrine",
     image: "/assets/wave-purple.png",
@@ -21,6 +23,7 @@ const cards = [
   },
   {
     brand: "Marc Dev®",
+    buttonLabel: "Style",
     tagline: "Votre marque mérite une seconde chance.",
     title: "Portfolio",
     image: "/assets/wave-blue.png",
@@ -30,6 +33,7 @@ const cards = [
   },
   {
     brand: "Aura Store®",
+    buttonLabel: "Achat",
     tagline: "Une boutique en ligne moderne et performante.",
     title: "Site e-commerce",
     image: "/assets/wave-green.png",
@@ -121,15 +125,10 @@ export default function BookmarkCards() {
                         : "0 16px 40px rgba(0,0,0,0.5)",
                     }}
                   >
-                    <div className="absolute top-3 right-3 z-10">
-                      <span className="text-[10px] text-white/70 font-mono tracking-wide">
-                        — {card.brand}
-                      </span>
-                    </div>
                     <div className="relative w-full h-[155px] rounded-t-2xl overflow-hidden">
                       <img
                         src={card.image}
-                        alt={card.brand}
+                        alt={card.title}
                         className="w-full h-full object-cover"
                         style={{
                           filter: isActive ? "brightness(1)" : "brightness(0.7)",
@@ -185,7 +184,7 @@ export default function BookmarkCards() {
                   color: active === i ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0.4)",
                 }}
               >
-                {c.brand.replace("®", "")}
+                {c.buttonLabel}
               </button>
             ))}
           </div>
