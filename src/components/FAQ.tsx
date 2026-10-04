@@ -60,7 +60,7 @@ export default function FAQ() {
   return (
     <section id="faq" className="py-24 bg-black relative" ref={ref}>
       <div className="max-w-3xl mx-auto px-6">
-        <h2 className="w-fit mx-auto font-heading font-extrabold text-3xl sm:text-5xl text-center mb-4 bg-gradient-to-r from-white via-zinc-200 to-rose-500 bg-clip-text text-transparent">
+        <h2 className="w-fit mx-auto font-heading font-extrabold text-3xl sm:text-5xl text-center mb-4 bg-gradient-to-b from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
           Questions fréquentes
         </h2>
         <div className="w-20 h-1.5 bg-gradient-to-r from-red-600 via-rose-500 to-red-600 mx-auto mb-16 rounded-full shadow-[0_0_15px_rgba(229,0,36,0.5)]" />
