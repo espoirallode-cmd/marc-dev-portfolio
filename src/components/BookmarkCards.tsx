@@ -200,9 +200,7 @@ export default function BookmarkCards() {
           </h2>
 
           <p className="font-body text-zinc-400 text-base leading-relaxed max-w-md">
-            Chaque projet est conçu sur-mesure — illustration saturée, typographie premium
-            et expérience utilisateur soignée. L'image se dissout dans la lueur
-            plutôt que d'être cachée derrière elle.
+            Chaque projet est conçu sur-mesure, illustration, typographie premium et expérience utilisateur soignée.
           </p>
         </div>
       </div>
