@@ -1,12 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap');
-
-@font-face {
-  font-family: 'Remixa';
-  src: local('Remixa'), local('Remixa-Bold'), local('Remixa Bold');
-  font-weight: 400 900;
-  font-style: normal;
-  font-display: swap;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&family=Space+Grotesk:wght@600;700&family=Syne:wght@700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -35,7 +27,7 @@
     --ring: 350 100% 45%;
     --radius: 0.75rem;
 
-    --font-heading: 'Remixa', 'Outfit', sans-serif;
+    --font-heading: 'Syne', 'Plus Jakarta Sans', 'Space Grotesk', sans-serif;
     --font-body: 'Montserrat', sans-serif;
 
     --sidebar-background: 0 0% 0%;

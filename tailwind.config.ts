@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['Remixa', 'var(--font-heading)', 'Outfit', 'sans-serif'],
+        heading: ['Syne', 'Plus Jakarta Sans', 'Space Grotesk', 'var(--font-heading)', 'sans-serif'],
         body: ['var(--font-body)', 'Montserrat', 'sans-serif'],
       },
       colors: {
