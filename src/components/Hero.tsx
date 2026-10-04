@@ -14,18 +14,11 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-32 pb-16 sm:pt-40 bg-black bg-grid-pattern"
     >
-      {/* Glow top-left */}
+      {/* Glow top full-width */}
       <div
-        className="pointer-events-none absolute top-0 left-0 w-[520px] h-[420px]"
+        className="pointer-events-none absolute top-0 left-0 w-full h-[380px]"
         style={{
-          background: "radial-gradient(ellipse at top left, rgba(230,0,41,0.32) 0%, transparent 65%)",
-        }}
-      />
-      {/* Glow top-right */}
-      <div
-        className="pointer-events-none absolute top-0 right-0 w-[520px] h-[420px]"
-        style={{
-          background: "radial-gradient(ellipse at top right, rgba(230,0,41,0.32) 0%, transparent 65%)",
+          background: "radial-gradient(ellipse 100% 60% at 50% 0%, rgba(230,0,41,0.38) 0%, transparent 70%)",
         }}
       />
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
