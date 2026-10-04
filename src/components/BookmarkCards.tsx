@@ -174,9 +174,10 @@ export default function BookmarkCards() {
                 onClick={() => setActive(i)}
                 className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 cursor-pointer whitespace-nowrap"
                 style={{
-                  background: active === i ? "rgba(255,255,255,0.12)" : "transparent",
-                  border: active === i ? "1px solid rgba(255,255,255,0.25)" : "1px solid rgba(255,255,255,0.08)",
-                  color: active === i ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0.4)",
+                  background: active === i ? "#38b000" : "transparent",
+                  border: active === i ? "1px solid #38b000" : "1px solid rgba(255,255,255,0.08)",
+                  color: active === i ? "#ffffff" : "rgba(255,255,255,0.4)",
+                  boxShadow: active === i ? "0 0 15px rgba(56,176,0,0.4)" : "none",
                 }}
               >
                 {c.buttonLabel}
