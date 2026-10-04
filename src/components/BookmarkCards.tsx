@@ -72,104 +72,113 @@ export default function BookmarkCards() {
           transition: "opacity 0.8s ease, transform 0.8s ease",
         }}
       >
-        {/* === CARDS AREA === */}
-        <div className="relative w-full lg:w-[55%] h-[320px] sm:h-[380px] flex items-start">
-          {cards.map((card, i) => {
-            const isActive = i === active;
-            // Position offsets: active is left/center, others stack to the right
-            const positions = [
-              { left: "0%", zIndex: 30, scale: 1, opacity: 1 },
-              { left: "37%", zIndex: 20, scale: 0.88, opacity: 0.9 },
-              { left: "62%", zIndex: 10, scale: 0.78, opacity: 0.75 },
-            ];
-            // Rotate based on order from active
-            const order = ((i - active) + cards.length) % cards.length;
-            const pos = positions[order];
+        {/* === CARDS AREA + BUTTONS BELOW === */}
+        <div className="flex flex-col gap-5 w-full lg:w-[55%]">
+          {/* Cards */}
+          <div className="relative h-[320px] sm:h-[380px]">
+            {cards.map((card, i) => {
+              const isActive = i === active;
+              const positions = [
+                { left: "0%", zIndex: 30, scale: 1, opacity: 1 },
+                { left: "37%", zIndex: 20, scale: 0.88, opacity: 0.9 },
+                { left: "62%", zIndex: 10, scale: 0.78, opacity: 0.75 },
+              ];
+              const order = ((i - active) + cards.length) % cards.length;
+              const pos = positions[order];
 
-            return (
-              <div
-                key={i}
-                onClick={() => setActive(i)}
-                className="absolute top-0 cursor-pointer"
-                style={{
-                  left: pos.left,
-                  zIndex: pos.zIndex,
-                  transform: `scale(${pos.scale})`,
-                  transformOrigin: "top left",
-                  opacity: pos.opacity,
-                  transition: "all 0.6s cubic-bezier(0.34,1.56,0.64,1)",
-                  width: "220px",
-                }}
-              >
-                {/* Card shell — bookmark style: bottom sticks out */}
+              return (
                 <div
-                  className="relative rounded-2xl overflow-visible"
+                  key={i}
+                  onClick={() => setActive(i)}
+                  className="absolute top-0 cursor-pointer"
                   style={{
-                    background: "rgba(15,15,20,0.95)",
-                    border: "1px solid rgba(255,255,255,0.08)",
-                    boxShadow: isActive
-                      ? "0 32px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.06)"
-                      : "0 16px 40px rgba(0,0,0,0.5)",
+                    left: pos.left,
+                    zIndex: pos.zIndex,
+                    transform: `scale(${pos.scale})`,
+                    transformOrigin: "top left",
+                    opacity: pos.opacity,
+                    transition: "all 0.6s cubic-bezier(0.34,1.56,0.64,1)",
+                    width: "220px",
                   }}
                 >
-                  {/* Brand label top-right */}
-                  <div className="absolute top-3 right-3 z-10">
-                    <span className="text-[10px] text-white/70 font-mono tracking-wide">
-                      — {card.brand}
-                    </span>
-                  </div>
-
-                  {/* Image area */}
-                  <div className="relative w-full h-[155px] rounded-t-2xl overflow-hidden">
-                    <img
-                      src={card.image}
-                      alt={card.brand}
-                      className="w-full h-full object-cover"
-                      style={{
-                        filter: isActive ? "brightness(1)" : "brightness(0.7)",
-                        transition: "filter 0.5s ease",
-                      }}
-                    />
-                    {/* Gradient overlay fading into card bg */}
-                    <div className={`absolute inset-0 bg-gradient-to-t ${card.accent}`} />
-                    {/* Tagline inside image */}
-                    <div className="absolute bottom-3 left-3 right-8">
-                      <p className="text-white text-[11px] font-semibold leading-snug drop-shadow-md">
-                        {card.tagline}
-                      </p>
+                  <div
+                    className="relative rounded-2xl overflow-visible"
+                    style={{
+                      background: "rgba(15,15,20,0.95)",
+                      border: "1px solid rgba(255,255,255,0.08)",
+                      boxShadow: isActive
+                        ? "0 32px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.06)"
+                        : "0 16px 40px rgba(0,0,0,0.5)",
+                    }}
+                  >
+                    <div className="absolute top-3 right-3 z-10">
+                      <span className="text-[10px] text-white/70 font-mono tracking-wide">
+                        — {card.brand}
+                      </span>
                     </div>
-                  </div>
-
-                  {/* Bottom content — "pops out" below image (bookmark effect) */}
-                  <div className="px-4 pt-3 pb-4">
-                    <h3
-                      className="font-heading text-white/90 leading-none tracking-tight"
-                      style={{ fontSize: isActive ? "2rem" : "1.5rem", transition: "font-size 0.4s ease" }}
-                    >
-                      {card.title}
-                    </h3>
-
-                    {/* Dots */}
-                    <div className="flex gap-1 mt-3">
-                      {Array.from({ length: card.dots }).map((_, d) => (
-                        <span
-                          key={d}
-                          className="rounded-full transition-all duration-300"
-                          style={{
-                            width: d === card.activeDot ? 16 : 6,
-                            height: 6,
-                            background: d === card.activeDot
-                              ? "rgba(255,255,255,0.85)"
-                              : "rgba(255,255,255,0.25)",
-                          }}
-                        />
-                      ))}
+                    <div className="relative w-full h-[155px] rounded-t-2xl overflow-hidden">
+                      <img
+                        src={card.image}
+                        alt={card.brand}
+                        className="w-full h-full object-cover"
+                        style={{
+                          filter: isActive ? "brightness(1)" : "brightness(0.7)",
+                          transition: "filter 0.5s ease",
+                        }}
+                      />
+                      <div className={`absolute inset-0 bg-gradient-to-t ${card.accent}`} />
+                      <div className="absolute bottom-3 left-3 right-8">
+                        <p className="text-white text-[11px] font-semibold leading-snug drop-shadow-md">
+                          {card.tagline}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="px-4 pt-3 pb-4">
+                      <h3
+                        className="font-heading text-white/90 leading-none tracking-tight"
+                        style={{ fontSize: isActive ? "2rem" : "1.5rem", transition: "font-size 0.4s ease" }}
+                      >
+                        {card.title}
+                      </h3>
+                      <div className="flex gap-1 mt-3">
+                        {Array.from({ length: card.dots }).map((_, d) => (
+                          <span
+                            key={d}
+                            className="rounded-full transition-all duration-300"
+                            style={{
+                              width: d === card.activeDot ? 16 : 6,
+                              height: 6,
+                              background: d === card.activeDot
+                                ? "rgba(255,255,255,0.85)"
+                                : "rgba(255,255,255,0.25)",
+                            }}
+                          />
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
+
+          {/* Selector buttons — below cards, horizontal */}
+          <div className="flex flex-row gap-2">
+            {cards.map((c, i) => (
+              <button
+                key={i}
+                onClick={() => setActive(i)}
+                className="px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer whitespace-nowrap"
+                style={{
+                  background: active === i ? "rgba(255,255,255,0.12)" : "transparent",
+                  border: active === i ? "1px solid rgba(255,255,255,0.25)" : "1px solid rgba(255,255,255,0.08)",
+                  color: active === i ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0.4)",
+                }}
+              >
+                {c.brand.replace("®", "")}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* === TEXT CONTENT === */}
@@ -186,31 +195,11 @@ export default function BookmarkCards() {
             </span>
           </h2>
 
-          {/* Subtitle + buttons on same line */}
-          <div className="flex flex-row items-start gap-6 flex-wrap">
-            <p className="font-body text-zinc-400 text-base leading-relaxed flex-1 min-w-[180px]">
-              Chaque projet est conçu sur-mesure — illustration saturée, typographie premium
-              et expérience utilisateur soignée.
-            </p>
-
-            {/* Card selector pills */}
-            <div className="flex flex-col gap-2 shrink-0">
-              {cards.map((c, i) => (
-                <button
-                  key={i}
-                  onClick={() => setActive(i)}
-                  className="px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer whitespace-nowrap"
-                  style={{
-                    background: active === i ? "rgba(255,255,255,0.12)" : "transparent",
-                    border: active === i ? "1px solid rgba(255,255,255,0.25)" : "1px solid rgba(255,255,255,0.08)",
-                    color: active === i ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0.4)",
-                  }}
-                >
-                  {c.brand.replace("®", "")}
-                </button>
-              ))}
-            </div>
-          </div>
+          <p className="font-body text-zinc-400 text-base leading-relaxed max-w-md">
+            Chaque projet est conçu sur-mesure — illustration saturée, typographie premium
+            et expérience utilisateur soignée. L'image se dissout dans la lueur
+            plutôt que d'être cachée derrière elle.
+          </p>
         </div>
       </div>
     </section>
