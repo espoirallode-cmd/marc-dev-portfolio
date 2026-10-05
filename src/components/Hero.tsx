@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ChevronDown, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   const title = "On construit votre présence en ligne, vous gérez votre business.";
@@ -52,11 +52,6 @@ export default function Hero() {
             Me contacter
           </a>
         </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 scroll-bounce text-zinc-500 z-10 hidden sm:block">
-        <ChevronDown className="w-6 h-6 text-rose-500" />
       </div>
     </section>
   );
