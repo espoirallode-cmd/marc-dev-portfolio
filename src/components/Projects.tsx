@@ -41,7 +41,7 @@ const projects: Project[] = [
     description: "Portfolio interactif & moderne avec animations dynamiques et interface fluide.",
     url: "https://marcos-portfolio-main.vercel.app",
     displayUrl: "marcos-portfolio-main.vercel.app",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+    image: "/assets/project-1.png",
     category: "Portfolio",
     color: "#38bdf8",
   },
