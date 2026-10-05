@@ -68,7 +68,7 @@ export default function Footer() {
                 </span>
               </div>
               <p className="mb-10 max-w-sm text-lg leading-relaxed font-light text-white/90">
-                Création de sites web professionnels d'exception propulsés par l'IA. Design sur-mesure, rapide & réactif.
+                Création de sites web professionnels. Design sur-mesure, rapide & réactif.
               </p>
             </div>
 
