@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { useReveal } from "@/hooks/use-reveal";
 import { Zap, PenSquare, Smartphone, Search, Sparkles, Headphones } from "lucide-react";
 
@@ -69,47 +70,69 @@ export default function Advantages() {
         </h2>
 
         {/* Staggered sticky-note layout */}
-        <div className="relative flex flex-col gap-8">
+        <div className="flex flex-col">
           {advantages.map((a, i) => (
-            <div
-              key={i}
-              className={`reveal flex w-full ${a.side === "right" ? "justify-end" : "justify-start"}`}
-              style={{ transitionDelay: `${i * 80}ms` }}
-            >
-              {/* Card */}
+            <Fragment key={i}>
+              {/* Card row */}
               <div
-                className={`relative w-64 sm:w-72 bg-zinc-950 border border-white/10 rounded-2xl px-6 pt-8 pb-6 shadow-[0_10px_40px_rgba(0,0,0,0.7)] transition-transform duration-300 hover:scale-[1.03] ${a.rotate}`}
+                className={`reveal flex w-full ${a.side === "right" ? "justify-end" : "justify-start"}`}
+                style={{ transitionDelay: `${i * 80}ms` }}
               >
-                {/* Pin */}
                 <div
-                  className={`absolute -top-3.5 left-1/2 -translate-x-1/2 w-7 h-7 rounded-full border-2 border-white/20 shadow-lg z-10 ${a.pinColor}`}
-                />
+                  className={`relative w-64 sm:w-72 bg-zinc-950 border border-white/10 rounded-2xl px-6 pt-8 pb-6 shadow-[0_10px_40px_rgba(0,0,0,0.7)] transition-transform duration-300 hover:scale-[1.03] ${a.rotate}`}
+                >
+                  {/* Pin */}
+                  <div
+                    className={`absolute -top-3.5 left-1/2 -translate-x-1/2 w-7 h-7 rounded-full border-2 border-white/20 shadow-lg z-10 ${a.pinColor}`}
+                  />
 
-                {/* Number + Icon row */}
-                <div className="flex items-center justify-between mb-4">
-                  <span className="font-mono text-sm font-bold text-white/25 tracking-widest">
-                    {a.num}
-                  </span>
-                  <div className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
-                    <a.icon className="w-4 h-4 text-white/60" />
+                  {/* Number + Icon row */}
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="font-mono text-sm font-bold text-white/25 tracking-widest">
+                      {a.num}
+                    </span>
+                    <div className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+                      <a.icon className="w-4 h-4 text-white/60" />
+                    </div>
                   </div>
+
+                  {/* Title */}
+                  <h3 className="font-heading font-bold text-lg text-white mb-2 leading-snug">
+                    {a.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="font-body text-zinc-400 text-sm leading-relaxed">
+                    {a.desc}
+                  </p>
                 </div>
-
-                {/* Title */}
-                <h3 className="font-heading font-bold text-lg text-white mb-2 leading-snug">
-                  {a.title}
-                </h3>
-
-                {/* Description */}
-                <p className="font-body text-zinc-400 text-sm leading-relaxed">
-                  {a.desc}
-                </p>
               </div>
-            </div>
-          ))}
 
-          {/* Dashed vertical connector line */}
-          <div className="absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-px border-l-2 border-dashed border-white/10 pointer-events-none hidden sm:block" />
+              {/* Curved dashed connector between this card and the next */}
+              {i < advantages.length - 1 && (
+                <div className="hidden sm:block w-full" style={{ height: "72px" }}>
+                  <svg
+                    viewBox="0 0 700 72"
+                    preserveAspectRatio="none"
+                    className="w-full h-full"
+                    fill="none"
+                  >
+                    <path
+                      d={
+                        a.side === "left"
+                          ? "M 144 0 C 250 72, 450 0, 556 72"
+                          : "M 556 0 C 450 72, 250 0, 144 72"
+                      }
+                      stroke="rgba(255,255,255,0.18)"
+                      strokeWidth="1.5"
+                      strokeDasharray="7 5"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </div>
+              )}
+            </Fragment>
+          ))}
         </div>
       </div>
     </section>
