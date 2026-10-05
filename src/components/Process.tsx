@@ -6,7 +6,6 @@ interface Step {
   title: string;
   desc: string;
   icon: LucideIcon;
-  colorClass: string;
 }
 
 const steps: Step[] = [
@@ -15,28 +14,24 @@ const steps: Step[] = [
     title: "Brief",
     desc: "On échange sur vos besoins et objectifs.",
     icon: MessageSquare,
-    colorClass: "bg-rose-500/10 text-rose-500 border border-rose-500/20 shadow-[0_0_20px_rgba(244,63,94,0.25)]",
   },
   {
     subtitle: "Étape 02",
     title: "Design",
     desc: "Maquettes & identité visuelle sur-mesure.",
     icon: Pencil,
-    colorClass: "bg-orange-500/10 text-orange-400 border border-orange-500/20 shadow-[0_0_20px_rgba(249,115,22,0.25)]",
   },
   {
     subtitle: "Étape 03",
     title: "Développement",
     desc: "Intégration rapide propulsée par l'IA.",
     icon: Code,
-    colorClass: "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shadow-[0_0_20px_rgba(16,185,129,0.25)]",
   },
   {
     subtitle: "Étape 04",
     title: "Livraison",
     desc: "Votre site clé en main en ligne.",
     icon: Rocket,
-    colorClass: "bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 shadow-[0_0_20px_rgba(6,182,212,0.25)]",
   },
 ];
 
@@ -61,16 +56,12 @@ export default function Process() {
                       {/* Connecting Line */}
                       <div className="absolute bg-zinc-800 max-xl:left-2/4 max-xl:h-[calc(100%+40px)] max-xl:w-0.5 xl:-inset-x-10 xl:top-2/4 xl:h-0.5" />
                       
-                      {/* Icon Circle Container */}
+                      {/* Icon Circle Container - Glass White, No Glow */}
                       <div className="relative z-20 mx-auto inline-flex bg-black p-2 rounded-2xl">
                         <div
-                          className={
-                            "relative size-12 rounded-xl md:size-14 " +
-                            step.colorClass +
-                            " flex items-center justify-center transition-all duration-300 ease-in-out group-hover:scale-110"
-                          }
+                          className="relative size-12 rounded-xl md:size-14 bg-zinc-900/90 border border-white/15 backdrop-blur-md text-white flex items-center justify-center transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:bg-zinc-800 group-hover:border-white/30"
                         >
-                          <step.icon className="size-5 stroke-2 md:size-7" />
+                          <step.icon className="size-5 stroke-2 md:size-7 text-white" />
                         </div>
                       </div>
                     </div>
