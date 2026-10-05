@@ -2,71 +2,98 @@ import { useReveal } from "@/hooks/use-reveal";
 import { MessageSquare, Pencil, Code, Rocket, type LucideIcon } from "lucide-react";
 
 interface Step {
-  icon: LucideIcon;
+  subtitle: string;
   title: string;
   desc: string;
+  icon: LucideIcon;
+  colorClass: string;
 }
 
 const steps: Step[] = [
-  { icon: MessageSquare, title: "Brief", desc: "On échange sur vos besoins et objectifs." },
-  { icon: Pencil, title: "Design", desc: "Maquettes & identité visuelle sur-mesure." },
-  { icon: Code, title: "Développement", desc: "Intégration rapide propulsée par l'IA." },
-  { icon: Rocket, title: "Livraison", desc: "Votre site clé en main en ligne." },
+  {
+    subtitle: "Étape 01",
+    title: "Brief",
+    desc: "On échange sur vos besoins et objectifs.",
+    icon: MessageSquare,
+    colorClass: "bg-rose-500/10 text-rose-500 border border-rose-500/20 shadow-[0_0_20px_rgba(244,63,94,0.25)]",
+  },
+  {
+    subtitle: "Étape 02",
+    title: "Design",
+    desc: "Maquettes & identité visuelle sur-mesure.",
+    icon: Pencil,
+    colorClass: "bg-orange-500/10 text-orange-400 border border-orange-500/20 shadow-[0_0_20px_rgba(249,115,22,0.25)]",
+  },
+  {
+    subtitle: "Étape 03",
+    title: "Développement",
+    desc: "Intégration rapide propulsée par l'IA.",
+    icon: Code,
+    colorClass: "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shadow-[0_0_20px_rgba(16,185,129,0.25)]",
+  },
+  {
+    subtitle: "Étape 04",
+    title: "Livraison",
+    desc: "Votre site clé en main en ligne.",
+    icon: Rocket,
+    colorClass: "bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 shadow-[0_0_20px_rgba(6,182,212,0.25)]",
+  },
 ];
 
 export default function Process() {
   const ref = useReveal();
 
   return (
-    <section id="process" className="py-24 bg-black relative" ref={ref}>
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="w-fit mx-auto font-heading font-extrabold text-3xl sm:text-5xl text-center mb-16 bg-gradient-to-b from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
-          Comment ça marche ?
-        </h2>
+    <section id="process" className="py-24 sm:py-32 bg-black relative" ref={ref}>
+      <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center gap-12">
+          {/* Header Title Preserved */}
+          <h2 className="w-fit mx-auto font-heading font-extrabold text-3xl sm:text-5xl text-center mb-6 bg-gradient-to-b from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
+            Comment ça marche ?
+          </h2>
 
-        {/* Desktop horizontal */}
-        <div className="hidden md:flex items-start justify-between relative">
-          {/* Connector line */}
-          <div className="absolute top-10 left-[12%] right-[12%] h-[2px] bg-gradient-to-r from-red-500/40 via-rose-500/40 to-red-500/40 border-t border-dashed border-rose-500/30" />
+          <div className="relative grid grid-cols-12 gap-0 overflow-hidden w-full">
+            {steps.map((step, idx) => (
+              <div key={idx} className="col-span-12 xl:col-span-3">
+                <div className="group relative rounded-lg p-4 xl:p-8">
+                  <div className="flex flex-row gap-4 md:gap-6 xl:flex-col xl:items-center xl:text-center">
+                    <div className="relative xl:w-full">
+                      {/* Connecting Line */}
+                      <div className="absolute bg-zinc-800 max-xl:left-2/4 max-xl:h-[calc(100%+40px)] max-xl:w-0.5 xl:-inset-x-10 xl:top-2/4 xl:h-0.5" />
+                      
+                      {/* Icon Circle Container */}
+                      <div className="relative z-20 mx-auto inline-flex bg-black p-2 rounded-2xl">
+                        <div
+                          className={
+                            "relative size-12 rounded-xl md:size-14 " +
+                            step.colorClass +
+                            " flex items-center justify-center transition-all duration-300 ease-in-out group-hover:scale-110"
+                          }
+                        >
+                          <step.icon className="size-5 stroke-2 md:size-7" />
+                        </div>
+                      </div>
+                    </div>
 
-          {steps.map((s, i) => (
-            <div
-              key={i}
-              className="reveal flex flex-col items-center text-center w-1/4 relative z-10 px-4 group"
-              style={{ transitionDelay: `${i * 150}ms` }}
-            >
-              <div className="w-20 h-20 rounded-2xl bg-zinc-950 border border-white/15 flex items-center justify-center font-heading font-extrabold text-xl text-white mb-6 shadow-[0_0_25px_rgba(0,0,0,0.8)] group-hover:border-rose-500 group-hover:shadow-[0_0_30px_rgba(229,0,36,0.4)] group-hover:scale-110 transition-all duration-300">
-                <span className="w-12 h-12 rounded-xl bg-gradient-to-br from-red-600 to-rose-600 flex items-center justify-center text-white shadow-[0_0_15px_rgba(229,0,36,0.5)]">
-                  {i + 1}
-                </span>
-              </div>
-              <s.icon className="text-rose-400 w-6 h-6 mb-3 group-hover:scale-110 transition-transform" />
-              <h3 className="font-heading font-bold text-xl text-white mb-2 tracking-wide group-hover:text-rose-400 transition-colors">{s.title}</h3>
-              <p className="font-body text-zinc-400 text-sm leading-relaxed">{s.desc}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Mobile vertical */}
-        <div className="md:hidden flex flex-col gap-6">
-          {steps.map((s, i) => (
-            <div
-              key={i}
-              className="reveal flex gap-5 items-start bg-zinc-950/80 border border-white/10 p-6 rounded-2xl backdrop-blur-xl"
-              style={{ transitionDelay: `${i * 100}ms` }}
-            >
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-red-600 to-rose-600 flex items-center justify-center text-white font-heading font-extrabold text-lg shrink-0 shadow-[0_0_20px_rgba(229,0,36,0.4)]">
-                {i + 1}
-              </div>
-              <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <s.icon className="text-rose-400 w-5 h-5" />
-                  <h3 className="font-heading font-bold text-lg text-white">{s.title}</h3>
+                    {/* Text Details */}
+                    <div className="flex flex-col gap-3 xl:items-center xl:gap-4 xl:text-center">
+                      <div className="flex flex-col gap-1 xl:items-center">
+                        <h3 className="text-lg font-heading font-bold text-white sm:text-xl group-hover:text-rose-400 transition-colors">
+                          {step.title}
+                        </h3>
+                        <p className="text-xs font-mono font-semibold tracking-wider text-zinc-500 uppercase">
+                          {step.subtitle}
+                        </p>
+                      </div>
+                      <p className="text-sm text-zinc-400 leading-relaxed font-body">
+                        {step.desc}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <p className="font-body text-zinc-400 text-sm leading-relaxed">{s.desc}</p>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
