@@ -23,7 +23,6 @@ interface Project {
   displayUrl: string;
   image: string;
   category: string;
-  tag: string;
   color: string;
 }
 
@@ -44,7 +43,6 @@ const projects: Project[] = [
     displayUrl: "marcos-portfolio-main.vercel.app",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
     category: "Portfolio",
-    tag: "Design & Dev",
     color: "#38bdf8",
   },
   {
@@ -56,7 +54,6 @@ const projects: Project[] = [
     displayUrl: "la-transformation-hub.vercel.app",
     image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=800&auto=format&fit=crop",
     category: "Coaching",
-    tag: "Web App",
     color: "#f97316",
   },
   {
@@ -68,7 +65,6 @@ const projects: Project[] = [
     displayUrl: "negos-food.vercel.app",
     image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop",
     category: "Restauration",
-    tag: "E-Commerce",
     color: "#4ade80",
   },
   {
@@ -80,7 +76,6 @@ const projects: Project[] = [
     displayUrl: "el-elias-fashion.vercel.app",
     image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800&auto=format&fit=crop",
     category: "Mode",
-    tag: "E-Commerce",
     color: "#2dd4bf",
   },
   {
@@ -92,7 +87,6 @@ const projects: Project[] = [
     displayUrl: "artprintly.vercel.app",
     image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=800&auto=format&fit=crop",
     category: "Art & Print",
-    tag: "Vitrine",
     color: "#a3e635",
   },
   {
@@ -104,7 +98,6 @@ const projects: Project[] = [
     displayUrl: "chez-hoovi-bouffe.vercel.app",
     image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop",
     category: "Restauration",
-    tag: "Vitrine",
     color: "#c084fc",
   },
 ];
@@ -131,20 +124,15 @@ function ProjectCard({ project }: { project: Project }) {
         >
           {project.category}
         </Badge>
-        <span
-          className="absolute top-3 left-3 font-mono font-bold text-xs px-2.5 py-1 rounded-full bg-black/70 border border-white/20 text-white backdrop-blur-md"
-          style={{ color: project.color }}
-        >
+        {/* Number badge - White Glass */}
+        <span className="absolute top-3 left-3 font-mono font-bold text-xs px-2.5 py-1 rounded-full bg-white/15 border border-white/30 text-white backdrop-blur-md shadow-sm">
           {project.id}
         </span>
       </div>
 
       <div className="flex flex-1 flex-col p-5 sm:p-6">
-        <div className="mb-3 flex flex-wrap items-center gap-x-3 gap-y-2">
-          <Badge variant="secondary" className="uppercase bg-white/10 text-white border-white/10">
-            {project.tag}
-          </Badge>
-          <span className="flex items-center gap-1 text-xs text-zinc-400">
+        <div className="mb-3 flex items-center gap-x-3 text-xs text-zinc-400">
+          <span className="flex items-center gap-1.5">
             <Globe aria-hidden="true" className="size-3.5 text-zinc-400" />
             {project.displayUrl}
           </span>
