@@ -21,7 +21,7 @@ const faqs = [
   },
   { 
     q: "Est-il possible d'avoir un site multilingue ?", 
-    a: "Absolument. Je peux intégrer plusieurs langues à votre site selon vos besoins — français, anglais, espagnol et bien d'autres. Un site multilingue, c'est plus de visibilité, plus de clients potentiels, et une image encore plus professionnelle. Il suffit juste de le mentionner après votre commande.",
+    a: "Absolument. Je peux intégrer plusieurs langues à votre site selon vos besoins : français, anglais, espagnol et bien d'autres. Un site multilingue, c'est plus de visibilité, plus de clients potentiels, et une image encore plus professionnelle. Il suffit juste de le mentionner après votre commande.",
   },
 ];
 
