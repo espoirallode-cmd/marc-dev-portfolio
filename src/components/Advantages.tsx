@@ -1,129 +1,40 @@
 import { useReveal } from "@/hooks/use-reveal";
-import { Zap, PenSquare, Smartphone, Search, Sparkles } from "lucide-react";
+import { Zap, PenSquare, Smartphone, Search, Sparkles, Headphones } from "lucide-react";
 
 const advantages = [
-  {
-    year: "2022",
-    stat: "7 Jours",
-    icon: Zap,
-    title: "Livraison rapide",
-    desc: "Votre site web livré clé en main sous 7 jours, prêt à convertir vos premiers clients.",
-    isHighlight: false,
-    isLow: false,
-  },
-  {
-    year: "2023",
-    stat: "100%",
-    icon: PenSquare,
-    title: "Design sur-mesure",
-    desc: "Un design unique, élégant et entièrement adapté à l'image et l’identité de votre marque.",
-    isHighlight: false,
-    isLow: true,
-  },
-  {
-    year: "2024",
-    stat: "3-en-1",
-    icon: Smartphone,
-    title: "100% Responsive",
-    desc: "Affichage parfait et ultra-fluide sur tous les écrans : mobile, tablette et ordinateur.",
-    isHighlight: false,
-    isLow: false,
-  },
-  {
-    year: "2025",
-    stat: "#1",
-    icon: Search,
-    title: "SEO optimisé",
-    desc: "Optimisation pour Google afin de capter l'attention de vos visiteurs et générer du trafic.",
-    isHighlight: false,
-    isLow: true,
-  },
-  {
-    year: "2026",
-    stat: "IA+",
-    icon: Sparkles,
-    title: "Support & IA inclus",
-    desc: "Propulsé par les dernières technologies IA avec accompagnement et suivi personnalisé.",
-    isHighlight: true,
-    isLow: false,
-  },
+  { icon: Zap, title: "Livraison rapide", desc: "Site livré sous 7 jours, prêt à l'emploi.", bg: "bg-cyan-500/10", border: "border-cyan-500/30", iconColor: "text-cyan-400", shadow: "shadow-[0_0_25px_rgba(6,182,212,0.3)]" },
+  { icon: PenSquare, title: "Design sur-mesure", desc: "Un design unique adapté à votre identité.", bg: "bg-orange-500/10", border: "border-orange-500/30", iconColor: "text-orange-400", shadow: "shadow-[0_0_25px_rgba(249,115,22,0.3)]" },
+  { icon: Smartphone, title: "100% Responsive", desc: "Parfait sur mobile, tablette et desktop.", bg: "bg-emerald-500/10", border: "border-emerald-500/30", iconColor: "text-emerald-400", shadow: "shadow-[0_0_25px_rgba(16,185,129,0.3)]" },
+  { icon: Search, title: "SEO optimisé", desc: "Visible sur Google dès le lancement.", bg: "bg-teal-500/10", border: "border-teal-500/30", iconColor: "text-teal-400", shadow: "shadow-[0_0_25px_rgba(20,184,166,0.3)]" },
+  { icon: Sparkles, title: "Propulsé par l'IA", desc: "Technologies IA pour un résultat optimal.", bg: "bg-rose-500/10", border: "border-rose-500/30", iconColor: "text-rose-400", shadow: "shadow-[0_0_25px_rgba(244,63,94,0.3)]" },
+  { icon: Headphones, title: "Support inclus", desc: "Accompagnement après la livraison.", bg: "bg-sky-500/10", border: "border-sky-500/30", iconColor: "text-sky-400", shadow: "shadow-[0_0_25px_rgba(14,165,233,0.3)]" },
 ];
 
 export default function Advantages() {
   const ref = useReveal();
 
   return (
-    <section id="avantages" className="py-24 sm:py-32 bg-[#090a0f] relative overflow-hidden" ref={ref}>
-      <div className="max-w-7xl mx-auto px-6 sm:px-8">
+    <section id="avantages" className="py-24 bg-black relative" ref={ref}>
+      <div className="max-w-6xl mx-auto px-6">
+        <h2 className="w-fit mx-auto font-heading font-extrabold text-3xl sm:text-5xl text-center mb-16 bg-gradient-to-b from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
+          Pourquoi Marc Dev ?
+        </h2>
 
-        {/* Section Header */}
-        <div className="mb-16 sm:mb-20 max-w-2xl">
-          <h2 className="font-heading font-extrabold text-4xl sm:text-6xl text-white tracking-tight leading-[1.1] mb-5">
-            Pourquoi Marc Dev ?
-          </h2>
-          <p className="font-body text-zinc-400 text-lg sm:text-xl font-normal leading-relaxed">
-            Des engagements clairs et des résultats mesurables pour propulser votre présence en ligne.
-          </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {advantages.map((a, i) => (
+            <div
+              key={i}
+              className="reveal relative bg-zinc-950/80 border border-white/10 backdrop-blur-xl rounded-3xl p-8 flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-2 hover:border-white/20 hover:bg-zinc-900/90 hover:shadow-[0_15px_30px_rgba(0,0,0,0.8),0_0_25px_rgba(229,0,36,0.15)] cursor-default group"
+              style={{ transitionDelay: `${i * 100}ms` }}
+            >
+              <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border transition-all duration-300 group-hover:scale-110 ${a.bg} ${a.border} ${a.shadow}`}>
+                <a.icon className={`w-7 h-7 ${a.iconColor}`} />
+              </div>
+              <h3 className="font-heading font-bold text-2xl text-white mb-3 tracking-wide group-hover:text-rose-400 transition-colors">{a.title}</h3>
+              <p className="font-body text-zinc-400 text-sm leading-relaxed">{a.desc}</p>
+            </div>
+          ))}
         </div>
-
-        {/* Timeline Container */}
-        <div className="relative pt-4 pb-20">
-
-          {/* Desktop Dotted Connecting Lines */}
-          <div className="hidden lg:block absolute inset-0 pointer-events-none z-0">
-            {/* Horizontal line under low cards */}
-            <div className="absolute top-[320px] left-[10%] right-[10%] border-b border-dashed border-zinc-700/60" />
-            {/* Vertical connector line under 5th card to node dot */}
-            <div className="absolute top-[260px] right-[10%] bottom-[40px] border-r border-dashed border-zinc-700/60" />
-            {/* End Node Dot at bottom right */}
-            <div className="absolute bottom-[28px] right-[10%] translate-x-1/2 w-4 h-4 rounded-full bg-white border-4 border-[#090a0f] shadow-[0_0_12px_rgba(255,255,255,0.8)]" />
-          </div>
-
-          {/* 5 Grid Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 relative z-10 items-start">
-            {advantages.map((item, index) => {
-              return (
-                <div
-                  key={index}
-                  className={`reveal flex flex-col justify-between rounded-2xl p-6 sm:p-7 transition-all duration-300 group ${
-                    item.isLow ? "lg:translate-y-16" : "lg:translate-y-0"
-                  } ${
-                    item.isHighlight
-                      ? "bg-white text-zinc-950 shadow-[0_25px_60px_rgba(255,255,255,0.18)] hover:scale-[1.02]"
-                      : "bg-[#12141d] border border-zinc-800/70 text-white hover:border-zinc-700 hover:bg-[#171924] hover:scale-[1.02]"
-                  }`}
-                  style={{ transitionDelay: `${index * 100}ms` }}
-                >
-                  <div>
-                    {/* Top Row: Tag / Year & Icon */}
-                    <div className="flex items-center justify-between mb-5">
-                      <span className={`text-xs sm:text-sm font-semibold ${item.isHighlight ? "text-zinc-400" : "text-zinc-500"}`}>
-                        {item.year}
-                      </span>
-                      <item.icon className={`w-4 h-4 ${item.isHighlight ? "text-zinc-400" : "text-zinc-500"}`} />
-                    </div>
-
-                    {/* Giant Number / Stat */}
-                    <div className={`font-heading font-extrabold text-3xl sm:text-4xl lg:text-4xl mb-4 tracking-tight ${item.isHighlight ? "text-zinc-950" : "text-white"}`}>
-                      {item.stat}
-                    </div>
-
-                    {/* Title */}
-                    <h3 className={`font-heading font-bold text-base sm:text-lg mb-2 ${item.isHighlight ? "text-zinc-900" : "text-white"}`}>
-                      {item.title}
-                    </h3>
-
-                    {/* Description */}
-                    <p className={`font-body text-xs sm:text-sm leading-relaxed ${item.isHighlight ? "text-zinc-600" : "text-zinc-400"}`}>
-                      {item.desc}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
       </div>
     </section>
   );
