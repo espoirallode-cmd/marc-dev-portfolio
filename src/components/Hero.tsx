@@ -16,9 +16,9 @@ export default function Hero() {
     >
       {/* Glow top full-width */}
       <div
-        className="pointer-events-none absolute top-0 left-0 w-full h-[380px]"
+        className="pointer-events-none absolute top-0 left-0 w-full h-[440px]"
         style={{
-          background: "radial-gradient(ellipse 100% 60% at 50% 0%, rgba(230,0,41,0.38) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse 100% 60% at 50% 0%, rgba(230,0,41,0.28) 0%, transparent 70%)",
         }}
       />
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">

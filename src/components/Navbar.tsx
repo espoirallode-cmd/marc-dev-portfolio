@@ -29,13 +29,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <a href="#hero" className="flex items-center gap-2 group">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-red-600 via-rose-500 to-amber-400 p-[1px] shadow-[0_0_15px_rgba(229,0,36,0.5)] group-hover:scale-105 transition-transform duration-300">
-            <div className="w-full h-full bg-black rounded-[11px] flex items-center justify-center">
-              <Sparkles className="w-4 h-4 text-rose-500" />
-            </div>
-          </div>
-          <span className="font-heading font-extrabold text-xl text-white tracking-tight group-hover:text-rose-400 transition-colors">
-            Marc <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-400">Dev</span>
+          <span className="font-heading font-extrabold text-xl text-white tracking-tight">
+            Marcdev
           </span>
         </a>
 
