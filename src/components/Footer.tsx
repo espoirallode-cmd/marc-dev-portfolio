@@ -36,21 +36,17 @@ export default function Footer() {
     { name: "Site Vitrine", href: "#offres" },
     { name: "Landing Page", href: "#offres" },
     { name: "Site E-commerce", href: "#offres" },
-    { name: "Sur-mesure", href: "#contact" },
   ];
 
   const contactLinks = [
     { name: "WhatsApp", href: "https://wa.me/22990107869", external: true },
     { name: "Email Direct", href: "mailto:contactmarcosgraphique@gmail.com", external: true },
-    { name: "Commandes ComeUp", href: "https://comeup.com", external: true },
   ];
 
   return (
     <footer className="dark relative z-10 overflow-hidden border-t border-white/5 bg-black pt-24 pb-8 text-white">
-      {/* Background Enhancements */}
+      {/* Background Grid Enhancement */}
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_0%,#000_10%,transparent_100%)] bg-[size:4rem_4rem]"></div>
-      <div className="absolute top-0 left-1/2 -z-10 h-[2px] w-3/4 -translate-x-1/2 bg-gradient-to-r from-transparent via-[#e60029]/70 to-transparent"></div>
-      <div className="pointer-events-none absolute top-0 left-1/2 -z-10 h-[300px] w-[800px] -translate-x-1/2 rounded-[100%] bg-[#e60029]/20 blur-[120px]"></div>
 
       <div className="relative z-10 container mx-auto px-4 md:px-6">
         <motion.div
@@ -94,9 +90,9 @@ export default function Footer() {
               <a
                 href="mailto:contactmarcosgraphique@gmail.com"
                 aria-label="Email"
-                className="group relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border border-white/10 bg-white/[0.03] text-white shadow-xl transition-all hover:border-[#e60029]/50 hover:text-[#e60029]"
+                className="group relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border border-white/10 bg-white/[0.03] text-white shadow-xl transition-all hover:border-white/30 hover:text-white"
               >
-                <span className="absolute inset-0 translate-y-full bg-gradient-to-t from-[#e60029]/40 to-transparent transition-transform duration-300 group-hover:translate-y-0"></span>
+                <span className="absolute inset-0 translate-y-full bg-gradient-to-t from-white/20 to-transparent transition-transform duration-300 group-hover:translate-y-0"></span>
                 <Mail className="relative z-10 h-5 w-5 transition-transform group-hover:scale-110" />
               </a>
             </div>
@@ -112,10 +108,10 @@ export default function Footer() {
                 <li key={item.name}>
                   <a
                     href={item.href}
-                    className="group flex items-center transition-colors hover:text-[#e60029]"
+                    className="group flex items-center transition-colors hover:text-zinc-300"
                   >
                     {item.name}{" "}
-                    <ArrowRight className="ml-2 h-4 w-4 -translate-x-3 text-[#e60029] opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
+                    <ArrowRight className="ml-2 h-4 w-4 -translate-x-3 text-white opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
                   </a>
                 </li>
               ))}
@@ -132,10 +128,10 @@ export default function Footer() {
                 <li key={item.name}>
                   <a
                     href={item.href}
-                    className="group flex items-center transition-colors hover:text-[#e60029]"
+                    className="group flex items-center transition-colors hover:text-zinc-300"
                   >
                     {item.name}{" "}
-                    <ArrowRight className="ml-2 h-4 w-4 -translate-x-3 text-[#e60029] opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
+                    <ArrowRight className="ml-2 h-4 w-4 -translate-x-3 text-white opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
                   </a>
                 </li>
               ))}
@@ -154,10 +150,10 @@ export default function Footer() {
                     href={item.href}
                     target={item.external ? "_blank" : undefined}
                     rel={item.external ? "noopener noreferrer" : undefined}
-                    className="group flex items-center transition-colors hover:text-[#e60029]"
+                    className="group flex items-center transition-colors hover:text-zinc-300"
                   >
                     {item.name}{" "}
-                    <ArrowRight className="ml-2 h-4 w-4 -translate-x-3 text-[#e60029] opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
+                    <ArrowRight className="ml-2 h-4 w-4 -translate-x-3 text-white opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
                   </a>
                 </li>
               ))}
