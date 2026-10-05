@@ -71,7 +71,7 @@ export default function Footer() {
                   Marc Dev
                 </span>
               </div>
-              <p className="mb-10 max-w-sm text-lg leading-relaxed font-light text-slate-400">
+              <p className="mb-10 max-w-sm text-lg leading-relaxed font-light text-white/90">
                 Création de sites web professionnels d'exception propulsés par l'IA. Design sur-mesure, rapide & réactif.
               </p>
             </div>
@@ -83,7 +83,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
-                className="group relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border border-white/10 bg-white/[0.03] text-slate-400 shadow-xl transition-all hover:border-emerald-500/50 hover:text-emerald-400"
+                className="group relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border border-white/10 bg-white/[0.03] text-white shadow-xl transition-all hover:border-emerald-500/50 hover:text-emerald-400"
               >
                 <span className="absolute inset-0 translate-y-full bg-gradient-to-t from-emerald-600/40 to-transparent transition-transform duration-300 group-hover:translate-y-0"></span>
                 <svg className="relative z-10 h-5 w-5 transition-transform group-hover:scale-110" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -94,7 +94,7 @@ export default function Footer() {
               <a
                 href="mailto:contactmarcosgraphique@gmail.com"
                 aria-label="Email"
-                className="group relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border border-white/10 bg-white/[0.03] text-slate-400 shadow-xl transition-all hover:border-[#e60029]/50 hover:text-[#e60029]"
+                className="group relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border border-white/10 bg-white/[0.03] text-white shadow-xl transition-all hover:border-[#e60029]/50 hover:text-[#e60029]"
               >
                 <span className="absolute inset-0 translate-y-full bg-gradient-to-t from-[#e60029]/40 to-transparent transition-transform duration-300 group-hover:translate-y-0"></span>
                 <Mail className="relative z-10 h-5 w-5 transition-transform group-hover:scale-110" />
@@ -104,10 +104,10 @@ export default function Footer() {
 
           {/* Navigation Column */}
           <motion.div variants={itemVariants}>
-            <h4 className="mb-8 bg-gradient-to-r from-white to-slate-500 bg-clip-text text-lg font-bold tracking-wide text-transparent uppercase">
+            <h4 className="mb-8 text-white text-lg font-bold tracking-wide uppercase">
               Navigation
             </h4>
-            <ul className="space-y-5 text-base font-medium text-slate-400">
+            <ul className="space-y-5 text-base font-medium text-white">
               {navLinks.map((item) => (
                 <li key={item.name}>
                   <a
@@ -124,10 +124,10 @@ export default function Footer() {
 
           {/* Services Column */}
           <motion.div variants={itemVariants}>
-            <h4 className="mb-8 bg-gradient-to-r from-white to-slate-500 bg-clip-text text-lg font-bold tracking-wide text-transparent uppercase">
+            <h4 className="mb-8 text-white text-lg font-bold tracking-wide uppercase">
               Offres
             </h4>
-            <ul className="space-y-5 text-base font-medium text-slate-400">
+            <ul className="space-y-5 text-base font-medium text-white">
               {serviceLinks.map((item) => (
                 <li key={item.name}>
                   <a
@@ -144,10 +144,10 @@ export default function Footer() {
 
           {/* Contact Column */}
           <motion.div variants={itemVariants}>
-            <h4 className="mb-8 bg-gradient-to-r from-white to-slate-500 bg-clip-text text-lg font-bold tracking-wide text-transparent uppercase">
+            <h4 className="mb-8 text-white text-lg font-bold tracking-wide uppercase">
               Contact
             </h4>
-            <ul className="space-y-5 text-base font-medium text-slate-400">
+            <ul className="space-y-5 text-base font-medium text-white">
               {contactLinks.map((item) => (
                 <li key={item.name}>
                   <a
@@ -180,10 +180,10 @@ export default function Footer() {
           transition={{ duration: 1, delay: 0.5 }}
           className="flex flex-col items-center justify-between gap-6 border-t border-white/5 pt-8 text-center md:flex-row md:gap-0 md:text-left"
         >
-          <p className="text-sm font-medium text-slate-500">
+          <p className="text-sm font-medium text-white/70">
             &copy; {new Date().getFullYear()} Marc Dev. Tous droits réservés.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm font-medium text-slate-500 md:gap-8">
+          <div className="flex flex-wrap justify-center gap-4 text-sm font-medium text-white/70 md:gap-8">
             <a
               href="#hero"
               className="underline-offset-4 transition-all hover:text-white hover:underline"
