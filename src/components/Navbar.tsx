@@ -47,7 +47,7 @@ export default function Navbar() {
           ))}
           <a
             href="#contact"
-            className="inline-flex items-center justify-center bg-[#e60029] hover:bg-[#c2001f] text-white font-semibold text-sm px-6 py-2.5 rounded-full transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center justify-center bg-zinc-900/90 border border-white/15 text-white font-semibold text-sm px-6 py-2.5 rounded-full hover:bg-zinc-800 hover:border-white/30 transition-all duration-300 backdrop-blur-md hover:scale-105 cursor-pointer"
           >
             Démarrer mon projet
           </a>
@@ -78,7 +78,7 @@ export default function Navbar() {
           ))}
           <a
             href="#contact"
-            className="mt-2 bg-[#e60029] hover:bg-[#c2001f] text-white px-6 py-3 rounded-full text-sm font-semibold text-center transition-all"
+            className="mt-2 bg-zinc-900/90 border border-white/15 text-white px-6 py-3 rounded-full text-sm font-semibold text-center hover:bg-zinc-800 hover:border-white/30 transition-all backdrop-blur-md cursor-pointer"
             onClick={() => setMenuOpen(false)}
           >
             Démarrer mon projet
