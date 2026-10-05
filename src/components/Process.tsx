@@ -69,7 +69,7 @@ export default function Process() {
                     {/* Text Details */}
                     <div className="flex flex-col gap-3 xl:items-center xl:gap-4 xl:text-center">
                       <div className="flex flex-col gap-1 xl:items-center">
-                        <h3 className="text-lg font-heading font-bold text-white sm:text-xl group-hover:text-rose-400 transition-colors">
+                        <h3 className="text-lg font-heading font-bold text-white sm:text-xl">
                           {step.title}
                         </h3>
                         <p className="text-xs font-mono font-semibold tracking-wider text-zinc-500 uppercase">
