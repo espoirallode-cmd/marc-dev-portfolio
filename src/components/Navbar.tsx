@@ -29,8 +29,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <a href="#hero" className="flex items-center gap-2 group">
-          <span className="font-heading font-extrabold text-xl text-white tracking-tight">
-            Marcdev
+          <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-red-600 via-rose-500 to-amber-400 p-[1px] shadow-[0_0_15px_rgba(229,0,36,0.5)] group-hover:scale-105 transition-transform duration-300">
+            <div className="w-full h-full bg-black rounded-[11px] flex items-center justify-center">
+              <Sparkles className="w-4 h-4 text-rose-500" />
+            </div>
+          </div>
+          <span className="font-heading font-extrabold text-xl text-white tracking-tight group-hover:text-rose-400 transition-colors">
+            Marc <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-400">Dev</span>
           </span>
         </a>
 
@@ -47,7 +52,7 @@ export default function Navbar() {
           ))}
           <a
             href="#contact"
-            className="inline-flex items-center justify-center bg-zinc-900/90 border border-white/15 text-white font-semibold text-sm px-6 py-2.5 rounded-full hover:bg-zinc-800 hover:border-white/30 transition-all duration-300 backdrop-blur-md hover:scale-105 cursor-pointer"
+            className="inline-flex items-center justify-center bg-[#e60029] hover:bg-[#c2001f] text-white font-semibold text-sm px-6 py-2.5 rounded-full transition-all duration-300 hover:scale-105"
           >
             Démarrer mon projet
           </a>
@@ -59,7 +64,7 @@ export default function Navbar() {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menu"
         >
-          {menuOpen ? <X className="w-6 h-6 text-emerald-400" /> : <Menu className="w-6 h-6" />}
+          {menuOpen ? <X className="w-6 h-6 text-rose-500" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
@@ -78,7 +83,7 @@ export default function Navbar() {
           ))}
           <a
             href="#contact"
-            className="mt-2 bg-zinc-900/90 border border-white/15 text-white px-6 py-3 rounded-full text-sm font-semibold text-center hover:bg-zinc-800 hover:border-white/30 transition-all backdrop-blur-md cursor-pointer"
+            className="mt-2 bg-[#e60029] hover:bg-[#c2001f] text-white px-6 py-3 rounded-full text-sm font-semibold text-center transition-all"
             onClick={() => setMenuOpen(false)}
           >
             Démarrer mon projet

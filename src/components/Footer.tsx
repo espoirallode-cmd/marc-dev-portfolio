@@ -7,8 +7,13 @@ export default function Footer() {
         {/* Brand info */}
         <div>
           <a href="#hero" className="flex items-center gap-2 mb-3 group">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-red-600 via-rose-500 to-amber-400 p-[1px] shadow-[0_0_12px_rgba(229,0,36,0.5)]">
+              <div className="w-full h-full bg-black rounded-[7px] flex items-center justify-center">
+                <Sparkles className="w-3.5 h-3.5 text-rose-500" />
+              </div>
+            </div>
             <span className="font-heading font-extrabold text-xl text-white tracking-tight">
-              Marcdev
+              Marc <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-rose-400">Dev</span>
             </span>
           </a>
           <p className="font-body text-zinc-400 text-sm leading-relaxed max-w-sm">
