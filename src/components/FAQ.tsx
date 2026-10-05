@@ -12,24 +12,12 @@ const faqs = [
     a: "Chaque offre inclut 2 tours de révisions. Des modifications supplémentaires peuvent être réalisées sur devis.",
   },
   { 
-    q: "Quels moyens de paiement acceptez-vous ?", 
-    a: "Pour le moment vous serez dirigé vers mon site Comeup pour terminer votre commande en toute sécurité.",
-  },
-  { 
     q: "Que se passe-t-il après la livraison ?", 
     a: "Vous recevez tous les accès à votre site. Et un mois de suivi inclus pour toute mise à jour complémentaire.",
   },
   { 
     q: "Puis-je modifier mon site moi-même après livraison ?", 
     a: "Oui, selon la solution technique choisie, vous pouvez modifier les contenus de manière autonome. Une formation rapide est incluse.",
-  },
-  { 
-    q: "Et si l'IA se trompe ?", 
-    a: "C'est pour ça que je suis là. Je valide, je corrige, je teste sur tous les appareils. Je suis votre filtre de qualité. Vous n'achetez pas une IA — vous m'achetez moi, avec l'IA comme outil.",
-  },
-  { 
-    q: "Mais c'est fait par une IA, c'est pas du vrai travail ?", 
-    a: "L'outil n'est pas le problème. Ce qui compte, c'est ce qu'on en fait.\nUn architecte utilise AutoCAD, un photographe utilise Lightroom. L'outil ne remet pas en cause la qualité du travail — c'est l'expertise derrière qui fait la différence.\nJ'utilise l'IA comme levier : elle me permet d'aller plus vite, et cette rapidité je vous la répercute en tarif et en délai. Ce que vous payez, c'est mon jugement et ma capacité à transformer vos besoins en un site qui convertit.\nLa vraie question n'est pas 'est-ce que c'est fait par une IA' — c'est : est-ce que votre site va vous ramener des clients ? Et là, ma réponse est oui.",
   },
   { 
     q: "Est-il possible d'avoir un site multilingue ?", 
