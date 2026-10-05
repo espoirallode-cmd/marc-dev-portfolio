@@ -22,7 +22,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-2.5 rounded-full bg-[#0a0e1a]/85 border border-slate-800/80 backdrop-blur-xl shadow-[0_10px_35px_rgba(0,0,0,0.8)] flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-2.5 rounded-full bg-black/85 border border-white/15 backdrop-blur-xl shadow-[0_4px_15px_rgba(0,0,0,0.5)] flex items-center justify-between">
         {/* Logo */}
         <a href="#hero" className="flex items-center gap-2 group">
           <span className="font-heading font-extrabold text-xl text-white tracking-tight">
@@ -65,7 +65,7 @@ export default function Navbar() {
 
       {/* Mobile menu dropdown */}
       {menuOpen && (
-        <div className="md:hidden mt-2 max-w-6xl mx-auto px-6 py-5 flex flex-col gap-4 rounded-3xl bg-[#0a0e1a]/95 backdrop-blur-2xl border border-slate-800 shadow-2xl animate-in slide-in-from-top duration-300">
+        <div className="md:hidden mt-2 max-w-6xl mx-auto px-6 py-5 flex flex-col gap-4 rounded-3xl bg-black/90 backdrop-blur-2xl border border-white/15 shadow-xl animate-in slide-in-from-top duration-300">
           {links.map((l) => (
             <a
               key={l.href}
