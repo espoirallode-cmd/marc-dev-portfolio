@@ -66,12 +66,9 @@ export default function Footer() {
             className="col-span-2 flex flex-col justify-between"
           >
             <div>
-              <div className="mb-8 flex items-center gap-4">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/20 bg-gradient-to-br from-purple-600 via-indigo-600 to-fuchsia-600 shadow-[0_0_30px_rgba(168,85,247,0.4)]">
-                  <span className="text-2xl font-black text-white">M</span>
-                </div>
-                <span className="bg-gradient-to-r from-white to-slate-400 bg-clip-text text-4xl font-black tracking-tighter text-transparent">
-                  Marcdev.
+              <div className="mb-8">
+                <span className="font-heading font-extrabold text-3xl sm:text-4xl text-white tracking-tight">
+                  Marc Dev
                 </span>
               </div>
               <p className="mb-10 max-w-sm text-lg leading-relaxed font-light text-slate-400">
@@ -168,9 +165,9 @@ export default function Footer() {
           </motion.div>
         </motion.div>
 
-        {/* Massive Background Brand Text */}
+        {/* Massive Background Brand Text - single line */}
         <div className="relative mt-16 mb-8 flex justify-center overflow-hidden md:mt-24 md:mb-12">
-          <span className="pointer-events-none bg-gradient-to-b from-white/[0.08] to-transparent bg-clip-text text-[24vw] sm:text-[20vw] lg:text-[16vw] leading-none font-black tracking-tighter text-transparent select-none">
+          <span className="pointer-events-none bg-gradient-to-b from-white/[0.08] to-transparent bg-clip-text text-[15vw] sm:text-[13vw] lg:text-[11vw] leading-none font-heading font-black tracking-tighter text-transparent select-none whitespace-nowrap uppercase">
             MARC DEV
           </span>
         </div>
