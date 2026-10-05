@@ -2,66 +2,12 @@ import { useReveal } from "@/hooks/use-reveal";
 import { Zap, PenSquare, Smartphone, Search, Sparkles, Headphones } from "lucide-react";
 
 const advantages = [
-  {
-    icon: Zap,
-    title: "Livraison rapide",
-    subtitle: "Site livré en 7 jours",
-    desc: "Site livré sous 7 jours, prêt à l'emploi.",
-    bg: "bg-cyan-500/15",
-    border: "border-cyan-500/40",
-    iconColor: "text-cyan-400",
-    subtitleColor: "text-cyan-400",
-  },
-  {
-    icon: PenSquare,
-    title: "Design sur-mesure",
-    subtitle: "Identité visuelle unique",
-    desc: "Un design unique adapté à votre identité.",
-    bg: "bg-orange-500/15",
-    border: "border-orange-500/40",
-    iconColor: "text-orange-400",
-    subtitleColor: "text-orange-400",
-  },
-  {
-    icon: Smartphone,
-    title: "100% Responsive",
-    subtitle: "Mobile, tablette & desktop",
-    desc: "Parfait sur mobile, tablette et desktop.",
-    bg: "bg-emerald-500/15",
-    border: "border-emerald-500/40",
-    iconColor: "text-emerald-400",
-    subtitleColor: "text-emerald-400",
-  },
-  {
-    icon: Search,
-    title: "SEO optimisé",
-    subtitle: "Visible sur Google",
-    desc: "Visible sur Google dès le lancement.",
-    bg: "bg-teal-500/15",
-    border: "border-teal-500/40",
-    iconColor: "text-teal-400",
-    subtitleColor: "text-teal-400",
-  },
-  {
-    icon: Sparkles,
-    title: "Propulsé par l'IA",
-    subtitle: "Technologies IA avancées",
-    desc: "Technologies IA pour un résultat optimal.",
-    bg: "bg-rose-500/15",
-    border: "border-rose-500/40",
-    iconColor: "text-rose-400",
-    subtitleColor: "text-rose-400",
-  },
-  {
-    icon: Headphones,
-    title: "Support inclus",
-    subtitle: "Accompagnement continu",
-    desc: "Accompagnement après la livraison.",
-    bg: "bg-sky-500/15",
-    border: "border-sky-500/40",
-    iconColor: "text-sky-400",
-    subtitleColor: "text-sky-400",
-  },
+  { icon: Zap, title: "Livraison rapide", desc: "Site livré sous 7 jours, prêt à l'emploi.", bg: "bg-cyan-500/10", border: "border-cyan-500/30", iconColor: "text-cyan-400", shadow: "shadow-[0_0_25px_rgba(6,182,212,0.3)]" },
+  { icon: PenSquare, title: "Design sur-mesure", desc: "Un design unique adapté à votre identité.", bg: "bg-orange-500/10", border: "border-orange-500/30", iconColor: "text-orange-400", shadow: "shadow-[0_0_25px_rgba(249,115,22,0.3)]" },
+  { icon: Smartphone, title: "100% Responsive", desc: "Parfait sur mobile, tablette et desktop.", bg: "bg-emerald-500/10", border: "border-emerald-500/30", iconColor: "text-emerald-400", shadow: "shadow-[0_0_25px_rgba(16,185,129,0.3)]" },
+  { icon: Search, title: "SEO optimisé", desc: "Visible sur Google dès le lancement.", bg: "bg-teal-500/10", border: "border-teal-500/30", iconColor: "text-teal-400", shadow: "shadow-[0_0_25px_rgba(20,184,166,0.3)]" },
+  { icon: Sparkles, title: "Propulsé par l'IA", desc: "Technologies IA pour un résultat optimal.", bg: "bg-rose-500/10", border: "border-rose-500/30", iconColor: "text-rose-400", shadow: "shadow-[0_0_25px_rgba(244,63,94,0.3)]" },
+  { icon: Headphones, title: "Support inclus", desc: "Accompagnement après la livraison.", bg: "bg-sky-500/10", border: "border-sky-500/30", iconColor: "text-sky-400", shadow: "shadow-[0_0_25px_rgba(14,165,233,0.3)]" },
 ];
 
 export default function Advantages() {
@@ -74,32 +20,18 @@ export default function Advantages() {
           Pourquoi Marc Dev ?
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {advantages.map((a, i) => (
             <div
               key={i}
-              className="reveal relative bg-[#0d1117]/80 border border-white/10 backdrop-blur-xl rounded-2xl p-8 flex flex-col items-start text-left transition-all duration-300 cursor-default"
+              className="reveal relative bg-zinc-950/80 border border-white/10 backdrop-blur-xl rounded-3xl p-8 flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-2 hover:border-white/20 hover:bg-zinc-900/90 hover:shadow-[0_15px_30px_rgba(0,0,0,0.8),0_0_25px_rgba(229,0,36,0.15)] cursor-default group"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
-              {/* Icon box */}
-              <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 border backdrop-blur-md ${a.bg} ${a.border}`}>
-                <a.icon className={`w-6 h-6 ${a.iconColor}`} />
+              <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border transition-all duration-300 group-hover:scale-110 ${a.bg} ${a.border} ${a.shadow}`}>
+                <a.icon className={`w-7 h-7 ${a.iconColor}`} />
               </div>
-
-              {/* Title */}
-              <h3 className="font-heading font-bold text-xl text-white mb-1 tracking-wide">
-                {a.title}
-              </h3>
-
-              {/* Colored uppercase subtitle */}
-              <p className={`text-xs font-mono font-bold tracking-widest uppercase mb-4 ${a.subtitleColor}`}>
-                {a.subtitle}
-              </p>
-
-              {/* Description */}
-              <p className="font-body text-zinc-400 text-sm leading-relaxed">
-                {a.desc}
-              </p>
+              <h3 className="font-heading font-bold text-2xl text-white mb-3 tracking-wide group-hover:text-rose-400 transition-colors">{a.title}</h3>
+              <p className="font-body text-zinc-400 text-sm leading-relaxed">{a.desc}</p>
             </div>
           ))}
         </div>
@@ -107,3 +39,4 @@ export default function Advantages() {
     </section>
   );
 }
+
