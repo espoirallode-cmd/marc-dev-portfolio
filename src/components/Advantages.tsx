@@ -2,12 +2,60 @@ import { useReveal } from "@/hooks/use-reveal";
 import { Zap, PenSquare, Smartphone, Search, Sparkles, Headphones } from "lucide-react";
 
 const advantages = [
-  { icon: Zap, title: "Livraison rapide", desc: "Site livré sous 7 jours, prêt à l'emploi.", bg: "bg-cyan-500/10", border: "border-cyan-500/30", iconColor: "text-cyan-400", shadow: "shadow-[0_0_25px_rgba(6,182,212,0.3)]" },
-  { icon: PenSquare, title: "Design sur-mesure", desc: "Un design unique adapté à votre identité.", bg: "bg-orange-500/10", border: "border-orange-500/30", iconColor: "text-orange-400", shadow: "shadow-[0_0_25px_rgba(249,115,22,0.3)]" },
-  { icon: Smartphone, title: "100% Responsive", desc: "Parfait sur mobile, tablette et desktop.", bg: "bg-emerald-500/10", border: "border-emerald-500/30", iconColor: "text-emerald-400", shadow: "shadow-[0_0_25px_rgba(16,185,129,0.3)]" },
-  { icon: Search, title: "SEO optimisé", desc: "Visible sur Google dès le lancement.", bg: "bg-teal-500/10", border: "border-teal-500/30", iconColor: "text-teal-400", shadow: "shadow-[0_0_25px_rgba(20,184,166,0.3)]" },
-  { icon: Sparkles, title: "Propulsé par l'IA", desc: "Technologies IA pour un résultat optimal.", bg: "bg-rose-500/10", border: "border-rose-500/30", iconColor: "text-rose-400", shadow: "shadow-[0_0_25px_rgba(244,63,94,0.3)]" },
-  { icon: Headphones, title: "Support inclus", desc: "Accompagnement après la livraison.", bg: "bg-sky-500/10", border: "border-sky-500/30", iconColor: "text-sky-400", shadow: "shadow-[0_0_25px_rgba(14,165,233,0.3)]" },
+  {
+    icon: Zap,
+    num: "01",
+    title: "Livraison rapide",
+    desc: "Site livré sous 7 jours, prêt à l'emploi.",
+    rotate: "-rotate-2",
+    side: "left",
+    pinColor: "bg-orange-400 shadow-orange-400/40",
+  },
+  {
+    icon: PenSquare,
+    num: "02",
+    title: "Design sur-mesure",
+    desc: "Un design unique adapté à votre identité.",
+    rotate: "rotate-1",
+    side: "right",
+    pinColor: "bg-blue-400 shadow-blue-400/40",
+  },
+  {
+    icon: Smartphone,
+    num: "03",
+    title: "100% Responsive",
+    desc: "Parfait sur mobile, tablette et desktop.",
+    rotate: "-rotate-1",
+    side: "left",
+    pinColor: "bg-violet-500 shadow-violet-500/40",
+  },
+  {
+    icon: Search,
+    num: "04",
+    title: "SEO optimisé",
+    desc: "Visible sur Google dès le lancement.",
+    rotate: "rotate-2",
+    side: "right",
+    pinColor: "bg-orange-400 shadow-orange-400/40",
+  },
+  {
+    icon: Sparkles,
+    num: "05",
+    title: "Propulsé par l'IA",
+    desc: "Technologies IA pour un résultat optimal.",
+    rotate: "-rotate-2",
+    side: "left",
+    pinColor: "bg-blue-400 shadow-blue-400/40",
+  },
+  {
+    icon: Headphones,
+    num: "06",
+    title: "Support inclus",
+    desc: "Accompagnement après la livraison.",
+    rotate: "rotate-1",
+    side: "right",
+    pinColor: "bg-violet-500 shadow-violet-500/40",
+  },
 ];
 
 export default function Advantages() {
@@ -15,28 +63,55 @@ export default function Advantages() {
 
   return (
     <section id="avantages" className="py-24 bg-black relative" ref={ref}>
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="w-fit mx-auto font-heading font-extrabold text-3xl sm:text-5xl text-center mb-16 bg-gradient-to-b from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
+      <div className="max-w-3xl mx-auto px-6">
+        <h2 className="w-fit mx-auto font-heading font-extrabold text-3xl sm:text-5xl text-center mb-20 bg-gradient-to-b from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
           Pourquoi Marc Dev ?
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Staggered sticky-note layout */}
+        <div className="relative flex flex-col gap-8">
           {advantages.map((a, i) => (
             <div
               key={i}
-              className="reveal relative bg-zinc-950/80 border border-white/10 backdrop-blur-xl rounded-3xl p-8 flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-2 hover:border-white/20 hover:bg-zinc-900/90 hover:shadow-[0_15px_30px_rgba(0,0,0,0.8),0_0_25px_rgba(229,0,36,0.15)] cursor-default group"
-              style={{ transitionDelay: `${i * 100}ms` }}
+              className={`reveal flex w-full ${a.side === "right" ? "justify-end" : "justify-start"}`}
+              style={{ transitionDelay: `${i * 80}ms` }}
             >
-              <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border transition-all duration-300 group-hover:scale-110 ${a.bg} ${a.border} ${a.shadow}`}>
-                <a.icon className={`w-7 h-7 ${a.iconColor}`} />
+              {/* Card */}
+              <div
+                className={`relative w-64 sm:w-72 bg-zinc-950 border border-white/10 rounded-2xl px-6 pt-8 pb-6 shadow-[0_10px_40px_rgba(0,0,0,0.7)] transition-transform duration-300 hover:scale-[1.03] ${a.rotate}`}
+              >
+                {/* Pin */}
+                <div
+                  className={`absolute -top-3.5 left-1/2 -translate-x-1/2 w-7 h-7 rounded-full border-2 border-white/20 shadow-lg z-10 ${a.pinColor}`}
+                />
+
+                {/* Number + Icon row */}
+                <div className="flex items-center justify-between mb-4">
+                  <span className="font-mono text-sm font-bold text-white/25 tracking-widest">
+                    {a.num}
+                  </span>
+                  <div className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+                    <a.icon className="w-4 h-4 text-white/60" />
+                  </div>
+                </div>
+
+                {/* Title */}
+                <h3 className="font-heading font-bold text-lg text-white mb-2 leading-snug">
+                  {a.title}
+                </h3>
+
+                {/* Description */}
+                <p className="font-body text-zinc-400 text-sm leading-relaxed">
+                  {a.desc}
+                </p>
               </div>
-              <h3 className="font-heading font-bold text-2xl text-white mb-3 tracking-wide group-hover:text-rose-400 transition-colors">{a.title}</h3>
-              <p className="font-body text-zinc-400 text-sm leading-relaxed">{a.desc}</p>
             </div>
           ))}
+
+          {/* Dashed vertical connector line */}
+          <div className="absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-px border-l-2 border-dashed border-white/10 pointer-events-none hidden sm:block" />
         </div>
       </div>
     </section>
   );
 }
-
