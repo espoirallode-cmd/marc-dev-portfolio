@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sparkles } from "lucide-react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -21,56 +21,59 @@ export default function Navbar() {
   ];
 
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "py-3 bg-black/85 backdrop-blur-xl border-b border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.8)]" : "py-5 bg-black/40 backdrop-blur-md border-b border-white/[0.05]"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+    <nav className="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-2.5 rounded-full bg-[#0a0e1a]/85 border border-slate-800/80 backdrop-blur-xl shadow-[0_10px_35px_rgba(0,0,0,0.8)] flex items-center justify-between">
         {/* Logo */}
-        <a href="#hero" className="flex items-center gap-2 group">
-          <span className="font-heading font-extrabold text-xl sm:text-2xl text-white tracking-tight">
-            Marcdev
+        <a href="#hero" className="flex items-center gap-2.5 group">
+          <div className="w-8 h-8 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center group-hover:border-blue-500/40 transition-colors">
+            <Sparkles className="w-4 h-4 text-blue-400" />
+          </div>
+          <span className="font-heading font-extrabold text-lg text-white tracking-tight">
+            Marc<span className="text-blue-400">Dev</span>
           </span>
         </a>
 
         {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6 lg:gap-8">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-zinc-400 hover:text-white transition-colors duration-200 relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-red-500 after:to-rose-400 hover:after:w-full after:transition-all after:duration-300"
+              className="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200"
             >
               {l.label}
             </a>
           ))}
+        </div>
+
+        {/* CTA Button */}
+        <div className="hidden md:block">
           <a
             href="#contact"
-            className="inline-flex items-center justify-center bg-zinc-900/90 border border-white/15 text-white font-semibold text-sm px-6 py-2.5 rounded-full hover:bg-zinc-800 hover:border-white/30 transition-all duration-300 backdrop-blur-md hover:scale-105 cursor-pointer"
+            className="inline-flex items-center justify-center bg-blue-500 hover:bg-blue-400 text-white font-semibold text-sm px-6 py-2 rounded-full shadow-[0_0_20px_rgba(59,130,246,0.5)] hover:shadow-[0_0_25px_rgba(59,130,246,0.8)] transition-all duration-300 hover:scale-105 cursor-pointer"
           >
             Démarrer mon projet
           </a>
         </div>
 
-        {/* Hamburger */}
+        {/* Mobile Hamburger */}
         <button
-          className="md:hidden text-white cursor-pointer p-2 rounded-lg bg-white/5 border border-white/10"
+          className="md:hidden text-white cursor-pointer p-1.5 rounded-full bg-white/5 border border-white/10"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menu"
         >
-          {menuOpen ? <X className="w-6 h-6 text-rose-500" /> : <Menu className="w-6 h-6" />}
+          {menuOpen ? <X className="w-5 h-5 text-blue-400" /> : <Menu className="w-5 h-5" />}
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu dropdown */}
       {menuOpen && (
-        <div className="md:hidden px-6 pt-4 pb-6 flex flex-col gap-4 bg-black/95 backdrop-blur-2xl border-b border-white/10 shadow-2xl animate-in slide-in-from-top duration-300">
+        <div className="md:hidden mt-2 max-w-6xl mx-auto px-6 py-5 flex flex-col gap-4 rounded-3xl bg-[#0a0e1a]/95 backdrop-blur-2xl border border-slate-800 shadow-2xl animate-in slide-in-from-top duration-300">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-zinc-300 hover:text-white font-medium transition-colors text-base py-2 border-b border-white/5"
+              className="text-slate-300 hover:text-white font-medium transition-colors text-base py-1.5 border-b border-white/5"
               onClick={() => setMenuOpen(false)}
             >
               {l.label}
@@ -78,7 +81,7 @@ export default function Navbar() {
           ))}
           <a
             href="#contact"
-            className="mt-2 bg-zinc-900/90 border border-white/15 text-white px-6 py-3 rounded-full text-sm font-semibold text-center hover:bg-zinc-800 hover:border-white/30 transition-all backdrop-blur-md cursor-pointer"
+            className="mt-2 bg-blue-500 hover:bg-blue-400 text-white px-6 py-3 rounded-full text-sm font-semibold text-center shadow-[0_0_20px_rgba(59,130,246,0.5)] transition-all"
             onClick={() => setMenuOpen(false)}
           >
             Démarrer mon projet
