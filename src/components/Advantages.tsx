@@ -10,7 +10,6 @@ const advantages = [
     desc: "Site livré sous 7 jours, prêt à l'emploi.",
     rotate: "-rotate-2",
     side: "left",
-    pinColor: "bg-orange-400 shadow-orange-400/40",
   },
   {
     icon: PenSquare,
@@ -19,7 +18,6 @@ const advantages = [
     desc: "Un design unique adapté à votre identité.",
     rotate: "rotate-1",
     side: "right",
-    pinColor: "bg-blue-400 shadow-blue-400/40",
   },
   {
     icon: Smartphone,
@@ -28,7 +26,6 @@ const advantages = [
     desc: "Parfait sur mobile, tablette et desktop.",
     rotate: "-rotate-1",
     side: "left",
-    pinColor: "bg-violet-500 shadow-violet-500/40",
   },
   {
     icon: Search,
@@ -37,7 +34,6 @@ const advantages = [
     desc: "Visible sur Google dès le lancement.",
     rotate: "rotate-2",
     side: "right",
-    pinColor: "bg-orange-400 shadow-orange-400/40",
   },
   {
     icon: Sparkles,
@@ -46,7 +42,6 @@ const advantages = [
     desc: "Technologies IA pour un résultat optimal.",
     rotate: "-rotate-2",
     side: "left",
-    pinColor: "bg-blue-400 shadow-blue-400/40",
   },
   {
     icon: Headphones,
@@ -55,7 +50,6 @@ const advantages = [
     desc: "Accompagnement après la livraison.",
     rotate: "rotate-1",
     side: "right",
-    pinColor: "bg-violet-500 shadow-violet-500/40",
   },
 ];
 
@@ -81,9 +75,9 @@ export default function Advantages() {
                 <div
                   className={`relative w-64 sm:w-72 bg-zinc-950 border border-white/10 rounded-2xl px-6 pt-8 pb-6 shadow-[0_10px_40px_rgba(0,0,0,0.7)] transition-transform duration-300 hover:scale-[1.03] ${a.rotate}`}
                 >
-                  {/* Pin */}
+                  {/* Pin — white glass */}
                   <div
-                    className={`absolute -top-3.5 left-1/2 -translate-x-1/2 w-7 h-7 rounded-full border-2 border-white/20 shadow-lg z-10 ${a.pinColor}`}
+                    className="absolute -top-3.5 left-1/2 -translate-x-1/2 w-7 h-7 rounded-full bg-white/20 border border-white/40 backdrop-blur-md shadow-[0_2px_10px_rgba(255,255,255,0.15)] z-10"
                   />
 
                   {/* Number + Icon row */}
