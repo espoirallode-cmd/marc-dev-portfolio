@@ -29,6 +29,7 @@ export default function Footer() {
     { name: "Process", href: "#process" },
     { name: "Offres", href: "#offres" },
     { name: "FAQ", href: "#faq" },
+    { name: "Réalisation", href: "#realisations" },
     { name: "Contact", href: "#contact" },
   ];
 

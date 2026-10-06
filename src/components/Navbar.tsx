@@ -17,6 +17,7 @@ export default function Navbar() {
     { label: "Process", href: "#process" },
     { label: "Offres", href: "#offres" },
     { label: "FAQ", href: "#faq" },
+    { label: "Réalisation", href: "#realisations" },
     { label: "Contact", href: "#contact" },
   ];
 
