@@ -140,7 +140,7 @@ export default function Footer() {
           </motion.div>
 
           {/* Contact Column */}
-          <motion.div variants={itemVariants}>
+          <motion.div variants={itemVariants} className="hidden md:block">
             <h4 className="mb-8 text-white text-lg font-bold tracking-wide uppercase">
               Contact
             </h4>
