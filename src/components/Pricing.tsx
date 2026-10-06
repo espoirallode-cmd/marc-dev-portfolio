@@ -33,7 +33,7 @@ export default function Pricing() {
         <div className="flex flex-col gap-10 sm:gap-16">
 
           {/* Header */}
-          <div className="flex flex-col items-center gap-4 text-center max-w-2xl mx-auto">
+          <div className="flex flex-col items-center gap-4 text-center max-w-2xl mx-auto reveal" style={{ transitionDelay: "0ms" }}>
             <h2 className="w-fit mx-auto font-heading font-extrabold text-3xl sm:text-5xl text-center bg-gradient-to-b from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
               Mes offres
             </h2>
@@ -42,10 +42,14 @@ export default function Pricing() {
             </p>
           </div>
 
-          {/* Steps — Content15 layout */}
+          {/* Steps */}
           <div className="relative grid grid-cols-12 gap-8 overflow-hidden">
             {steps.map((step, idx) => (
-              <div key={idx} className="col-span-12 xl:col-span-4">
+              <div
+                key={idx}
+                className="col-span-12 xl:col-span-4 reveal"
+                style={{ transitionDelay: `${100 + idx * 150}ms` }}
+              >
                 <div className="group relative rounded-lg px-5 xl:px-10 py-2">
                   {/* Left white border */}
                   <div className="absolute inset-y-0 left-0 z-20 w-0.5 rounded-full bg-white/40" />

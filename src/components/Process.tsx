@@ -43,13 +43,13 @@ export default function Process() {
       <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-12">
           {/* Header Title Preserved */}
-          <h2 className="w-fit mx-auto font-heading font-extrabold text-3xl sm:text-5xl text-center mb-6 bg-gradient-to-b from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
+          <h2 className="w-fit mx-auto font-heading font-extrabold text-3xl sm:text-5xl text-center mb-6 bg-gradient-to-b from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent reveal" style={{ transitionDelay: "0ms" }}>
             Comment ça marche ?
           </h2>
 
           <div className="relative grid grid-cols-12 gap-0 overflow-hidden w-full">
             {steps.map((step, idx) => (
-              <div key={idx} className="col-span-12 xl:col-span-3">
+              <div key={idx} className="col-span-12 xl:col-span-3 reveal" style={{ transitionDelay: `${100 + idx * 150}ms` }}>
                 <div className="group relative rounded-lg p-4 xl:p-8">
                   <div className="flex flex-row gap-4 md:gap-6 xl:flex-col xl:items-center xl:text-center">
                     <div className="relative xl:w-full">
