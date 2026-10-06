@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useReveal } from "@/hooks/use-reveal";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -25,13 +24,6 @@ interface Project {
   category: string;
   color: string;
 }
-
-const glass = cn(
-  "border bg-black/60",
-  "border-white/10",
-  "backdrop-blur-md",
-  "shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_8px_30px_-12px_rgba(0,0,0,0.5)]"
-);
 
 const projects: Project[] = [
   {
@@ -115,19 +107,6 @@ function ProjectCard({ project }: { project: Project }) {
           aria-hidden="true"
           className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-80"
         />
-        <Badge
-          variant="outline"
-          className={cn(
-            glass,
-            "absolute top-3 right-3 border-white/20 font-semibold text-white bg-black/60 backdrop-blur-md"
-          )}
-        >
-          {project.category}
-        </Badge>
-        {/* Number badge - White Glass */}
-        <span className="absolute top-3 left-3 font-mono font-bold text-xs px-2.5 py-1 rounded-full bg-white/15 border border-white/30 text-white backdrop-blur-md shadow-sm">
-          {project.id}
-        </span>
       </div>
 
       <div className="flex flex-1 flex-col p-5 sm:p-6">
@@ -169,15 +148,15 @@ function ProjectCard({ project }: { project: Project }) {
 }
 
 export default function Projects() {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState("Tout");
   const [searchQuery, setSearchQuery] = useState("");
   const ref = useReveal();
 
-  const categories = ["All", ...Array.from(new Set(projects.map((p) => p.category)))];
+  const categories = ["Tout", ...Array.from(new Set(projects.map((p) => p.category)))];
 
   const filteredProjects = projects.filter((project) => {
     const matchesCategory =
-      activeCategory === "All" || project.category === activeCategory;
+      activeCategory === "Tout" || project.category === activeCategory;
     const matchesSearch =
       project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -187,7 +166,7 @@ export default function Projects() {
 
   const resetFilters = () => {
     setSearchQuery("");
-    setActiveCategory("All");
+    setActiveCategory("Tout");
   };
 
   return (
