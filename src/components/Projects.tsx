@@ -85,7 +85,7 @@ const projects: Project[] = [
     description: "Service d'impression artistique personnalisée et galerie d'œuvres numériques.",
     url: "https://artprintly.vercel.app",
     displayUrl: "artprintly.vercel.app",
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=800&auto=format&fit=crop",
+    image: "/assets/project-5.png",
     category: "Art & Print",
     color: "#a3e635",
   },
