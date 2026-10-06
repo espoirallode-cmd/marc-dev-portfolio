@@ -26,8 +26,8 @@ export default function Footer() {
   const navLinks = [
     { name: "Accueil", href: "#hero" },
     { name: "Avantages", href: "#avantages" },
-    { name: "Offres", href: "#offres" },
     { name: "Process", href: "#process" },
+    { name: "Offres", href: "#offres" },
     { name: "FAQ", href: "#faq" },
     { name: "Contact", href: "#contact" },
   ];
