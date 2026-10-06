@@ -29,7 +29,7 @@ const cards = [
     image: "/assets/card-3.png",
     dots: 4,
     activeDot: 2,
-    accent: "from-indigo-500/30 via-blue-600/20 to-transparent",
+    accent: "from-zinc-500/20 via-zinc-600/10 to-transparent",
   },
   {
     brand: "Aura Store®",
@@ -72,11 +72,6 @@ export default function BookmarkCards() {
       className="relative w-full bg-black py-24 overflow-hidden"
       id="bookmark-cards"
     >
-      {/* Subtle background glow */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute left-1/3 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-indigo-900/10 rounded-full blur-[120px]" />
-      </div>
-
       <div
         className="relative max-w-6xl mx-auto px-6 flex flex-col lg:flex-row items-start gap-16"
         style={{
