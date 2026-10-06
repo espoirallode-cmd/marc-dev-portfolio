@@ -12,7 +12,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-32 pb-16 sm:pt-40 bg-black bg-grid-pattern"
+      className="relative flex flex-col items-center justify-center overflow-hidden pt-32 pb-6 sm:pt-40 sm:pb-8 bg-black bg-grid-pattern"
     >
       {/* Glow top full-width */}
       <div
