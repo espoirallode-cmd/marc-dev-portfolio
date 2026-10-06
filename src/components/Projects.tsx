@@ -74,7 +74,7 @@ const projects: Project[] = [
     description: "Boutique de mode haut de gamme réactive aux tendances contemporaines.",
     url: "https://el-elias-fashion.vercel.app",
     displayUrl: "el-elias-fashion.vercel.app",
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800&auto=format&fit=crop",
+    image: "/assets/project-4.png",
     category: "Mode",
     color: "#2dd4bf",
   },
