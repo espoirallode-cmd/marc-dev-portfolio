@@ -63,7 +63,7 @@ const projects: Project[] = [
     description: "Site e-commerce & vitrine gourmande avec menu interactif et commande rapide.",
     url: "https://negos-food.vercel.app",
     displayUrl: "negos-food.vercel.app",
-    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop",
+    image: "/assets/project-3.png",
     category: "Restauration",
     color: "#4ade80",
   },
