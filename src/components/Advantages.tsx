@@ -64,16 +64,16 @@ export default function Advantages() {
         </h2>
 
         {/* Staggered sticky-note layout */}
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-6 sm:gap-0">
           {advantages.map((a, i) => (
             <Fragment key={i}>
               {/* Card row */}
               <div
-                className={`reveal flex w-full ${a.side === "right" ? "justify-end" : "justify-start"}`}
+                className={`reveal flex w-full justify-center ${a.side === "right" ? "sm:justify-end" : "sm:justify-start"}`}
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
                 <div
-                  className={`relative w-64 sm:w-72 bg-zinc-950 border border-white/10 rounded-2xl px-6 pt-8 pb-6 shadow-[0_10px_40px_rgba(0,0,0,0.7)] transition-transform duration-300 hover:scale-[1.03] ${a.rotate}`}
+                  className={`relative w-72 bg-zinc-950 border border-white/10 rounded-2xl px-6 pt-8 pb-6 shadow-[0_10px_40px_rgba(0,0,0,0.7)] transition-transform duration-300 hover:scale-[1.03] rotate-0 sm:${a.rotate}`}
                 >
                   {/* Pin — white glass */}
                   <div
