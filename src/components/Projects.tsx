@@ -52,7 +52,7 @@ const projects: Project[] = [
     description: "Plateforme de coaching & hub de transformation personnelle sur-mesure.",
     url: "https://la-transformation-hub.vercel.app",
     displayUrl: "la-transformation-hub.vercel.app",
-    image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=800&auto=format&fit=crop",
+    image: "/assets/project-2.png",
     category: "Coaching",
     color: "#f97316",
   },
