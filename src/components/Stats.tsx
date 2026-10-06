@@ -47,7 +47,7 @@ interface Stat {
 
 export default function Stats() {
   const stats: Stat[] = [
-    { icon: FolderOpen, value: 20, label: "Projets livrés" },
+    { icon: FolderOpen, value: 10, label: "Projets réalisés" },
     { icon: Clock,      value: 7,  label: "Délai moyen (jours)", suffix: "" },
     { icon: Smile,      value: 100, label: "Clients satisfaits" },
   ];
