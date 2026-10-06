@@ -32,17 +32,17 @@ export default function FAQ() {
   return (
     <section id="faq" className="py-24 bg-black relative" ref={ref}>
       <div className="max-w-3xl mx-auto px-6">
-        <h2 className="w-fit mx-auto font-heading font-extrabold text-3xl sm:text-5xl text-center mb-16 bg-gradient-to-b from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
+        <h2 className="w-fit mx-auto font-heading font-extrabold text-3xl sm:text-5xl text-center mb-16 bg-gradient-to-b from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent reveal" style={{ transitionDelay: "0ms" }}>
           Questions fréquentes
         </h2>
 
-        <div className="reveal divide-y divide-white/10 border-y border-white/10">
+        <div className="divide-y divide-white/10 border-y border-white/10">
           {faqs.map((faq, i) => {
             const isOpen = openIndex === i;
             const numStr = String(i + 1).padStart(2, "0");
 
             return (
-              <div key={i} className="py-6 transition-colors">
+              <div key={i} className={`py-6 transition-colors reveal`} style={{ transitionDelay: `${100 + i * 120}ms` }}>
                 <button
                   className="w-full flex items-center justify-between gap-4 sm:gap-6 text-left cursor-pointer group"
                   onClick={() => setOpenIndex(isOpen ? null : i)}

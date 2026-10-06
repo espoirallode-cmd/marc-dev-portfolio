@@ -172,7 +172,7 @@ export default function Projects() {
   return (
     <section id="realisations" className="bg-black py-16 sm:py-24 relative" ref={ref}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="w-fit mx-auto font-heading font-extrabold text-3xl sm:text-5xl text-center mb-16 bg-gradient-to-b from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
+        <h2 className="w-fit mx-auto font-heading font-extrabold text-3xl sm:text-5xl text-center mb-16 bg-gradient-to-b from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent reveal" style={{ transitionDelay: "0ms" }}>
           Mes récentes réalisations
         </h2>
 
@@ -228,6 +228,8 @@ export default function Projects() {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.2 }}
                 key={project.slug}
+                className="reveal"
+                style={{ transitionDelay: `${projects.indexOf(project) * 100}ms` }}
               >
                 <ProjectCard project={project} />
               </motion.div>
