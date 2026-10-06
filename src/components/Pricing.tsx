@@ -1,6 +1,5 @@
 import { useReveal } from "@/hooks/use-reveal";
 import { Globe, Palette, Rocket } from "lucide-react";
-import { Star } from "lucide-react";
 
 const offers = [
   {
@@ -32,29 +31,12 @@ const offers = [
   },
 ];
 
-function DecorativeStars() {
-  return (
-    <div className="absolute left-1/2 w-screen -translate-x-1/2 pointer-events-none before:absolute before:top-0 before:left-[-100vw] before:h-px before:w-[200vw] before:border-t before:border-dashed before:border-zinc-800">
-      <div className="relative container mx-auto h-full max-sm:w-[calc(100%-30px)]">
-        <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 pt-1 pl-1 text-zinc-700">
-          <Star className="size-10 text-zinc-700 fill-zinc-900 max-md:hidden" />
-        </div>
-        <div className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 pt-1 pr-1 text-zinc-700">
-          <Star className="size-10 text-zinc-700 fill-zinc-900 max-md:hidden" />
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function Pricing() {
   const ref = useReveal();
 
   return (
     <section id="offres" className="overflow-hidden py-24 sm:py-32 bg-black relative" ref={ref}>
-      <div className="relative container mx-auto border-x border-dashed border-zinc-800/80 py-8 sm:py-16 px-4 sm:px-6">
-        <DecorativeStars />
-
+      <div className="relative container mx-auto px-4 sm:px-6">
         <div className="flex flex-col gap-10 sm:gap-16">
 
           {/* Header — titre et sous-titre préservés */}
@@ -114,8 +96,6 @@ export default function Pricing() {
           </div>
 
         </div>
-
-        <DecorativeStars />
       </div>
     </section>
   );
