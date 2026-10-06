@@ -28,7 +28,7 @@ export default function Pricing() {
   const ref = useReveal();
 
   return (
-    <section id="offres" className="overflow-hidden py-24 sm:py-32 bg-black relative" ref={ref}>
+    <section id="offres" className="overflow-hidden py-16 sm:py-24 bg-black relative" ref={ref}>
       <div className="relative container mx-auto px-4 sm:px-6">
         <div className="flex flex-col gap-10 sm:gap-16">
 

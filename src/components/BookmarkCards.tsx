@@ -69,7 +69,7 @@ export default function BookmarkCards() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full bg-black py-24 overflow-hidden"
+      className="relative w-full bg-black py-16 sm:py-24 overflow-hidden"
       id="bookmark-cards"
     >
       <div

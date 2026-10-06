@@ -39,7 +39,7 @@ export default function Process() {
   const ref = useReveal();
 
   return (
-    <section id="process" className="py-24 sm:py-32 bg-black relative" ref={ref}>
+    <section id="process" className="py-16 sm:py-24 bg-black relative" ref={ref}>
       <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-12">
           {/* Header Title Preserved */}

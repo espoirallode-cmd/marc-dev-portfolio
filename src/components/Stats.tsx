@@ -53,7 +53,7 @@ export default function Stats() {
   ];
 
   return (
-    <section className="py-16 bg-black relative z-10">
+    <section className="py-16 sm:py-24 bg-black relative z-10">
       <div className="max-w-6xl mx-auto px-6">
         <div className="bg-white/5 border border-white/15 backdrop-blur-2xl rounded-3xl p-8 sm:p-12 shadow-[0_0_60px_rgba(255,255,255,0.04)] grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 text-center">
           {stats.map((s, i) => (

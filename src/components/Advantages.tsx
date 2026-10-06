@@ -57,7 +57,7 @@ export default function Advantages() {
   const ref = useReveal();
 
   return (
-    <section id="avantages" className="py-24 bg-black relative" ref={ref}>
+    <section id="avantages" className="py-16 sm:py-24 bg-black relative" ref={ref}>
       <div className="max-w-3xl mx-auto px-6">
         <h2 className="w-fit mx-auto font-heading font-extrabold text-3xl sm:text-5xl text-center mb-20 bg-gradient-to-b from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
           Pourquoi Marc Dev ?
