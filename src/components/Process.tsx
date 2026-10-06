@@ -24,7 +24,7 @@ const steps: Step[] = [
   {
     subtitle: "Étape 03",
     title: "Développement",
-    desc: "Intégration rapide propulsée par l'IA.",
+    desc: "Votre maquette prend vie, avec un code soigné et optimisé.",
     icon: Code,
   },
   {
