@@ -38,8 +38,8 @@ const advantages = [
   {
     icon: Sparkles,
     num: "05",
-    title: "Propulsé par l'IA",
-    desc: "Technologies IA pour un résultat optimal.",
+    title: "Pensé pour convertir",
+    desc: "Chaque détail est conçu pour transformer vos visiteurs en clients.",
     rotate: "-rotate-2",
     side: "left",
   },
