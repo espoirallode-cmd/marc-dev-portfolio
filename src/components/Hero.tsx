@@ -25,33 +25,11 @@ export default function Hero() {
 
         {/* Main Heading */}
         <h1
-          className="font-heading font-extrabold text-4xl sm:text-6xl lg:text-[4.75rem] leading-[1.08] tracking-tight mb-8 bg-gradient-to-b from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent"
+          className="font-heading font-extrabold text-4xl sm:text-6xl lg:text-[4.75rem] leading-[1.08] tracking-tight bg-gradient-to-b from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent"
           style={{ opacity: mounted ? 1 : 0, transition: "opacity 0.8s ease-out" }}
         >
           {title}
         </h1>
-
-        {/* Subtitle */}
-        <p className="font-body text-zinc-400 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-          Des sites d'exception qui captivent votre audience, convertissent vos visiteurs et propulsent votre activité.
-        </p>
-
-        {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a
-            href="#offres"
-            className="group relative inline-flex items-center gap-2 bg-[#e60029] hover:bg-[#c2001f] text-white font-bold text-base px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 cursor-pointer"
-          >
-            <span>Voir mes offres</span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </a>
-          <a
-            href="#contact"
-            className="inline-flex items-center justify-center bg-zinc-900/90 border border-white/15 text-white font-semibold text-base px-8 py-4 rounded-full hover:bg-zinc-800 hover:border-white/30 transition-all duration-300 backdrop-blur-md hover:scale-105 cursor-pointer"
-          >
-            Me contacter
-          </a>
-        </div>
       </div>
     </section>
   );
