@@ -96,7 +96,7 @@ const projects: Project[] = [
     description: "Restaurant local authentique avec réservation et commande en ligne.",
     url: "https://chez-hoovi-bouffe.vercel.app",
     displayUrl: "chez-hoovi-bouffe.vercel.app",
-    image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop",
+    image: "/assets/project-6.png",
     category: "Restauration",
     color: "#c084fc",
   },
