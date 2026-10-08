@@ -7,9 +7,6 @@ const steps = [
     subtitle: "Étape 01",
     description:
       "On échange sur vos besoins, votre activité et vos objectifs. Je vous prépare ensuite un devis clair et personnalisé sans engagement.",
-    gradient: "linear-gradient(to bottom, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.06) 55%, #e11d48 100%)",
-    badgeGradient: "linear-gradient(135deg, #e11d48, #7c3aed)",
-    glow: "rgba(225, 29, 72, 0.35)",
   },
   {
     number: "2",
@@ -17,9 +14,6 @@ const steps = [
     subtitle: "Étape 02",
     description:
       "Vous acceptez le devis et on lance le projet ensemble. Un planning détaillé vous est envoyé dès le départ pour suivre l'avancement.",
-    gradient: "linear-gradient(to bottom, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.06) 55%, #84cc16 100%)",
-    badgeGradient: "linear-gradient(135deg, #a3e635, #16a34a)",
-    glow: "rgba(132, 204, 22, 0.35)",
   },
   {
     number: "3",
@@ -27,9 +21,6 @@ const steps = [
     subtitle: "Étape 03",
     description:
       "Je crée votre site de A à Z : design sur-mesure, développement, optimisation et mise en ligne. Votre site est livré clé en main.",
-    gradient: "linear-gradient(to bottom, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.06) 55%, #0ea5e9 100%)",
-    badgeGradient: "linear-gradient(135deg, #38bdf8, #6366f1)",
-    glow: "rgba(14, 165, 233, 0.35)",
   },
 ];
 
@@ -52,55 +43,31 @@ export default function Pricing() {
           </div>
 
           {/* Steps */}
-          <div className="relative grid grid-cols-12 gap-8">
+          <div className="relative grid grid-cols-12 gap-8 overflow-hidden">
             {steps.map((step, idx) => (
               <div
                 key={idx}
                 className="col-span-12 xl:col-span-4 reveal"
                 style={{ transitionDelay: `${100 + idx * 150}ms` }}
               >
-                {/* Gradient border wrapper */}
-                <div
-                  className="group relative rounded-2xl p-px transition-all duration-500"
-                  style={{ background: step.gradient }}
-                >
-                  {/* Bottom glow */}
-                  <div
-                    className="absolute bottom-0 left-1/2 -translate-x-1/2 h-px w-3/4 blur-sm rounded-full transition-all duration-500 group-hover:w-full group-hover:blur-md"
-                    style={{ background: step.glow.replace("0.35", "0.7") }}
-                  />
+                <div className="group relative rounded-lg px-5 xl:px-10 py-2">
+                  {/* Left white border */}
+                  <div className="absolute inset-y-0 left-0 z-20 w-0.5 rounded-full bg-white/40" />
 
-                  {/* Card inner — white glass */}
-                  <div
-                    className="relative rounded-2xl px-7 py-8 flex flex-col gap-6 overflow-hidden transition-all duration-500 group-hover:-translate-y-1"
-                    style={{
-                      background: "rgba(255, 255, 255, 0.04)",
-                      backdropFilter: "blur(20px)",
-                      WebkitBackdropFilter: "blur(20px)",
-                    }}
-                  >
-                    {/* Subtle inner glow at bottom */}
-                    <div
-                      className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none rounded-b-2xl"
-                      style={{
-                        background: `linear-gradient(to top, ${step.glow}, transparent)`,
-                      }}
-                    />
-
-                    {/* Number badge */}
-                    <div className="relative z-10">
-                      <div
-                        className="size-12 md:size-14 rounded-xl flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110"
-                        style={{ background: step.badgeGradient }}
-                      >
-                        <span className="font-heading font-extrabold text-lg md:text-xl text-white drop-shadow">
-                          {step.number}
-                        </span>
+                  <div className="relative z-30 flex flex-col gap-5 md:gap-6">
+                    {/* Number badge — white glass */}
+                    <div className="xl:w-full">
+                      <div className="z-20 inline-flex">
+                        <div className="relative size-12 rounded-xl md:size-14 bg-white/10 border border-white/20 backdrop-blur-md text-white flex items-center justify-center transition-all duration-300 ease-in-out group-hover:scale-110 group-hover:bg-white/15 group-hover:border-white/40">
+                          <span className="font-heading font-extrabold text-lg md:text-xl text-white">
+                            {step.number}
+                          </span>
+                        </div>
                       </div>
                     </div>
 
                     {/* Text */}
-                    <div className="relative z-10 flex flex-col gap-4">
+                    <div className="flex flex-col gap-4">
                       <div className="flex flex-col gap-1.5">
                         <h3 className="text-lg font-heading font-bold text-white sm:text-xl">
                           {step.title}
