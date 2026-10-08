@@ -41,13 +41,6 @@ export default function Pricing() {
 
   return (
     <section id="offres" className="overflow-hidden py-16 sm:py-24 bg-black relative" ref={ref}>
-      {/* Ambient background glow behind the roadmap */}
-      <div
-        className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-40"
-        aria-hidden="true"
-      >
-        <div className="w-[600px] h-[600px] rounded-full bg-gradient-to-b from-white/10 to-transparent blur-[120px]" />
-      </div>
 
       <div className="relative container mx-auto px-4 sm:px-6">
         <div className="flex flex-col gap-12 sm:gap-16">
