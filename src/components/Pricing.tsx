@@ -96,7 +96,7 @@ export default function Pricing() {
             {/* Steps Container */}
             <div className="relative z-10 flex flex-col gap-10 lg:gap-14">
 
-              {/* STEP 01: Card on Left, Node in Center, STEP 01 on Right */}
+              {/* STEP 01: Card on Left, Node in Center, ÉTAPE 01 on Right */}
               <div
                 className="reveal grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] items-center gap-6 lg:gap-8"
                 style={{ transitionDelay: "100ms" }}
@@ -108,10 +108,17 @@ export default function Pricing() {
                       <div className="size-2 rounded-full bg-white" />
                     </div>
                     <span className="text-xs font-bold uppercase tracking-widest text-zinc-400">
-                      Étape 01
+                      Étape {steps[0].number}
                     </span>
                   </div>
-                  <span className="text-3xl font-heading font-black text-white">01</span>
+                  <div className="flex flex-col items-end">
+                    <span className="text-[10px] font-extrabold tracking-[0.2em] text-white/60 uppercase font-heading">
+                      ÉTAPE
+                    </span>
+                    <span className="text-3xl font-heading font-black text-white tracking-tight">
+                      {steps[0].number}
+                    </span>
+                  </div>
                 </div>
 
                 {/* Left: Capsule White Glass Card */}
@@ -151,18 +158,18 @@ export default function Pricing() {
                   </div>
                 </div>
 
-                {/* Right: STEP 01 Typography */}
+                {/* Right: ÉTAPE 01 Typography */}
                 <div className="hidden lg:flex flex-col justify-center items-start pl-4 xl:pl-8">
                   <span className="text-sm font-extrabold tracking-[0.25em] text-white/60 uppercase font-heading">
-                    STEP
+                    ÉTAPE
                   </span>
-                  <span className="text-6xl xl:text-7xl font-black font-heading text-white tracking-tight drop-shadow-[0_4px_20px_rgba(255,255,255,0.25)]">
+                  <span className="text-6xl xl:text-7xl font-black font-heading text-white tracking-tight">
                     {steps[0].number}
                   </span>
                 </div>
               </div>
 
-              {/* STEP 02: STEP 02 on Left, Node in Center, Card on Right */}
+              {/* STEP 02: ÉTAPE 02 on Left, Node in Center, Card on Right */}
               <div
                 className="reveal grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] items-center gap-6 lg:gap-8"
                 style={{ transitionDelay: "250ms" }}
@@ -174,18 +181,25 @@ export default function Pricing() {
                       <div className="size-2 rounded-full bg-white" />
                     </div>
                     <span className="text-xs font-bold uppercase tracking-widest text-zinc-400">
-                      Étape 02
+                      Étape {steps[1].number}
                     </span>
                   </div>
-                  <span className="text-3xl font-heading font-black text-white">02</span>
+                  <div className="flex flex-col items-end">
+                    <span className="text-[10px] font-extrabold tracking-[0.2em] text-white/60 uppercase font-heading">
+                      ÉTAPE
+                    </span>
+                    <span className="text-3xl font-heading font-black text-white tracking-tight">
+                      {steps[1].number}
+                    </span>
+                  </div>
                 </div>
 
-                {/* Left: STEP 02 Typography */}
+                {/* Left: ÉTAPE 02 Typography */}
                 <div className="hidden lg:flex flex-col justify-center items-end pr-4 xl:pr-8 text-right">
                   <span className="text-sm font-extrabold tracking-[0.25em] text-white/60 uppercase font-heading">
-                    STEP
+                    ÉTAPE
                   </span>
-                  <span className="text-6xl xl:text-7xl font-black font-heading text-white tracking-tight drop-shadow-[0_4px_20px_rgba(255,255,255,0.25)]">
+                  <span className="text-6xl xl:text-7xl font-black font-heading text-white tracking-tight">
                     {steps[1].number}
                   </span>
                 </div>
@@ -228,7 +242,7 @@ export default function Pricing() {
                 </div>
               </div>
 
-              {/* STEP 03: Card on Left, Node in Center, STEP 03 on Right */}
+              {/* STEP 03: Card on Left, Node in Center, ÉTAPE 03 on Right */}
               <div
                 className="reveal grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] items-center gap-6 lg:gap-8"
                 style={{ transitionDelay: "400ms" }}
@@ -240,10 +254,17 @@ export default function Pricing() {
                       <div className="size-2 rounded-full bg-white" />
                     </div>
                     <span className="text-xs font-bold uppercase tracking-widest text-zinc-400">
-                      Étape 03
+                      Étape {steps[2].number}
                     </span>
                   </div>
-                  <span className="text-3xl font-heading font-black text-white">03</span>
+                  <div className="flex flex-col items-end">
+                    <span className="text-[10px] font-extrabold tracking-[0.2em] text-white/60 uppercase font-heading">
+                      ÉTAPE
+                    </span>
+                    <span className="text-3xl font-heading font-black text-white tracking-tight">
+                      {steps[2].number}
+                    </span>
+                  </div>
                 </div>
 
                 {/* Left: Capsule White Glass Card */}
@@ -283,12 +304,12 @@ export default function Pricing() {
                   </div>
                 </div>
 
-                {/* Right: STEP 03 Typography */}
+                {/* Right: ÉTAPE 03 Typography */}
                 <div className="hidden lg:flex flex-col justify-center items-start pl-4 xl:pl-8">
                   <span className="text-sm font-extrabold tracking-[0.25em] text-white/60 uppercase font-heading">
-                    STEP
+                    ÉTAPE
                   </span>
-                  <span className="text-6xl xl:text-7xl font-black font-heading text-white tracking-tight drop-shadow-[0_4px_20px_rgba(255,255,255,0.25)]">
+                  <span className="text-6xl xl:text-7xl font-black font-heading text-white tracking-tight">
                     {steps[2].number}
                   </span>
                 </div>
