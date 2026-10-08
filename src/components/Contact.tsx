@@ -105,7 +105,7 @@ export default function Contact() {
 
             <button
               type="submit"
-              className="w-full group bg-[#e60029] hover:brightness-110 text-white py-4 rounded-xl font-bold text-sm uppercase tracking-wider transition-all duration-300 hover:scale-[1.01] cursor-pointer flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(230,0,41,0.35)] hover:shadow-[0_0_30px_rgba(230,0,41,0.55)]"
+              className="w-full group bg-[#e60029] hover:brightness-110 text-white py-4 rounded-xl font-bold text-sm uppercase tracking-wider transition-all duration-300 hover:scale-[1.01] cursor-pointer flex items-center justify-center gap-2"
               style={{ backgroundColor: "#e60029" }}
             >
               <span>Envoyer ma demande</span>
