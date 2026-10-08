@@ -41,7 +41,7 @@ export default function Contact() {
             href="mailto:contactmarcosgraphique@gmail.com"
             className="bg-white/5 border border-white/15 text-white hover:bg-white/10 hover:border-white/30 px-6 py-3.5 rounded-2xl font-bold text-sm flex items-center justify-center gap-2.5 transition-all shadow-[0_0_15px_rgba(255,255,255,0.05)] cursor-pointer"
           >
-            <Mail className="w-5 h-5 text-rose-400" />
+            <Mail className="w-5 h-5 text-[#e60029]" />
             Envoyer un email
           </a>
         </div>
