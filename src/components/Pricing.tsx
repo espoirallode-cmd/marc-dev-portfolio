@@ -102,7 +102,7 @@ export default function Pricing() {
                       <div className="size-2 rounded-full bg-white" />
                     </div>
                     <span className="text-xs font-bold uppercase tracking-widest text-zinc-400">
-                      Étape {steps[0].number}
+                      Étape
                     </span>
                   </div>
                   <span className="text-3xl font-heading font-black text-white tracking-tight">
@@ -170,7 +170,7 @@ export default function Pricing() {
                       <div className="size-2 rounded-full bg-white" />
                     </div>
                     <span className="text-xs font-bold uppercase tracking-widest text-zinc-400">
-                      Étape {steps[1].number}
+                      Étape
                     </span>
                   </div>
                   <span className="text-3xl font-heading font-black text-white tracking-tight">
@@ -238,7 +238,7 @@ export default function Pricing() {
                       <div className="size-2 rounded-full bg-white" />
                     </div>
                     <span className="text-xs font-bold uppercase tracking-widest text-zinc-400">
-                      Étape {steps[2].number}
+                      Étape
                     </span>
                   </div>
                   <span className="text-3xl font-heading font-black text-white tracking-tight">
