@@ -68,37 +68,38 @@ export default function Pricing() {
           {/* Roadmap Timeline Container */}
           <div className="relative max-w-5xl mx-auto w-full">
 
-            {/* Desktop Serpentine Dotted Line SVG */}
+            {/* Desktop Center Vertical Dashed Line with Decorative Endpoints */}
             <svg
               className="hidden lg:block absolute inset-0 w-full h-full pointer-events-none z-0"
-              viewBox="0 0 1000 820"
-              preserveAspectRatio="none"
               fill="none"
             >
-              {/* Top starting decorative dot */}
-              <circle cx="500" cy="20" r="4.5" fill="#ffffff" opacity="0.8" />
-              <circle cx="500" cy="20" r="8" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" />
-
-              {/* Dotted serpentine path connecting node 1 (x: 520, y: 150) -> node 2 (x: 480, y: 410) -> node 3 (x: 520, y: 670) */}
-              <path
-                d="M 500 28 C 500 70, 520 100, 520 150 C 520 250, 480 310, 480 410 C 480 510, 520 570, 520 670 C 520 740, 500 765, 500 795"
-                stroke="rgba(255, 255, 255, 0.45)"
+              {/* Vertical line through exact horizontal center (50%) */}
+              <line
+                x1="50%"
+                y1="16"
+                x2="50%"
+                y2="calc(100% - 16px)"
+                stroke="rgba(255, 255, 255, 0.4)"
                 strokeWidth="2.5"
-                strokeDasharray="5 7"
+                strokeDasharray="6 8"
                 strokeLinecap="round"
               />
 
+              {/* Top starting decorative dot */}
+              <circle cx="50%" cy="12" r="4" fill="#ffffff" opacity="0.9" />
+              <circle cx="50%" cy="12" r="8" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" />
+
               {/* Bottom ending decorative dot */}
-              <circle cx="500" cy="800" r="4" fill="#ffffff" opacity="0.8" />
-              <circle cx="505" cy="815" r="2.5" fill="#ffffff" opacity="0.5" />
+              <circle cx="50%" cy="calc(100% - 12px)" r="4" fill="#ffffff" opacity="0.9" />
+              <circle cx="50%" cy="calc(100% - 12px)" r="8" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" />
             </svg>
 
             {/* Steps Container */}
-            <div className="relative z-10 flex flex-col gap-10 lg:gap-14">
+            <div className="relative z-10 flex flex-col gap-10 lg:gap-16">
 
-              {/* STEP 01: Card on Left, Node in Center, ÉTAPE 01 on Right */}
+              {/* STEP 01: Card on Left, Center Node at 50%, ÉTAPE 01 on Right */}
               <div
-                className="reveal grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] items-center gap-6 lg:gap-8"
+                className="reveal relative grid grid-cols-1 lg:grid-cols-2 items-center gap-6 lg:gap-0"
                 style={{ transitionDelay: "100ms" }}
               >
                 {/* Mobile step label (< lg) */}
@@ -122,7 +123,7 @@ export default function Pricing() {
                 </div>
 
                 {/* Left: Capsule White Glass Card */}
-                <div className="flex justify-end w-full">
+                <div className="flex justify-end w-full lg:pr-14">
                   <div className="group relative w-full max-w-lg rounded-3xl sm:rounded-full p-5 sm:p-6 sm:pr-4 sm:pl-8 bg-white/[0.08] backdrop-blur-2xl border border-white/20 shadow-[inset_0_1px_1px_rgba(255,255,255,0.35),0_12px_36px_rgba(0,0,0,0.5)] transition-all duration-300 hover:bg-white/[0.13] hover:border-white/35 hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.5),0_16px_48px_rgba(255,255,255,0.08)] flex flex-col sm:flex-row items-center gap-5 sm:gap-6">
                     {/* Text Details */}
                     <div className="flex-1 flex flex-col gap-2 text-center sm:text-left">
@@ -142,7 +143,7 @@ export default function Pricing() {
                         </div>
                       </div>
 
-                      {/* Right-pointing pointer towards the node */}
+                      {/* Right-pointing pointer towards the center node */}
                       <div
                         className="hidden lg:block absolute -right-2 top-1/2 -translate-y-1/2 w-0 h-0 border-y-[7px] border-y-transparent border-l-[10px] border-l-white/60 drop-shadow-[0_0_6px_rgba(255,255,255,0.5)]"
                         aria-hidden="true"
@@ -151,15 +152,15 @@ export default function Pricing() {
                   </div>
                 </div>
 
-                {/* Center: Concentric Node */}
-                <div className="hidden lg:flex items-center justify-center w-12 relative z-20">
-                  <div className="size-7 sm:size-8 rounded-full border-2 border-white/80 bg-black/90 backdrop-blur-md flex items-center justify-center shadow-[0_0_16px_rgba(255,255,255,0.5)]">
-                    <div className="size-2.5 sm:size-3 rounded-full bg-white shadow-[0_0_8px_#ffffff]" />
+                {/* Center: Concentric Node Centered on PC at 50% */}
+                <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 items-center justify-center">
+                  <div className="size-7 sm:size-8 rounded-full border-2 border-white/80 bg-black backdrop-blur-md flex items-center justify-center shadow-[0_0_16px_rgba(255,255,255,0.4)]">
+                    <div className="size-2.5 sm:size-3 rounded-full bg-white shadow-[0_0_6px_#ffffff]" />
                   </div>
                 </div>
 
                 {/* Right: ÉTAPE 01 Typography */}
-                <div className="hidden lg:flex flex-col justify-center items-start pl-4 xl:pl-8">
+                <div className="hidden lg:flex flex-col justify-center items-start lg:pl-14">
                   <span className="text-sm font-extrabold tracking-[0.25em] text-white/60 uppercase font-heading">
                     ÉTAPE
                   </span>
@@ -169,9 +170,9 @@ export default function Pricing() {
                 </div>
               </div>
 
-              {/* STEP 02: ÉTAPE 02 on Left, Node in Center, Card on Right */}
+              {/* STEP 02: ÉTAPE 02 on Left, Center Node at 50%, Card on Right */}
               <div
-                className="reveal grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] items-center gap-6 lg:gap-8"
+                className="reveal relative grid grid-cols-1 lg:grid-cols-2 items-center gap-6 lg:gap-0"
                 style={{ transitionDelay: "250ms" }}
               >
                 {/* Mobile step label (< lg) */}
@@ -195,7 +196,7 @@ export default function Pricing() {
                 </div>
 
                 {/* Left: ÉTAPE 02 Typography */}
-                <div className="hidden lg:flex flex-col justify-center items-end pr-4 xl:pr-8 text-right">
+                <div className="hidden lg:flex flex-col justify-center items-end lg:pr-14 text-right">
                   <span className="text-sm font-extrabold tracking-[0.25em] text-white/60 uppercase font-heading">
                     ÉTAPE
                   </span>
@@ -204,19 +205,19 @@ export default function Pricing() {
                   </span>
                 </div>
 
-                {/* Center: Concentric Node */}
-                <div className="hidden lg:flex items-center justify-center w-12 relative z-20">
-                  <div className="size-7 sm:size-8 rounded-full border-2 border-white/80 bg-black/90 backdrop-blur-md flex items-center justify-center shadow-[0_0_16px_rgba(255,255,255,0.5)]">
-                    <div className="size-2.5 sm:size-3 rounded-full bg-white shadow-[0_0_8px_#ffffff]" />
+                {/* Center: Concentric Node Centered on PC at 50% */}
+                <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 items-center justify-center">
+                  <div className="size-7 sm:size-8 rounded-full border-2 border-white/80 bg-black backdrop-blur-md flex items-center justify-center shadow-[0_0_16px_rgba(255,255,255,0.4)]">
+                    <div className="size-2.5 sm:size-3 rounded-full bg-white shadow-[0_0_6px_#ffffff]" />
                   </div>
                 </div>
 
                 {/* Right: Capsule White Glass Card */}
-                <div className="flex justify-start w-full">
+                <div className="flex justify-start w-full lg:pl-14">
                   <div className="group relative w-full max-w-lg rounded-3xl sm:rounded-full p-5 sm:p-6 sm:pl-4 sm:pr-8 bg-white/[0.08] backdrop-blur-2xl border border-white/20 shadow-[inset_0_1px_1px_rgba(255,255,255,0.35),0_12px_36px_rgba(0,0,0,0.5)] transition-all duration-300 hover:bg-white/[0.13] hover:border-white/35 hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.5),0_16px_48px_rgba(255,255,255,0.08)] flex flex-col sm:flex-row items-center gap-5 sm:gap-6">
                     {/* Circular White Glass Orb with Pointer */}
                     <div className="relative flex-shrink-0 order-2 sm:order-1">
-                      {/* Left-pointing pointer towards the node */}
+                      {/* Left-pointing pointer towards the center node */}
                       <div
                         className="hidden lg:block absolute -left-2 top-1/2 -translate-y-1/2 w-0 h-0 border-y-[7px] border-y-transparent border-r-[10px] border-r-white/60 drop-shadow-[0_0_6px_rgba(255,255,255,0.5)]"
                         aria-hidden="true"
@@ -242,9 +243,9 @@ export default function Pricing() {
                 </div>
               </div>
 
-              {/* STEP 03: Card on Left, Node in Center, ÉTAPE 03 on Right */}
+              {/* STEP 03: Card on Left, Center Node at 50%, ÉTAPE 03 on Right */}
               <div
-                className="reveal grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] items-center gap-6 lg:gap-8"
+                className="reveal relative grid grid-cols-1 lg:grid-cols-2 items-center gap-6 lg:gap-0"
                 style={{ transitionDelay: "400ms" }}
               >
                 {/* Mobile step label (< lg) */}
@@ -268,7 +269,7 @@ export default function Pricing() {
                 </div>
 
                 {/* Left: Capsule White Glass Card */}
-                <div className="flex justify-end w-full">
+                <div className="flex justify-end w-full lg:pr-14">
                   <div className="group relative w-full max-w-lg rounded-3xl sm:rounded-full p-5 sm:p-6 sm:pr-4 sm:pl-8 bg-white/[0.08] backdrop-blur-2xl border border-white/20 shadow-[inset_0_1px_1px_rgba(255,255,255,0.35),0_12px_36px_rgba(0,0,0,0.5)] transition-all duration-300 hover:bg-white/[0.13] hover:border-white/35 hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.5),0_16px_48px_rgba(255,255,255,0.08)] flex flex-col sm:flex-row items-center gap-5 sm:gap-6">
                     {/* Text Details */}
                     <div className="flex-1 flex flex-col gap-2 text-center sm:text-left">
@@ -288,7 +289,7 @@ export default function Pricing() {
                         </div>
                       </div>
 
-                      {/* Right-pointing pointer towards the node */}
+                      {/* Right-pointing pointer towards the center node */}
                       <div
                         className="hidden lg:block absolute -right-2 top-1/2 -translate-y-1/2 w-0 h-0 border-y-[7px] border-y-transparent border-l-[10px] border-l-white/60 drop-shadow-[0_0_6px_rgba(255,255,255,0.5)]"
                         aria-hidden="true"
@@ -297,15 +298,15 @@ export default function Pricing() {
                   </div>
                 </div>
 
-                {/* Center: Concentric Node */}
-                <div className="hidden lg:flex items-center justify-center w-12 relative z-20">
-                  <div className="size-7 sm:size-8 rounded-full border-2 border-white/80 bg-black/90 backdrop-blur-md flex items-center justify-center shadow-[0_0_16px_rgba(255,255,255,0.5)]">
-                    <div className="size-2.5 sm:size-3 rounded-full bg-white shadow-[0_0_8px_#ffffff]" />
+                {/* Center: Concentric Node Centered on PC at 50% */}
+                <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 items-center justify-center">
+                  <div className="size-7 sm:size-8 rounded-full border-2 border-white/80 bg-black backdrop-blur-md flex items-center justify-center shadow-[0_0_16px_rgba(255,255,255,0.4)]">
+                    <div className="size-2.5 sm:size-3 rounded-full bg-white shadow-[0_0_6px_#ffffff]" />
                   </div>
                 </div>
 
                 {/* Right: ÉTAPE 03 Typography */}
-                <div className="hidden lg:flex flex-col justify-center items-start pl-4 xl:pl-8">
+                <div className="hidden lg:flex flex-col justify-center items-start lg:pl-14">
                   <span className="text-sm font-extrabold tracking-[0.25em] text-white/60 uppercase font-heading">
                     ÉTAPE
                   </span>
