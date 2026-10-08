@@ -96,10 +96,23 @@ export default function Pricing() {
                 style={{ transitionDelay: "100ms" }}
               >
                 {/* Mobile step label (< lg) */}
-                <div className="lg:hidden flex justify-end px-2">
-                  <span className="text-3xl font-heading font-black text-white tracking-tight">
-                    {steps[0].number}
-                  </span>
+                <div className="lg:hidden flex items-center justify-between px-2">
+                  <div className="flex items-center gap-3">
+                    <div className="size-6 rounded-full border-2 border-white/80 bg-black/90 flex items-center justify-center shadow-[0_0_10px_rgba(255,255,255,0.6)]">
+                      <div className="size-2 rounded-full bg-white" />
+                    </div>
+                    <span className="text-xs font-bold uppercase tracking-widest text-zinc-400">
+                      Étape {steps[0].number}
+                    </span>
+                  </div>
+                  <div className="flex flex-col items-end">
+                    <span className="text-[10px] font-extrabold tracking-[0.2em] text-white/60 uppercase font-heading">
+                      ÉTAPE
+                    </span>
+                    <span className="text-3xl font-heading font-black text-white tracking-tight">
+                      {steps[0].number}
+                    </span>
+                  </div>
                 </div>
 
                 {/* Left: Capsule White Glass Card */}
@@ -156,10 +169,23 @@ export default function Pricing() {
                 style={{ transitionDelay: "250ms" }}
               >
                 {/* Mobile step label (< lg) */}
-                <div className="lg:hidden flex justify-end px-2">
-                  <span className="text-3xl font-heading font-black text-white tracking-tight">
-                    {steps[1].number}
-                  </span>
+                <div className="lg:hidden flex items-center justify-between px-2">
+                  <div className="flex items-center gap-3">
+                    <div className="size-6 rounded-full border-2 border-white/80 bg-black/90 flex items-center justify-center shadow-[0_0_10px_rgba(255,255,255,0.6)]">
+                      <div className="size-2 rounded-full bg-white" />
+                    </div>
+                    <span className="text-xs font-bold uppercase tracking-widest text-zinc-400">
+                      Étape {steps[1].number}
+                    </span>
+                  </div>
+                  <div className="flex flex-col items-end">
+                    <span className="text-[10px] font-extrabold tracking-[0.2em] text-white/60 uppercase font-heading">
+                      ÉTAPE
+                    </span>
+                    <span className="text-3xl font-heading font-black text-white tracking-tight">
+                      {steps[1].number}
+                    </span>
+                  </div>
                 </div>
 
                 {/* Left: ÉTAPE 02 Typography */}
@@ -216,10 +242,23 @@ export default function Pricing() {
                 style={{ transitionDelay: "400ms" }}
               >
                 {/* Mobile step label (< lg) */}
-                <div className="lg:hidden flex justify-end px-2">
-                  <span className="text-3xl font-heading font-black text-white tracking-tight">
-                    {steps[2].number}
-                  </span>
+                <div className="lg:hidden flex items-center justify-between px-2">
+                  <div className="flex items-center gap-3">
+                    <div className="size-6 rounded-full border-2 border-white/80 bg-black/90 flex items-center justify-center shadow-[0_0_10px_rgba(255,255,255,0.6)]">
+                      <div className="size-2 rounded-full bg-white" />
+                    </div>
+                    <span className="text-xs font-bold uppercase tracking-widest text-zinc-400">
+                      Étape {steps[2].number}
+                    </span>
+                  </div>
+                  <div className="flex flex-col items-end">
+                    <span className="text-[10px] font-extrabold tracking-[0.2em] text-white/60 uppercase font-heading">
+                      ÉTAPE
+                    </span>
+                    <span className="text-3xl font-heading font-black text-white tracking-tight">
+                      {steps[2].number}
+                    </span>
+                  </div>
                 </div>
 
                 {/* Left: Capsule White Glass Card */}
