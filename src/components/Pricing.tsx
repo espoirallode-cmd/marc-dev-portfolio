@@ -105,14 +105,9 @@ export default function Pricing() {
                       Étape {steps[0].number}
                     </span>
                   </div>
-                  <div className="flex flex-col items-end">
-                    <span className="text-[10px] font-extrabold tracking-[0.2em] text-white/60 uppercase font-heading">
-                      ÉTAPE
-                    </span>
-                    <span className="text-3xl font-heading font-black text-white tracking-tight">
-                      {steps[0].number}
-                    </span>
-                  </div>
+                  <span className="text-3xl font-heading font-black text-white tracking-tight">
+                    {steps[0].number}
+                  </span>
                 </div>
 
                 {/* Left: Capsule White Glass Card */}
@@ -178,14 +173,9 @@ export default function Pricing() {
                       Étape {steps[1].number}
                     </span>
                   </div>
-                  <div className="flex flex-col items-end">
-                    <span className="text-[10px] font-extrabold tracking-[0.2em] text-white/60 uppercase font-heading">
-                      ÉTAPE
-                    </span>
-                    <span className="text-3xl font-heading font-black text-white tracking-tight">
-                      {steps[1].number}
-                    </span>
-                  </div>
+                  <span className="text-3xl font-heading font-black text-white tracking-tight">
+                    {steps[1].number}
+                  </span>
                 </div>
 
                 {/* Left: ÉTAPE 02 Typography */}
@@ -251,14 +241,9 @@ export default function Pricing() {
                       Étape {steps[2].number}
                     </span>
                   </div>
-                  <div className="flex flex-col items-end">
-                    <span className="text-[10px] font-extrabold tracking-[0.2em] text-white/60 uppercase font-heading">
-                      ÉTAPE
-                    </span>
-                    <span className="text-3xl font-heading font-black text-white tracking-tight">
-                      {steps[2].number}
-                    </span>
-                  </div>
+                  <span className="text-3xl font-heading font-black text-white tracking-tight">
+                    {steps[2].number}
+                  </span>
                 </div>
 
                 {/* Left: Capsule White Glass Card */}
