@@ -59,7 +59,7 @@ export default function Contact() {
                   maxLength={100}
                   value={form.prenom}
                   onChange={(e) => setForm({ ...form, prenom: e.target.value })}
-                  className="w-full bg-black/60 border border-white/10 focus:border-rose-500 focus:ring-1 focus:ring-rose-500 rounded-xl p-3.5 text-sm font-body text-white placeholder:text-zinc-600 outline-none transition-all"
+                  className="w-full bg-black/60 border border-white/10 focus:border-white/40 focus:ring-1 focus:ring-white/20 rounded-xl p-3.5 text-sm font-body text-white placeholder:text-zinc-600 outline-none transition-all"
                 />
               </div>
               <div>
@@ -71,7 +71,7 @@ export default function Contact() {
                   maxLength={255}
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  className="w-full bg-black/60 border border-white/10 focus:border-rose-500 focus:ring-1 focus:ring-rose-500 rounded-xl p-3.5 text-sm font-body text-white placeholder:text-zinc-600 outline-none transition-all"
+                  className="w-full bg-black/60 border border-white/10 focus:border-white/40 focus:ring-1 focus:ring-white/20 rounded-xl p-3.5 text-sm font-body text-white placeholder:text-zinc-600 outline-none transition-all"
                 />
               </div>
             </div>
@@ -81,7 +81,7 @@ export default function Contact() {
               <select
                 value={form.type}
                 onChange={(e) => setForm({ ...form, type: e.target.value })}
-                className="w-full bg-black/60 border border-white/10 focus:border-rose-500 focus:ring-1 focus:ring-rose-500 rounded-xl p-3.5 text-sm font-body text-white outline-none transition-all cursor-pointer"
+                className="w-full bg-black/60 border border-white/10 focus:border-white/40 focus:ring-1 focus:ring-white/20 rounded-xl p-3.5 text-sm font-body text-white outline-none transition-all cursor-pointer"
               >
                 <option value="vitrine" className="bg-zinc-950 text-white">Site vitrine</option>
                 <option value="boutique" className="bg-zinc-950 text-white">Boutique en ligne</option>
@@ -99,7 +99,7 @@ export default function Contact() {
                 rows={4}
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
-                className="w-full bg-black/60 border border-white/10 focus:border-rose-500 focus:ring-1 focus:ring-rose-500 rounded-xl p-3.5 text-sm font-body text-white placeholder:text-zinc-600 outline-none transition-all resize-none"
+                className="w-full bg-black/60 border border-white/10 focus:border-white/40 focus:ring-1 focus:ring-white/20 rounded-xl p-3.5 text-sm font-body text-white placeholder:text-zinc-600 outline-none transition-all resize-none"
               />
             </div>
 
