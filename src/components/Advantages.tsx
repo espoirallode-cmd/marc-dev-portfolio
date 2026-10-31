@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "motion/react";
-import { Zap, PenSquare, Smartphone, Search, Sparkles, Headphones } from "lucide-react";
+import { Zap, PenSquare, Smartphone, Search } from "lucide-react";
 
 const advantages = [
   {
@@ -26,18 +26,6 @@ const advantages = [
     num: "04",
     title: "SEO optimisé",
     desc: "Visible sur Google dès le lancement.",
-  },
-  {
-    icon: Sparkles,
-    num: "05",
-    title: "Pensé pour convertir",
-    desc: "Chaque détail est conçu pour transformer vos visiteurs en clients.",
-  },
-  {
-    icon: Headphones,
-    num: "06",
-    title: "Support inclus",
-    desc: "Accompagnement après la livraison.",
   },
 ];
 
