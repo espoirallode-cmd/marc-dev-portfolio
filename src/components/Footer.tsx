@@ -73,7 +73,7 @@ export default function Footer() {
 
         {/* Massive Background Brand Text - single line */}
         <div className="relative mt-16 mb-8 flex justify-center overflow-hidden md:mt-24 md:mb-12">
-          <span className="pointer-events-none bg-gradient-to-b from-white/[0.08] to-transparent bg-clip-text text-[15vw] sm:text-[13vw] lg:text-[11vw] leading-none font-heading font-black tracking-tighter text-transparent select-none whitespace-nowrap uppercase">
+          <span className="pointer-events-none bg-gradient-to-b from-[#E60029]/20 to-transparent bg-clip-text text-[15vw] sm:text-[13vw] lg:text-[11vw] leading-none font-heading font-black tracking-tighter text-transparent select-none whitespace-nowrap uppercase">
             MARC DEV
           </span>
         </div>
