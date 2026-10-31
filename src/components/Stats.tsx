@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { FolderOpen, Clock, Smile, type LucideIcon } from "lucide-react";
 
 function AnimatedCounter({ target, suffix = "" }: { target: number; suffix?: string }) {
   const [count, setCount] = useState(0);
@@ -24,22 +23,21 @@ function AnimatedCounter({ target, suffix = "" }: { target: number; suffix?: str
           requestAnimationFrame(animate);
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.3 }
     );
     observer.observe(el);
     return () => observer.disconnect();
   }, [target]);
 
   return (
-    <span ref={ref} className="font-heading font-extrabold text-4xl sm:text-5xl text-white">
-      {target === 100 ? count + "%" : "+" + count}
+    <span ref={ref} className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.75rem] text-white tracking-tight">
+      {target === 100 ? `${count}%` : `+ ${count}`}
       {suffix}
     </span>
   );
 }
 
 interface Stat {
-  icon: LucideIcon;
   value: number;
   label: string;
   suffix?: string;
@@ -47,36 +45,32 @@ interface Stat {
 
 export default function Stats() {
   const stats: Stat[] = [
-    { icon: FolderOpen, value: 10, label: "Projets réalisés" },
-    { icon: Clock,      value: 7,  label: "Délai moyen (jours)", suffix: "" },
-    { icon: Smile,      value: 100, label: "Clients satisfaits" },
+    { value: 10, label: "Projets réalisés" },
+    { value: 7,  label: "Délai moyen (jours)" },
+    { value: 100, label: "Clients satisfaits" },
   ];
 
   return (
-    <section className="py-16 sm:py-24 bg-black relative z-10">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="bg-white/5 border border-white/15 backdrop-blur-2xl rounded-3xl p-8 sm:p-12 shadow-[0_0_60px_rgba(255,255,255,0.04)] grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 text-center">
-          {stats.map((s, i) => (
-            <div
-              key={i}
-              className={`flex flex-col items-center gap-3 p-4 ${
-                i < stats.length - 1 ? "md:border-r md:border-white/10" : ""
-              }`}
-            >
-              {/* Icon — white glass */}
-              <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-md flex items-center justify-center mb-1">
-                <s.icon className="w-6 h-6 text-white" />
+    <section className="py-12 sm:py-20 bg-black relative z-10">
+      <div className="max-w-5xl mx-auto px-6">
+        {/* Outer Card Container */}
+        <div className="rounded-[28px] sm:rounded-[36px] border border-white/10 bg-zinc-950/60 p-2.5 sm:p-3.5 backdrop-blur-xl shadow-[0_0_50px_rgba(0,0,0,0.8)]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-2.5 sm:gap-3.5">
+            {stats.map((s, i) => (
+              <div
+                key={i}
+                className="rounded-2xl sm:rounded-3xl border border-white/10 bg-[#09090b] py-7 sm:py-9 px-4 flex flex-col items-center justify-center gap-3 transition-all duration-300 hover:border-white/20 hover:bg-zinc-900/40"
+              >
+                {/* Number */}
+                <AnimatedCounter target={s.value} suffix={s.suffix} />
+
+                {/* Pill Badge */}
+                <span className="inline-flex items-center justify-center rounded-full bg-[#E60029] px-4 py-1.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-white shadow-[0_0_20px_rgba(230,0,41,0.5)]">
+                  {s.label}
+                </span>
               </div>
-
-              {/* Number — heading font, white */}
-              <AnimatedCounter target={s.value} suffix={s.suffix} />
-
-              {/* Label */}
-              <span className="font-body text-white/60 font-medium text-sm sm:text-base">
-                {s.label}
-              </span>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
