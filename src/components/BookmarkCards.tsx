@@ -73,7 +73,7 @@ export default function BookmarkCards() {
       id="bookmark-cards"
     >
       <div
-        className="relative max-w-6xl mx-auto px-6 flex flex-col lg:flex-row items-start gap-16"
+        className="relative w-full max-w-6xl mx-auto px-6 flex flex-col lg:flex-row items-start gap-16"
         style={{
           opacity: visible ? 1 : 0,
           transform: visible ? "translateY(0)" : "translateY(40px)",
@@ -181,14 +181,14 @@ export default function BookmarkCards() {
         </div>
 
         {/* === TEXT CONTENT === */}
-        <div className="lg:w-[45%] flex flex-col gap-5">
+        <div className="w-full lg:w-[45%] flex flex-col gap-5">
           {/* Mobile: bouton CTA uniquement */}
-          <div className="flex lg:hidden justify-center">
+          <div className="w-full flex lg:hidden justify-center items-center">
             <a
               href="https://wa.me/22990107869"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#E60029] text-white font-body font-semibold text-sm tracking-wide transition-all duration-300 hover:bg-[#cc0024] active:scale-95"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#E60029] text-white font-body font-semibold text-sm tracking-wide transition-all duration-300 hover:bg-[#cc0024] active:scale-95"
             >
               Démarrer mon projet
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
