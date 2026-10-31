@@ -182,19 +182,37 @@ export default function BookmarkCards() {
 
         {/* === TEXT CONTENT === */}
         <div className="lg:w-[45%] flex flex-col gap-5">
-          {/* Tag */}
-          <span className="inline-flex items-center self-start px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-white/70 text-sm font-medium tracking-wide backdrop-blur-sm">
-            Réalisations clients
-          </span>
+          {/* Mobile: bouton CTA uniquement */}
+          <div className="flex lg:hidden justify-start">
+            <a
+              href="https://wa.me/22990107869"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#E60029] text-white font-body font-semibold text-sm tracking-wide transition-all duration-300 hover:bg-[#cc0024] active:scale-95"
+            >
+              Démarrer mon projet
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+          </div>
 
-          <h2 className="font-heading text-4xl sm:text-5xl font-bold leading-tight bg-gradient-to-b from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
-            Des sites qui<br />
-            parlent d'eux-mêmes.
-          </h2>
+          {/* Desktop: contenu texte complet */}
+          <div className="hidden lg:flex flex-col gap-5">
+            {/* Tag */}
+            <span className="inline-flex items-center self-start px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-white/70 text-sm font-medium tracking-wide backdrop-blur-sm">
+              Réalisations clients
+            </span>
 
-          <p className="font-body text-zinc-400 text-base leading-relaxed max-w-md">
-            Chaque projet est conçu sur-mesure, illustration, typographie premium et expérience utilisateur soignée.
-          </p>
+            <h2 className="font-heading text-4xl sm:text-5xl font-bold leading-tight bg-gradient-to-b from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
+              Des sites qui<br />
+              parlent d'eux-mêmes.
+            </h2>
+
+            <p className="font-body text-zinc-400 text-base leading-relaxed max-w-md">
+              Chaque projet est conçu sur-mesure, illustration, typographie premium et expérience utilisateur soignée.
+            </p>
+          </div>
         </div>
       </div>
     </section>
