@@ -23,7 +23,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="dark relative z-10 overflow-hidden border-t border-white/5 bg-black pt-24 pb-8 text-white">
+    <footer className="dark relative z-10 overflow-hidden border-t border-white/5 bg-black pt-8 sm:pt-24 pb-8 text-white">
       {/* Background Grid Enhancement */}
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_80%_60%_at_50%_0%,#000_10%,transparent_100%)] bg-[size:4rem_4rem]"></div>
 
@@ -33,14 +33,14 @@ export default function Footer() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="mb-4 flex flex-col items-center text-center max-w-xl mx-auto"
+          className="mb-8 sm:mb-4 flex flex-col items-center text-center max-w-xl mx-auto"
         >
           {/* CTA Card */}
           <motion.div
             variants={itemVariants}
             className="flex flex-col items-center w-full"
           >
-            <div className="mb-2 w-full flex justify-center sm:max-w-xl">
+            <div className="mb-0 sm:mb-2 w-full flex justify-center sm:max-w-xl">
               <a
                 href="https://wa.me/22990107869"
                 target="_blank"
@@ -66,7 +66,7 @@ export default function Footer() {
         </motion.div>
 
         {/* Massive Background Brand Text - single line */}
-        <div className="relative mt-4 mb-4 flex justify-center overflow-hidden md:mt-6 md:mb-6">
+        <div className="relative mt-6 sm:mt-6 mb-4 md:mb-6 flex justify-center overflow-hidden">
           <span className="pointer-events-none bg-gradient-to-b from-[#E60029]/20 to-transparent bg-clip-text text-[15vw] sm:text-[13vw] lg:text-[11vw] leading-none font-heading font-black tracking-tighter text-transparent select-none whitespace-nowrap uppercase">
             MARC DEV
           </span>
