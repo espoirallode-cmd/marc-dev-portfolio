@@ -132,8 +132,7 @@ function ProjectCard({ project }: { project: Project }) {
         <div className="relative z-10 mt-auto">
           <Button
             asChild
-            variant="secondary"
-            className="w-full bg-white/10 hover:bg-white/20 text-white border border-white/15 transition-all cursor-pointer"
+            className="w-full bg-[#E60029] hover:bg-[#cc0024] text-white border-0 font-medium transition-all cursor-pointer shadow-[0_4px_14px_rgba(230,0,41,0.35)] hover:shadow-[0_6px_20px_rgba(230,0,41,0.5)]"
           >
             <a href={project.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
               Voir le projet <ExternalLink className="size-4" />
