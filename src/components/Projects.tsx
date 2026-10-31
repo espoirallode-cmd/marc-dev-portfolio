@@ -2,12 +2,10 @@ import { useState } from "react";
 import { useReveal } from "@/hooks/use-reveal";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
 import {
   ExternalLink,
-  Search,
   SearchX,
   RotateCcw,
   Globe,
@@ -149,23 +147,15 @@ function ProjectCard({ project }: { project: Project }) {
 
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState("Tout");
-  const [searchQuery, setSearchQuery] = useState("");
   const ref = useReveal();
 
   const categories = ["Tout", ...Array.from(new Set(projects.map((p) => p.category)))];
 
   const filteredProjects = projects.filter((project) => {
-    const matchesCategory =
-      activeCategory === "Tout" || project.category === activeCategory;
-    const matchesSearch =
-      project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      project.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      project.displayUrl.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
+    return activeCategory === "Tout" || project.category === activeCategory;
   });
 
   const resetFilters = () => {
-    setSearchQuery("");
     setActiveCategory("Tout");
   };
 
@@ -176,43 +166,28 @@ export default function Projects() {
           Mes récentes réalisations
         </h2>
 
-        <div className="mb-10 flex flex-col items-center justify-between gap-4 sm:flex-row md:mb-12">
-          <div className="flex flex-wrap items-center gap-2">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={cn(
-                  "relative rounded-full px-5 py-2 text-sm font-medium transition-colors cursor-pointer",
-                  activeCategory === category
-                    ? "text-white"
-                    : "border border-white/10 bg-zinc-950 text-zinc-400 hover:bg-white/10 hover:text-white"
-                )}
-              >
-                {activeCategory === category && (
-                  <motion.span
-                    layoutId="active-project-category"
-                    className="absolute inset-0 rounded-full bg-white/20 border border-white/30 backdrop-blur-md"
-                    transition={{ type: "spring", duration: 0.5, bounce: 0.2 }}
-                  />
-                )}
-                <span className="relative z-10">{category}</span>
-              </button>
-            ))}
-          </div>
-          <div className="relative w-full sm:w-64 md:w-80">
-            <Search
-              aria-hidden="true"
-              className="absolute top-1/2 left-3 size-4 -translate-y-1/2 text-zinc-400"
-            />
-            <Input
-              type="text"
-              placeholder="Rechercher un projet..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="h-10 w-full rounded-full pl-9 bg-zinc-950 border-white/10 text-white placeholder:text-zinc-500 focus-visible:ring-white/20"
-            />
-          </div>
+        <div className="mb-10 flex flex-wrap items-center justify-center gap-2 md:mb-12">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={cn(
+                "relative rounded-full px-5 py-2 text-sm font-medium transition-colors cursor-pointer",
+                activeCategory === category
+                  ? "text-white"
+                  : "border border-white/10 bg-zinc-950 text-zinc-400 hover:bg-white/10 hover:text-white"
+              )}
+            >
+              {activeCategory === category && (
+                <motion.span
+                  layoutId="active-project-category"
+                  className="absolute inset-0 rounded-full bg-white/20 border border-white/30 backdrop-blur-md"
+                  transition={{ type: "spring", duration: 0.5, bounce: 0.2 }}
+                />
+              )}
+              <span className="relative z-10">{category}</span>
+            </button>
+          ))}
         </div>
 
         <motion.div
@@ -248,9 +223,7 @@ export default function Projects() {
                 Aucun projet trouvé
               </h3>
               <p className="mb-8 max-w-lg text-zinc-400">
-                Aucun projet ne correspond à &ldquo;
-                <strong className="text-white">{searchQuery}</strong>
-                &rdquo;. Essayez de modifier votre recherche.
+                Aucun projet ne correspond à cette sélection.
               </p>
               <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
                 <Button
@@ -258,7 +231,7 @@ export default function Projects() {
                   className="h-12 rounded-full px-6 bg-white text-black hover:bg-zinc-200 cursor-pointer"
                 >
                   <RotateCcw aria-hidden="true" className="mr-2 size-4" />
-                  Réinitialiser la recherche
+                  Réinitialiser les filtres
                 </Button>
               </div>
             </motion.div>
