@@ -48,11 +48,11 @@ export default function FAQ() {
                   onClick={() => setOpenIndex(isOpen ? null : i)}
                 >
                   <div className="flex items-center gap-4 sm:gap-6 flex-1 min-w-0">
-                    {/* Numbered Pill - White Glass Effect */}
-                    <div className={`w-10 h-10 sm:w-11 sm:h-11 flex-shrink-0 rounded-full flex items-center justify-center font-mono font-bold text-xs sm:text-sm transition-all duration-300 backdrop-blur-md shadow-sm ${
+                    {/* Numbered Pill */}
+                    <div className={`w-10 h-10 sm:w-11 sm:h-11 flex-shrink-0 rounded-full flex items-center justify-center font-mono font-bold text-xs sm:text-sm text-[#E60029] transition-all duration-300 backdrop-blur-md shadow-sm ${
                       isOpen
-                        ? "bg-white/25 border border-white/40 text-white shadow-[0_0_15px_rgba(255,255,255,0.2)]"
-                        : "bg-white/10 border border-white/20 text-white/80 group-hover:bg-white/15 group-hover:border-white/30 group-hover:text-white"
+                        ? "bg-white/20 border border-white/30"
+                        : "bg-white/10 border border-white/20 group-hover:bg-white/15 group-hover:border-white/30"
                     }`}>
                       {numStr}
                     </div>
@@ -63,16 +63,16 @@ export default function FAQ() {
                     </span>
                   </div>
 
-                  {/* Toggle Button (+ / -) - White Glass Effect */}
+                  {/* Toggle Button (+ / -) */}
                   <div className={`w-10 h-10 sm:w-11 sm:h-11 flex-shrink-0 rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-md shadow-sm ${
                     isOpen
-                      ? "bg-white/25 border border-white/40 text-white shadow-[0_0_15px_rgba(255,255,255,0.2)]"
-                      : "bg-white/10 border border-white/20 text-white/80 group-hover:bg-white/15 group-hover:border-white/30 group-hover:text-white"
+                      ? "bg-white/20 border border-white/30"
+                      : "bg-white/10 border border-white/20 group-hover:bg-white/15 group-hover:border-white/30"
                   }`}>
                     {isOpen ? (
-                      <Minus className="w-5 h-5 text-white" />
+                      <Minus className="w-5 h-5 text-[#E60029]" />
                     ) : (
-                      <Plus className="w-5 h-5 text-white" />
+                      <Plus className="w-5 h-5 text-[#E60029]" />
                     )}
                   </div>
                 </button>
