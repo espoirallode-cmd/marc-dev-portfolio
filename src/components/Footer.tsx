@@ -34,14 +34,14 @@ export default function Footer() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="mb-16 flex flex-col items-center text-center max-w-xl mx-auto"
+          className="mb-4 flex flex-col items-center text-center max-w-xl mx-auto"
         >
           {/* CTA Card */}
           <motion.div
             variants={itemVariants}
             className="flex flex-col items-center"
           >
-            <div className="mb-8 w-full">
+            <div className="mb-2 w-full">
               <a
                 href="https://wa.me/22990107869"
                 target="_blank"
@@ -72,7 +72,7 @@ export default function Footer() {
         </motion.div>
 
         {/* Massive Background Brand Text - single line */}
-        <div className="relative mt-16 mb-8 flex justify-center overflow-hidden md:mt-24 md:mb-12">
+        <div className="relative mt-4 mb-4 flex justify-center overflow-hidden md:mt-6 md:mb-6">
           <span className="pointer-events-none bg-gradient-to-b from-[#E60029]/20 to-transparent bg-clip-text text-[15vw] sm:text-[13vw] lg:text-[11vw] leading-none font-heading font-black tracking-tighter text-transparent select-none whitespace-nowrap uppercase">
             MARC DEV
           </span>
