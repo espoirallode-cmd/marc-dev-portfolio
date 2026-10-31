@@ -1,4 +1,4 @@
-import { useReveal } from "@/hooks/use-reveal";
+import { motion } from "motion/react";
 import { MailCheck, CheckCircle2, Layout, type LucideIcon } from "lucide-react";
 
 interface Step {
@@ -33,16 +33,17 @@ const steps: Step[] = [
 ];
 
 export default function Pricing() {
-  const ref = useReveal();
-
   return (
-    <section id="offres" className="py-16 sm:py-24 bg-black relative" ref={ref}>
+    <section id="offres" className="py-16 sm:py-24 bg-black relative">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col items-center gap-12 sm:gap-16">
-          {/* Header */}
-          <div
-            className="flex flex-col items-center gap-4 text-center max-w-2xl mx-auto reveal"
-            style={{ transitionDelay: "0ms" }}
+          {/* Header with Fade-in */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="flex flex-col items-center gap-4 text-center max-w-2xl mx-auto"
           >
             <h2 className="w-fit mx-auto font-heading font-extrabold text-3xl sm:text-5xl text-center bg-gradient-to-b from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
               Mes offres
@@ -50,15 +51,18 @@ export default function Pricing() {
             <p className="font-body text-zinc-400 text-base sm:text-lg max-w-xl">
               Chaque projet avec son tarif
             </p>
-          </div>
+          </motion.div>
 
-          {/* Cards Stack */}
+          {/* Cards Stack with Fade-in on Scroll */}
           <div className="w-full flex flex-col gap-6 sm:gap-8">
             {steps.map((step, idx) => (
-              <div
+              <motion.div
                 key={idx}
-                className="relative reveal"
-                style={{ transitionDelay: `${100 + idx * 150}ms` }}
+                initial={{ opacity: 0, y: 35 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: idx * 0.12, ease: "easeOut" }}
+                className="relative"
               >
                 {/* Main Card */}
                 <div className="relative rounded-2xl sm:rounded-3xl border border-white/10 bg-zinc-950/90 p-6 sm:p-8 shadow-[0_12px_40px_rgba(0,0,0,0.6)] transition-all duration-300 hover:border-white/20 hover:bg-zinc-900/60">
@@ -80,12 +84,11 @@ export default function Pricing() {
                       </span>
                     </div>
 
-                    {/* Middle: Title, Underline, Description */}
-                    <div className="flex-1 min-w-0 flex flex-col">
-                      <h3 className="font-heading font-bold text-base sm:text-lg lg:text-xl text-[#E60029] tracking-wider uppercase">
+                    {/* Middle: Title in white, Description */}
+                    <div className="flex-1 min-w-0 flex flex-col gap-2">
+                      <h3 className="font-heading font-bold text-base sm:text-lg lg:text-xl text-white tracking-wider uppercase">
                         {step.title}
                       </h3>
-                      <div className="w-16 h-0.5 bg-[#E60029]/60 my-2 rounded-full" />
                       <p className="font-body text-zinc-300 text-xs sm:text-sm lg:text-base leading-relaxed">
                         {step.description}
                       </p>
@@ -106,7 +109,7 @@ export default function Pricing() {
                     </svg>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
