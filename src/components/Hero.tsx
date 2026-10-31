@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
-  const title = "On construit votre présence en ligne, vous gérez votre business.";
+  const title = "Je conçois votre présence en ligne, vous gérez votre business.";
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
