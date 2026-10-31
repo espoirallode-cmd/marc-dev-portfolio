@@ -5,25 +5,21 @@ import { Zap, PenSquare, Smartphone, Search } from "lucide-react";
 const advantages = [
   {
     icon: Zap,
-    num: "01",
     title: "Livraison rapide",
     desc: "Site livré sous 7 jours, prêt à l'emploi.",
   },
   {
     icon: PenSquare,
-    num: "02",
     title: "Design sur-mesure",
     desc: "Un design unique adapté à votre identité.",
   },
   {
     icon: Smartphone,
-    num: "03",
     title: "100% Responsive",
     desc: "Parfait sur mobile, tablette et desktop.",
   },
   {
     icon: Search,
-    num: "04",
     title: "SEO optimisé",
     desc: "Visible sur Google dès le lancement.",
   },
@@ -131,18 +127,9 @@ export default function Advantages() {
 
                       {/* Text */}
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center justify-between gap-2">
-                          <h3 className="font-heading font-bold text-base sm:text-lg leading-tight truncate">
-                            {a.title}
-                          </h3>
-                          <span
-                            className={`font-mono text-xs font-bold tracking-widest transition-colors duration-300 ${
-                              isActive ? "text-white/80" : "text-white/30"
-                            }`}
-                          >
-                            {a.num}
-                          </span>
-                        </div>
+                        <h3 className="font-heading font-bold text-base sm:text-lg leading-tight truncate">
+                          {a.title}
+                        </h3>
                         <p
                           className={`font-body text-xs sm:text-sm mt-1 leading-snug line-clamp-2 transition-colors duration-300 ${
                             isActive ? "text-white/95 font-medium" : "text-zinc-400"
