@@ -1,5 +1,5 @@
 import { motion, Variants } from "motion/react";
-import { ArrowRight, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 
 export default function Footer() {
   const containerVariants: Variants = {
@@ -23,27 +23,6 @@ export default function Footer() {
     },
   };
 
-  const navLinks = [
-    { name: "Accueil", href: "#hero" },
-    { name: "Avantages", href: "#avantages" },
-    { name: "Process", href: "#process" },
-    { name: "Offres", href: "#offres" },
-    { name: "FAQ", href: "#faq" },
-    { name: "Réalisation", href: "#realisations" },
-    { name: "Contact", href: "#contact" },
-  ];
-
-  const serviceLinks = [
-    { name: "Site Vitrine", href: "#offres" },
-    { name: "Landing Page", href: "#offres" },
-    { name: "Site E-commerce", href: "#offres" },
-  ];
-
-  const contactLinks = [
-    { name: "WhatsApp", href: "https://wa.me/22990107869", external: true },
-    { name: "Email Direct", href: "mailto:contactmarcosgraphique@gmail.com", external: true },
-  ];
-
   return (
     <footer className="dark relative z-10 overflow-hidden border-t border-white/5 bg-black pt-24 pb-8 text-white">
       {/* Background Grid Enhancement */}
@@ -55,26 +34,24 @@ export default function Footer() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="mb-20 grid grid-cols-2 gap-12 md:grid-cols-5 lg:gap-16 xl:gap-24"
+          className="mb-16 flex flex-col items-center text-center max-w-xl mx-auto"
         >
           {/* Brand & Mission */}
           <motion.div
             variants={itemVariants}
-            className="col-span-2 flex flex-col justify-between"
+            className="flex flex-col items-center"
           >
-            <div>
-              <div className="mb-8">
-                <span className="font-heading font-extrabold text-3xl sm:text-4xl text-white tracking-tight">
-                  Marc Dev
-                </span>
-              </div>
-              <p className="mb-10 max-w-sm text-lg leading-relaxed font-light text-white/90">
-                Création de sites web professionnels. Design sur-mesure, rapide & réactif.
-              </p>
+            <div className="mb-6">
+              <span className="font-heading font-extrabold text-3xl sm:text-4xl text-white tracking-tight">
+                Marc Dev
+              </span>
             </div>
+            <p className="mb-8 text-lg leading-relaxed font-light text-white/90">
+              Création de sites web professionnels. Design sur-mesure, rapide & réactif.
+            </p>
 
             {/* Social & Contact icons */}
-            <div className="mt-auto flex items-center gap-5">
+            <div className="flex items-center gap-5">
               <a
                 href="https://wa.me/22990107869"
                 target="_blank"
@@ -97,68 +74,6 @@ export default function Footer() {
                 <Mail className="relative z-10 h-5 w-5 transition-transform group-hover:scale-110" />
               </a>
             </div>
-          </motion.div>
-
-          {/* Navigation Column */}
-          <motion.div variants={itemVariants}>
-            <h4 className="mb-8 text-white text-lg font-bold tracking-wide uppercase">
-              Navigation
-            </h4>
-            <ul className="space-y-5 text-base font-medium text-white">
-              {navLinks.map((item) => (
-                <li key={item.name}>
-                  <a
-                    href={item.href}
-                    className="group flex items-center transition-colors hover:text-zinc-300"
-                  >
-                    {item.name}{" "}
-                    <ArrowRight className="ml-2 h-4 w-4 -translate-x-3 text-white opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Services Column */}
-          <motion.div variants={itemVariants}>
-            <h4 className="mb-8 text-white text-lg font-bold tracking-wide uppercase">
-              Offres
-            </h4>
-            <ul className="space-y-5 text-base font-medium text-white">
-              {serviceLinks.map((item) => (
-                <li key={item.name}>
-                  <a
-                    href={item.href}
-                    className="group flex items-center transition-colors hover:text-zinc-300"
-                  >
-                    {item.name}{" "}
-                    <ArrowRight className="ml-2 h-4 w-4 -translate-x-3 text-white opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          {/* Contact Column */}
-          <motion.div variants={itemVariants} className="hidden md:block">
-            <h4 className="mb-8 text-white text-lg font-bold tracking-wide uppercase">
-              Contact
-            </h4>
-            <ul className="space-y-5 text-base font-medium text-white">
-              {contactLinks.map((item) => (
-                <li key={item.name}>
-                  <a
-                    href={item.href}
-                    target={item.external ? "_blank" : undefined}
-                    rel={item.external ? "noopener noreferrer" : undefined}
-                    className="group flex items-center transition-colors hover:text-zinc-300"
-                  >
-                    {item.name}{" "}
-                    <ArrowRight className="ml-2 h-4 w-4 -translate-x-3 text-white opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100" />
-                  </a>
-                </li>
-              ))}
-            </ul>
           </motion.div>
         </motion.div>
 
