@@ -11,6 +11,33 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Lock background scroll on mobile when menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      const originalBodyOverflow = document.body.style.overflow;
+      const originalHtmlOverflow = document.documentElement.style.overflow;
+
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+
+      return () => {
+        document.body.style.overflow = originalBodyOverflow;
+        document.documentElement.style.overflow = originalHtmlOverflow;
+      };
+    }
+  }, [menuOpen]);
+
+  // Close menu on resize to desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setMenuOpen(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const links = [
     { label: "Accueil", href: "#hero" },
     { label: "Avantages", href: "#avantages" },
@@ -22,71 +49,81 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-2.5 rounded-full bg-black/85 border border-white/15 backdrop-blur-xl shadow-[0_4px_15px_rgba(0,0,0,0.5)] flex items-center justify-between">
-        {/* Logo */}
-        <a href="#hero" className="flex items-center gap-2 group">
-          <span className="font-heading font-extrabold text-xl text-white tracking-tight">
-            Marcdev
-          </span>
-        </a>
-
-        {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-6 lg:gap-8">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200"
-            >
-              {l.label}
-            </a>
-          ))}
-        </div>
-
-        {/* CTA Button - White Glass, No Glow */}
-        <div className="hidden md:block">
-          <a
-            href="#contact"
-            className="inline-flex items-center justify-center bg-white/10 border border-white/20 hover:bg-white/20 hover:border-white/35 backdrop-blur-md text-white font-semibold text-sm px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 cursor-pointer"
-          >
-            Démarrer mon projet
-          </a>
-        </div>
-
-        {/* Mobile Hamburger */}
-        <button
-          className="md:hidden text-white cursor-pointer p-1.5 rounded-full bg-white/5 border border-white/10"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Menu"
-        >
-          {menuOpen ? <X className="w-5 h-5 text-rose-500" /> : <Menu className="w-5 h-5" />}
-        </button>
-      </div>
-
-      {/* Mobile menu dropdown */}
+    <>
+      {/* Mobile backdrop overlay with blur and scroll prevention */}
       {menuOpen && (
-        <div className="md:hidden mt-2 max-w-6xl mx-auto px-6 py-5 flex flex-col gap-4 rounded-3xl bg-black/90 backdrop-blur-2xl border border-white/15 shadow-xl animate-in slide-in-from-top duration-300">
-          {links.map((l) => (
+        <div
+          className="fixed inset-0 bg-black/70 backdrop-blur-md z-40 md:hidden touch-none animate-in fade-in duration-200"
+          onClick={() => setMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
+      <nav className="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-2.5 rounded-full bg-black/85 border border-white/15 backdrop-blur-xl shadow-[0_4px_15px_rgba(0,0,0,0.5)] flex items-center justify-between">
+          {/* Logo */}
+          <a href="#hero" className="flex items-center gap-2 group">
+            <span className="font-heading font-extrabold text-xl text-white tracking-tight">
+              Marcdev
+            </span>
+          </a>
+
+          {/* Desktop links */}
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200"
+              >
+                {l.label}
+              </a>
+            ))}
+          </div>
+
+          {/* CTA Button - White Glass, No Glow */}
+          <div className="hidden md:block">
             <a
-              key={l.href}
-              href={l.href}
-              className="text-slate-300 hover:text-white font-medium transition-colors text-base py-1.5 border-b border-white/5"
+              href="#contact"
+              className="inline-flex items-center justify-center bg-white/10 border border-white/20 hover:bg-white/20 hover:border-white/35 backdrop-blur-md text-white font-semibold text-sm px-6 py-2 rounded-full transition-all duration-300 hover:scale-105 cursor-pointer"
+            >
+              Démarrer mon projet
+            </a>
+          </div>
+
+          {/* Mobile Hamburger */}
+          <button
+            className="md:hidden text-white cursor-pointer p-1.5 rounded-full bg-white/5 border border-white/10"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Menu"
+          >
+            {menuOpen ? <X className="w-5 h-5 text-[#E60029]" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
+
+        {/* Mobile menu dropdown */}
+        {menuOpen && (
+          <div className="md:hidden mt-2 max-w-6xl mx-auto px-6 py-5 flex flex-col gap-4 rounded-3xl bg-black/90 backdrop-blur-2xl border border-white/15 shadow-xl animate-in slide-in-from-top duration-300 max-h-[calc(100vh-6rem)] overflow-y-auto">
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className="text-slate-300 hover:text-white font-medium transition-colors text-base py-1.5 border-b border-white/5"
+                onClick={() => setMenuOpen(false)}
+              >
+                {l.label}
+              </a>
+            ))}
+            <a
+              href="#contact"
+              className="mt-2 bg-white/10 border border-white/20 hover:bg-white/20 text-white px-6 py-3 rounded-full text-sm font-semibold text-center backdrop-blur-md transition-all cursor-pointer"
               onClick={() => setMenuOpen(false)}
             >
-              {l.label}
+              Démarrer mon projet
             </a>
-          ))}
-          <a
-            href="#contact"
-            className="mt-2 bg-white/10 border border-white/20 hover:bg-white/20 text-white px-6 py-3 rounded-full text-sm font-semibold text-center backdrop-blur-md transition-all cursor-pointer"
-            onClick={() => setMenuOpen(false)}
-          >
-            Démarrer mon projet
-          </a>
-        </div>
-      )}
-    </nav>
+          </div>
+        )}
+      </nav>
+    </>
   );
 }
-
