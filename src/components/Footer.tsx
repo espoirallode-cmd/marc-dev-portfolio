@@ -100,7 +100,7 @@ export default function Footer() {
               href="#offres"
               className="underline-offset-4 transition-all hover:text-white hover:underline"
             >
-              Nos Offres
+              Offres
             </a>
             <a
               href="#contact"
