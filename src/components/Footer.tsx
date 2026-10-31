@@ -46,7 +46,7 @@ export default function Footer() {
                 href="https://wa.me/22990107869"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-4 w-full px-5 py-4 rounded-2xl bg-zinc-900/80 border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] backdrop-blur-sm transition-all duration-300 hover:border-[#E60029]/40 hover:bg-zinc-900 hover:shadow-[0_8px_32px_rgba(230,0,41,0.12)] cursor-pointer"
+                className="group flex items-center gap-4 w-full px-5 py-4 rounded-2xl bg-zinc-900/80 border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] backdrop-blur-sm cursor-pointer"
               >
 
 
@@ -59,7 +59,7 @@ export default function Footer() {
                 </div>
 
                 {/* Right Arrow */}
-                <div className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-white/5 border border-white/10 text-white/50 transition-all duration-300 group-hover:bg-[#E60029] group-hover:border-[#E60029] group-hover:text-white group-hover:translate-x-0.5">
+                <div className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-[#E60029] border border-[#E60029] text-white">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
                     <path d="M9 18l6-6-6-6"/>
                   </svg>
