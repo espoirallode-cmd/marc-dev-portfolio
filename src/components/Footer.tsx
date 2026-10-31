@@ -48,22 +48,14 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="group flex items-center gap-4 w-full px-5 py-4 rounded-2xl bg-zinc-900/80 border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] backdrop-blur-sm transition-all duration-300 hover:border-[#E60029]/40 hover:bg-zinc-900 hover:shadow-[0_8px_32px_rgba(230,0,41,0.12)] cursor-pointer"
               >
-                {/* Left Icon */}
-                <div className="flex-shrink-0 flex items-center justify-center w-9 h-9 rounded-xl bg-[#E60029]/10 border border-[#E60029]/20 text-[#E60029] transition-colors duration-300 group-hover:bg-[#E60029]/20">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
-                    <path d="M12 2.5L14.5 9.5L21.5 10L16.5 14.5L18 21.5L12 17.5L6 21.5L7.5 14.5L2.5 10L9.5 9.5L12 2.5Z"/>
-                  </svg>
-                </div>
+
 
                 {/* Text */}
                 <div className="flex-1 min-w-0">
                   <p className="font-body font-semibold text-sm sm:text-base text-white tracking-wide truncate">
                     Commander votre site dès maintenant
                   </p>
-                  <div className="mt-1.5 flex gap-1.5">
-                    <span className="block h-[2px] w-8 rounded-full bg-white/20" />
-                    <span className="block h-[2px] w-5 rounded-full bg-white/10" />
-                  </div>
+
                 </div>
 
                 {/* Right Arrow */}
