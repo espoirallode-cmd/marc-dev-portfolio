@@ -102,12 +102,14 @@ export default function Pricing() {
                     </div>
                   </div>
 
-                  {/* Downward Connector Tab */}
-                  <div className="absolute -bottom-3.5 left-1/2 -translate-x-1/2 z-20 flex justify-center">
-                    <svg width="40" height="14" viewBox="0 0 40 14" fill="none">
-                      <path d="M0 0 H40 V4 L20 14 L0 4 Z" fill="#E60029" />
-                    </svg>
-                  </div>
+                  {/* Downward Connector Tab (only between cards) */}
+                  {idx < steps.length - 1 && (
+                    <div className="absolute -bottom-3.5 left-1/2 -translate-x-1/2 z-20 flex justify-center">
+                      <svg width="40" height="14" viewBox="0 0 40 14" fill="none">
+                        <path d="M0 0 H40 V4 L20 14 L0 4 Z" fill="#E60029" />
+                      </svg>
+                    </div>
+                  )}
                 </div>
               </motion.div>
             ))}
