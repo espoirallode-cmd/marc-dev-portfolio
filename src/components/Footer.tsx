@@ -40,16 +40,16 @@ export default function Footer() {
             variants={itemVariants}
             className="flex flex-col items-center w-full"
           >
-            <div className="mb-2 w-full max-w-sm sm:max-w-xl">
+            <div className="mb-2 w-full flex justify-center sm:max-w-xl">
               <a
                 href="https://wa.me/22990107869"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-between gap-3 sm:gap-4 w-full px-3.5 py-2.5 sm:px-5 sm:py-4 rounded-xl sm:rounded-2xl bg-zinc-900/80 border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] backdrop-blur-sm cursor-pointer"
+                className="group inline-flex sm:flex items-center justify-center sm:justify-between gap-2.5 sm:gap-4 w-auto sm:w-full px-4 py-2 sm:px-5 sm:py-4 rounded-full sm:rounded-2xl bg-zinc-900/80 border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] backdrop-blur-sm cursor-pointer"
               >
                 {/* Text */}
-                <div className="flex-1 min-w-0 text-left">
-                  <p className="font-body font-semibold text-xs sm:text-base text-white tracking-wide truncate">
+                <div className="flex-initial sm:flex-1 min-w-0 text-left">
+                  <p className="font-body font-semibold text-xs sm:text-base text-white tracking-wide whitespace-nowrap sm:truncate">
                     Commander votre site dès maintenant
                   </p>
                 </div>
