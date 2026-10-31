@@ -1,5 +1,5 @@
-import { Fragment } from "react";
-import { useReveal } from "@/hooks/use-reveal";
+import { useState, useEffect, useRef } from "react";
+import { motion } from "motion/react";
 import { Zap, PenSquare, Smartphone, Search, Sparkles, Headphones } from "lucide-react";
 
 const advantages = [
@@ -8,125 +8,211 @@ const advantages = [
     num: "01",
     title: "Livraison rapide",
     desc: "Site livré sous 7 jours, prêt à l'emploi.",
-    rotate: "-rotate-2",
-    side: "left",
   },
   {
     icon: PenSquare,
     num: "02",
     title: "Design sur-mesure",
     desc: "Un design unique adapté à votre identité.",
-    rotate: "rotate-1",
-    side: "right",
   },
   {
     icon: Smartphone,
     num: "03",
     title: "100% Responsive",
     desc: "Parfait sur mobile, tablette et desktop.",
-    rotate: "-rotate-1",
-    side: "left",
   },
   {
     icon: Search,
     num: "04",
     title: "SEO optimisé",
     desc: "Visible sur Google dès le lancement.",
-    rotate: "rotate-2",
-    side: "right",
   },
   {
     icon: Sparkles,
     num: "05",
     title: "Pensé pour convertir",
     desc: "Chaque détail est conçu pour transformer vos visiteurs en clients.",
-    rotate: "-rotate-2",
-    side: "left",
   },
   {
     icon: Headphones,
     num: "06",
     title: "Support inclus",
     desc: "Accompagnement après la livraison.",
-    rotate: "rotate-1",
-    side: "right",
   },
 ];
 
 export default function Advantages() {
-  const ref = useReveal();
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const windowHeight = window.innerHeight;
+      const centerY = windowHeight * 0.45;
+
+      let closestIndex = 0;
+      let minDistance = Infinity;
+
+      cardRefs.current.forEach((el, index) => {
+        if (!el) return;
+        const rect = el.getBoundingClientRect();
+        const cardCenter = rect.top + rect.height / 2;
+        const distance = Math.abs(cardCenter - centerY);
+
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestIndex = index;
+        }
+      });
+
+      const section = document.getElementById("avantages");
+      if (section) {
+        const secRect = section.getBoundingClientRect();
+        if (secRect.top < windowHeight * 0.85 && secRect.bottom > windowHeight * 0.15) {
+          setActiveIndex(closestIndex);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <section id="avantages" className="py-16 sm:py-24 bg-black relative" ref={ref}>
-      <div className="max-w-3xl mx-auto px-6">
-        <h2 className="w-fit mx-auto font-heading font-extrabold text-3xl sm:text-5xl text-center mb-20 bg-gradient-to-b from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
+    <section id="avantages" className="py-20 sm:py-28 bg-black relative overflow-hidden">
+      {/* Subtle background glow */}
+      <div
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full"
+        style={{
+          background: "radial-gradient(circle, rgba(230,0,41,0.08) 0%, transparent 70%)",
+        }}
+      />
+
+      <div className="max-w-4xl mx-auto px-6 relative z-10">
+        <h2 className="w-fit mx-auto font-heading font-extrabold text-3xl sm:text-5xl text-center mb-16 sm:mb-20 bg-gradient-to-b from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
           Pourquoi Marc Dev ?
         </h2>
 
-        {/* Staggered sticky-note layout */}
-        <div className="flex flex-col gap-6 sm:gap-0">
-          {advantages.map((a, i) => (
-            <Fragment key={i}>
-              {/* Card row */}
-              <div
-                className={`reveal flex w-full justify-center ${a.side === "right" ? "sm:justify-end" : "sm:justify-start"}`}
-                style={{ transitionDelay: `${i * 80}ms` }}
-              >
-                <div
-                  className={`relative w-72 bg-zinc-950 border border-white/10 rounded-2xl px-6 pt-8 pb-6 shadow-[0_10px_40px_rgba(0,0,0,0.7)] transition-transform duration-300 hover:scale-[1.03] rotate-0 sm:${a.rotate}`}
-                >
-                  {/* Pin — white glass */}
-                  <div
-                    className="absolute -top-3.5 left-1/2 -translate-x-1/2 w-7 h-7 rounded-full bg-white/20 border border-white/40 backdrop-blur-md shadow-[0_2px_10px_rgba(255,255,255,0.15)] z-10"
-                  />
+        {/* Workflow Chain Layout */}
+        <div className="flex flex-col items-center">
+          {advantages.map((a, i) => {
+            const isActive = activeIndex === i;
 
-                  {/* Number + Icon row */}
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="font-mono text-sm font-bold text-white/25 tracking-widest">
-                      {a.num}
-                    </span>
-                    <div className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
-                      <a.icon className="w-4 h-4 text-white/60" />
+            return (
+              <div key={i} className="w-full flex flex-col items-center">
+                {/* Node Card with Fade-in */}
+                <motion.div
+                  initial={{ opacity: 0, y: 28 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: i * 0.07 }}
+                  className="w-full flex justify-center"
+                >
+                  <div
+                    ref={(el) => (cardRefs.current[i] = el)}
+                    onClick={() => setActiveIndex(i)}
+                    onMouseEnter={() => setActiveIndex(i)}
+                    className={`relative w-full max-w-lg cursor-pointer rounded-2xl p-4 sm:p-5 transition-all duration-300 ease-out select-none ${
+                      isActive
+                        ? "bg-[#E60029] border border-[#E60029] text-white shadow-[0_0_35px_rgba(230,0,41,0.5)] scale-[1.02]"
+                        : "bg-zinc-950/90 border border-white/10 text-white/90 hover:border-white/20 hover:bg-zinc-900/60 shadow-[0_8px_30px_rgba(0,0,0,0.6)]"
+                    }`}
+                  >
+                    {/* Top connector dot on card edge */}
+                    {i > 0 && (
+                      <div
+                        className={`absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full z-10 transition-colors duration-300 ${
+                          isActive || i <= activeIndex
+                            ? "bg-[#E60029] border border-white/70 shadow-[0_0_8px_rgba(230,0,41,0.8)]"
+                            : "bg-zinc-800 border border-zinc-600"
+                        }`}
+                      />
+                    )}
+
+                    {/* Bottom connector dot on card edge */}
+                    {i < advantages.length - 1 && (
+                      <div
+                        className={`absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full z-10 transition-colors duration-300 ${
+                          isActive || i < activeIndex
+                            ? "bg-[#E60029] border border-white/70 shadow-[0_0_8px_rgba(230,0,41,0.8)]"
+                            : "bg-zinc-800 border border-zinc-600"
+                        }`}
+                      />
+                    )}
+
+                    {/* Left vertical pill indicator */}
+                    <div
+                      className={`absolute left-3 top-1/2 -translate-y-1/2 w-1.5 h-6 rounded-full transition-all duration-300 ${
+                        isActive
+                          ? "bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)]"
+                          : "bg-[#E60029]"
+                      }`}
+                    />
+
+                    {/* Card Content */}
+                    <div className="flex items-center gap-4 pl-4 pr-1">
+                      {/* Icon */}
+                      <div
+                        className={`w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${
+                          isActive
+                            ? "bg-white/20 border border-white/30 text-white"
+                            : "bg-white/5 border border-white/10 text-white/70"
+                        }`}
+                      >
+                        <a.icon className="w-5 h-5" />
+                      </div>
+
+                      {/* Text */}
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center justify-between gap-2">
+                          <h3 className="font-heading font-bold text-base sm:text-lg leading-tight truncate">
+                            {a.title}
+                          </h3>
+                          <span
+                            className={`font-mono text-xs font-bold tracking-widest transition-colors duration-300 ${
+                              isActive ? "text-white/80" : "text-white/30"
+                            }`}
+                          >
+                            {a.num}
+                          </span>
+                        </div>
+                        <p
+                          className={`font-body text-xs sm:text-sm mt-1 leading-snug line-clamp-2 transition-colors duration-300 ${
+                            isActive ? "text-white/95 font-medium" : "text-zinc-400"
+                          }`}
+                        >
+                          {a.desc}
+                        </p>
+                      </div>
                     </div>
                   </div>
+                </motion.div>
 
-                  {/* Title */}
-                  <h3 className="font-heading font-bold text-lg text-white mb-2 leading-snug">
-                    {a.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="font-body text-zinc-400 text-sm leading-relaxed">
-                    {a.desc}
-                  </p>
-                </div>
-              </div>
-
-              {/* Curved dashed connector between this card and the next */}
-              {i < advantages.length - 1 && (
-                <div className="hidden sm:block w-full" style={{ height: "72px" }}>
-                  <svg
-                    viewBox="0 0 700 72"
-                    preserveAspectRatio="none"
-                    className="w-full h-full"
-                    fill="none"
-                  >
-                    <path
-                      d={
-                        a.side === "left"
-                          ? "M 144 0 C 250 72, 450 0, 556 72"
-                          : "M 556 0 C 450 72, 250 0, 144 72"
-                      }
-                      stroke="rgba(255,255,255,0.18)"
-                      strokeWidth="1.5"
-                      strokeDasharray="7 5"
-                      strokeLinecap="round"
+                {/* Vertical Dotted Connector between cards */}
+                {i < advantages.length - 1 && (
+                  <div className="relative flex flex-col items-center justify-center my-1 sm:my-1.5 h-10 sm:h-12 w-full">
+                    {/* Vertical dashed line */}
+                    <div
+                      className={`h-full w-0 border-l-2 border-dashed transition-colors duration-400 ${
+                        i < activeIndex
+                          ? "border-[#E60029]"
+                          : "border-zinc-700/80"
+                      }`}
                     />
-                  </svg>
-                </div>
-              )}
-            </Fragment>
-          ))}
+                    {/* Intermediate Dot Node */}
+                    <div
+                      className={`absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full transition-all duration-400 ${
+                        i < activeIndex
+                          ? "bg-[#E60029] shadow-[0_0_10px_rgba(230,0,41,0.8)] border border-white/40"
+                          : "bg-zinc-800 border border-zinc-600"
+                      }`}
+                    />
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
