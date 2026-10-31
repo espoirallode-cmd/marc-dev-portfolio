@@ -41,14 +41,11 @@ export default function Footer() {
             variants={itemVariants}
             className="flex flex-col items-center"
           >
-            <div className="mb-6">
-              <span className="font-heading font-extrabold text-3xl sm:text-4xl text-white tracking-tight">
-                Marc Dev
-              </span>
+            <div className="mb-8">
+              <h3 className="font-heading font-extrabold text-2xl sm:text-4xl text-white tracking-tight">
+                Commander votre site dès maintenant
+              </h3>
             </div>
-            <p className="mb-8 text-lg leading-relaxed font-light text-white/90">
-              Création de sites web professionnels. Design sur-mesure, rapide & réactif.
-            </p>
 
             {/* Social & Contact icons */}
             <div className="flex items-center gap-5">
