@@ -68,15 +68,7 @@ export default function Advantages() {
   }, []);
 
   return (
-    <section id="avantages" className="py-20 sm:py-28 bg-black relative overflow-hidden">
-      {/* Subtle background glow */}
-      <div
-        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full"
-        style={{
-          background: "radial-gradient(circle, rgba(230,0,41,0.08) 0%, transparent 70%)",
-        }}
-      />
-
+    <section id="avantages" className="py-20 sm:py-28 bg-black relative">
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         <h2 className="w-fit mx-auto font-heading font-extrabold text-3xl sm:text-5xl text-center mb-16 sm:mb-20 bg-gradient-to-b from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent">
           Pourquoi Marc Dev ?
@@ -103,38 +95,24 @@ export default function Advantages() {
                     onMouseEnter={() => setActiveIndex(i)}
                     className={`relative w-full max-w-lg cursor-pointer rounded-2xl p-4 sm:p-5 transition-all duration-300 ease-out select-none ${
                       isActive
-                        ? "bg-[#E60029] border border-[#E60029] text-white shadow-[0_0_35px_rgba(230,0,41,0.5)] scale-[1.02]"
+                        ? "bg-[#E60029] border border-[#E60029] text-white shadow-2xl scale-[1.02]"
                         : "bg-zinc-950/90 border border-white/10 text-white/90 hover:border-white/20 hover:bg-zinc-900/60 shadow-[0_8px_30px_rgba(0,0,0,0.6)]"
                     }`}
                   >
                     {/* Top connector dot on card edge */}
                     {i > 0 && (
-                      <div
-                        className={`absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full z-10 transition-colors duration-300 ${
-                          isActive || i <= activeIndex
-                            ? "bg-[#E60029] border border-white/70 shadow-[0_0_8px_rgba(230,0,41,0.8)]"
-                            : "bg-zinc-800 border border-zinc-600"
-                        }`}
-                      />
+                      <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full z-10 bg-zinc-800 border border-zinc-600" />
                     )}
 
                     {/* Bottom connector dot on card edge */}
                     {i < advantages.length - 1 && (
-                      <div
-                        className={`absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full z-10 transition-colors duration-300 ${
-                          isActive || i < activeIndex
-                            ? "bg-[#E60029] border border-white/70 shadow-[0_0_8px_rgba(230,0,41,0.8)]"
-                            : "bg-zinc-800 border border-zinc-600"
-                        }`}
-                      />
+                      <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full z-10 bg-zinc-800 border border-zinc-600" />
                     )}
 
                     {/* Left vertical pill indicator */}
                     <div
-                      className={`absolute left-3 top-1/2 -translate-y-1/2 w-1.5 h-6 rounded-full transition-all duration-300 ${
-                        isActive
-                          ? "bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)]"
-                          : "bg-[#E60029]"
+                      className={`absolute left-3 top-1/2 -translate-y-1/2 w-1.5 h-6 rounded-full transition-colors duration-300 ${
+                        isActive ? "bg-white" : "bg-[#E60029]"
                       }`}
                     />
 
@@ -181,21 +159,9 @@ export default function Advantages() {
                 {i < advantages.length - 1 && (
                   <div className="relative flex flex-col items-center justify-center my-1 sm:my-1.5 h-10 sm:h-12 w-full">
                     {/* Vertical dashed line */}
-                    <div
-                      className={`h-full w-0 border-l-2 border-dashed transition-colors duration-400 ${
-                        i < activeIndex
-                          ? "border-[#E60029]"
-                          : "border-zinc-700/80"
-                      }`}
-                    />
+                    <div className="h-full w-0 border-l-2 border-dashed border-zinc-700/80" />
                     {/* Intermediate Dot Node */}
-                    <div
-                      className={`absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full transition-all duration-400 ${
-                        i < activeIndex
-                          ? "bg-[#E60029] shadow-[0_0_10px_rgba(230,0,41,0.8)] border border-white/40"
-                          : "bg-zinc-800 border border-zinc-600"
-                      }`}
-                    />
+                    <div className="absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-zinc-800 border border-zinc-600" />
                   </div>
                 )}
               </div>
