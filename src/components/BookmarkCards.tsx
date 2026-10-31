@@ -183,7 +183,7 @@ export default function BookmarkCards() {
         {/* === TEXT CONTENT === */}
         <div className="lg:w-[45%] flex flex-col gap-5">
           {/* Mobile: bouton CTA uniquement */}
-          <div className="flex lg:hidden justify-start">
+          <div className="flex lg:hidden justify-center">
             <a
               href="https://wa.me/22990107869"
               target="_blank"
