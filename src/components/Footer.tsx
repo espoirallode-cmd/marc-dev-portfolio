@@ -1,5 +1,4 @@
 import { motion, Variants } from "motion/react";
-import { Mail } from "lucide-react";
 
 export default function Footer() {
   const containerVariants: Variants = {
@@ -39,35 +38,30 @@ export default function Footer() {
           {/* CTA Card */}
           <motion.div
             variants={itemVariants}
-            className="flex flex-col items-center"
+            className="flex flex-col items-center w-full"
           >
-            <div className="mb-2 w-full">
+            <div className="mb-2 w-full max-w-sm sm:max-w-xl">
               <a
                 href="https://wa.me/22990107869"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-4 w-full px-5 py-4 rounded-2xl bg-zinc-900/80 border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] backdrop-blur-sm cursor-pointer"
+                className="group flex items-center justify-between gap-3 sm:gap-4 w-full px-3.5 py-2.5 sm:px-5 sm:py-4 rounded-xl sm:rounded-2xl bg-zinc-900/80 border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] backdrop-blur-sm cursor-pointer"
               >
-
-
                 {/* Text */}
-                <div className="flex-1 min-w-0">
-                  <p className="font-body font-semibold text-sm sm:text-base text-white tracking-wide truncate">
+                <div className="flex-1 min-w-0 text-left">
+                  <p className="font-body font-semibold text-xs sm:text-base text-white tracking-wide truncate">
                     Commander votre site dès maintenant
                   </p>
-
                 </div>
 
                 {/* Right Arrow */}
-                <div className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-[#E60029] border border-[#E60029] text-white">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                <div className="flex-shrink-0 flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-[#E60029] border border-[#E60029] text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3 sm:w-4 sm:h-4">
                     <path d="M9 18l6-6-6-6"/>
                   </svg>
                 </div>
               </a>
             </div>
-
-
           </motion.div>
         </motion.div>
 
